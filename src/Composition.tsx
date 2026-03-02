@@ -12,7 +12,7 @@ export const Video: React.FC = () => {
 export const BackgroundImage: React.FC = () => {
   return (
     <AbsoluteFill>
-      <Img src={staticFile('lion.png')} />
+      <Img src={staticFile('logo.png')} />
     </AbsoluteFill>
   );
 };
