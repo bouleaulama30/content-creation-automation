@@ -1,6 +1,6 @@
 import "./index.css";
-import { Composition } from "remotion";
-import {Video, BackgroundImage, AudioVideo } from "./Composition";
+import { Composition, staticFile } from "remotion";
+import {Video, BackgroundImage, AudioVideo, calculateMetadata } from "./Composition";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -12,6 +12,10 @@ export const RemotionRoot: React.FC = () => {
         fps={30}
         width={1080}
         height={1920}
+        defaultProps={{
+        src: staticFile('video.mp4'),
+      }}
+        calculateMetadata={calculateMetadata}
       />
 
       <Composition
