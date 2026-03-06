@@ -1,6 +1,6 @@
 import "./index.css";
 import { Composition, staticFile } from "remotion";
-import {MyComp, Logo, Audio, calculateMetadata } from "./Composition";
+import {MyComp, calculateMetadata } from "./Composition";
 
 export const RemotionRoot: React.FC = () => {
   return (

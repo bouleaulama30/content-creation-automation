@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, OffthreadVideo, Html5Audio, Img, staticFile, CalculateMetadataFunction} from 'remotion';
+import {AbsoluteFill, OffthreadVideo, Html5Audio, Img, CalculateMetadataFunction} from 'remotion';
 import {parseMedia} from '@remotion/media-parser';
 
 
