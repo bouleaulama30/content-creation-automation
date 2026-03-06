@@ -2,29 +2,30 @@ import React from 'react';
 import {AbsoluteFill, OffthreadVideo, Html5Audio, Img, staticFile, CalculateMetadataFunction} from 'remotion';
 import {parseMedia} from '@remotion/media-parser';
 
-type MyCompProps = {
+
+type MediaSrcProp = {
   src: string;
 };
 
-export const Video: React.FC<MyCompProps> = ({src}) => {
+type MyCompProp = {
+  videoSrc: string;
+  audioSrc: string;
+  logoSrc: string;
+}
+
+export const MyComp: React.FC<MyCompProp> = ({videoSrc, audioSrc, logoSrc}) => {
   return (
     <AbsoluteFill>
-      <OffthreadVideo src={staticFile('video.mp4')} />
-      <Html5Audio src={src} />
-      <AbsoluteFill>
-        <Img 
-           src={staticFile('logo.png')}
-            style={{
-              transform: 'scale(0.48) translateY(-220px)',
-            }}/>
-     </AbsoluteFill>
+      <Video src={videoSrc} />
+      <Audio src={audioSrc} />
+      <Logo src={logoSrc} />
     </AbsoluteFill>
   );
 };
 
-export const calculateMetadata: CalculateMetadataFunction<MyCompProps> = async ({props}) => {
+export const calculateMetadata: CalculateMetadataFunction<MyCompProp> = async ({props}) => {
   const {slowDurationInSeconds} = await parseMedia({
-    src: props.src,
+    src: props.audioSrc,
     fields: {
       slowDurationInSeconds: true,
       // dimensions: true,
@@ -42,19 +43,30 @@ export const calculateMetadata: CalculateMetadataFunction<MyCompProps> = async (
   };
 };
 
-
-export const BackgroundImage: React.FC = () => {
+export const Video: React.FC<MediaSrcProp> = ({src}) => {
   return (
-    <AbsoluteFill>
-      <Img src={staticFile('logo.png')} />
-    </AbsoluteFill>
+      <AbsoluteFill>
+        <OffthreadVideo src={src} />
+      </AbsoluteFill>
   );
 };
 
-export const AudioVideo = () => {
+export const Logo: React.FC<MediaSrcProp> = ({src}) => {
   return (
     <AbsoluteFill>
-      <Html5Audio src={staticFile('audio.mp3')} />
+        <Img 
+           src={src}
+            style={{
+              transform: 'scale(0.48) translateY(-220px)',
+            }}/>
+     </AbsoluteFill>
+  );
+};
+
+export const Audio: React.FC<MediaSrcProp> = ({src}) => {
+  return (
+    <AbsoluteFill>
+      <Html5Audio src={src} />
     </AbsoluteFill>
   );
 };
