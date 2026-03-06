@@ -38,7 +38,7 @@ export const Logo: React.FC<MediaSrcProp> = ({src}) => {
         <Img 
            src={src}
             style={{
-              transform: 'scale(0.48) translateY(-220px)',
+              transform: 'scale(0.40) translateY(-340px)',
             }}/>
      </AbsoluteFill>
   );
@@ -93,7 +93,7 @@ export const calculateMetadata: CalculateMetadataFunction<MyCompProp> = async ({
       });
 
       return {
-        durationInFrames: Math.floor(slowDurationInSeconds * fps),
+        durationInFrames: Math.min(Math.floor(slowDurationInSeconds * fps), Math.floor(7 * fps)),
         src: video.src,
       };
     }),

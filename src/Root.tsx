@@ -2,7 +2,7 @@ import "./index.css";
 import { Composition, staticFile } from "remotion";
 import {MyComp, calculateMetadata } from "./Composition";
 
-// const fps = 30;
+const fps = 30;
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -15,17 +15,23 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={{
         videosSrc: [
           {
-            durationInFrames: null,
+            // durationInFrames: null,
+            durationInFrames: Math.floor(1 * fps),
             src: staticFile('video1.mp4'),
           },
           {
             durationInFrames: null,
             src: staticFile('video2.mp4'),
           },          
+          
           {
             durationInFrames: null,
+            src: staticFile('video.mp4'),
+          },
+          {          
+            durationInFrames: null,
             src: staticFile('video3.mp4'),
-          },          
+          },
           {
             durationInFrames: null,
             src: staticFile('video4.mp4'),
