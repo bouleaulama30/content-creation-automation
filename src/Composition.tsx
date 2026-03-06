@@ -9,8 +9,8 @@ type MyCompProps = {
 export const Video: React.FC<MyCompProps> = ({src}) => {
   return (
     <AbsoluteFill>
-      <OffthreadVideo src={src} />
-      <Html5Audio src={staticFile('audio.mp3')} />
+      <OffthreadVideo src={staticFile('video.mp4')} />
+      <Html5Audio src={src} />
       <AbsoluteFill>
         <Img 
            src={staticFile('logo.png')}
@@ -23,26 +23,22 @@ export const Video: React.FC<MyCompProps> = ({src}) => {
 };
 
 export const calculateMetadata: CalculateMetadataFunction<MyCompProps> = async ({props}) => {
-  const {slowDurationInSeconds, dimensions} = await parseMedia({
+  const {slowDurationInSeconds} = await parseMedia({
     src: props.src,
     fields: {
       slowDurationInSeconds: true,
-      dimensions: true,
+      // dimensions: true,
     },
   });
 
-  if (dimensions === null) {
-    // For example when passing an MP3 file:
-    throw new Error('Not a video file');
-  }
 
   const fps = 30;
 
   return {
     durationInFrames: Math.floor(slowDurationInSeconds * fps),
     fps,
-    width: dimensions.width,
-    height: dimensions.height,
+    // width: dimensions.width,
+    // height: dimensions.height,
   };
 };
 

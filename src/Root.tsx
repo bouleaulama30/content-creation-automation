@@ -8,12 +8,10 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="Video"
         component={Video}
-        durationInFrames={300}
-        fps={30}
         width={1080}
         height={1920}
         defaultProps={{
-        src: staticFile('video.mp4'),
+        src: staticFile('audio.mp3'),
       }}
         calculateMetadata={calculateMetadata}
       />
