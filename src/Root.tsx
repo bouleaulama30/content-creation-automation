@@ -2,6 +2,8 @@ import "./index.css";
 import { Composition, staticFile } from "remotion";
 import {MyComp, calculateMetadata } from "./Composition";
 
+// const fps = 30;
+
 export const RemotionRoot: React.FC = () => {
   return (
     <>
@@ -11,7 +13,24 @@ export const RemotionRoot: React.FC = () => {
         width={1080}
         height={1920}
         defaultProps={{
-        videoSrc: staticFile('video.mp4'),
+        videosSrc: [
+          {
+            durationInFrames: null,
+            src: staticFile('video1.mp4'),
+          },
+          {
+            durationInFrames: null,
+            src: staticFile('video2.mp4'),
+          },          
+          {
+            durationInFrames: null,
+            src: staticFile('video3.mp4'),
+          },          
+          {
+            durationInFrames: null,
+            src: staticFile('video4.mp4'),
+          },
+        ],
         audioSrc: staticFile('audio.mp3'),
         logoSrc: staticFile('logo.png'),
       }}
