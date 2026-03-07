@@ -36,7 +36,7 @@ export const Logo: React.FC<MediaSrcProp> = ({src}) => {
   return (
     <AbsoluteFill>
         <Img 
-           src={src}
+           src={staticFile(src)}
             style={{
               transform: 'scale(0.40) translateY(-340px)',
             }}/>
@@ -47,13 +47,13 @@ export const Logo: React.FC<MediaSrcProp> = ({src}) => {
 export const Audio: React.FC<MediaSrcProp> = ({src}) => {
   return (
     <AbsoluteFill>
-      <Html5Audio src={src} />
+      <Html5Audio src={staticFile(src)} />
     </AbsoluteFill>
   );
 };
 
 
-type VideoToEmbed = {
+export type VideoToEmbed = {
   src: string;
   durationInFrames: number | null;
 };
@@ -72,7 +72,7 @@ export const VideosInSequence: React.FC<Props> = ({videos}) => {
 
         return (
           <Series.Sequence key={vid.src} durationInFrames={vid.durationInFrames}>
-            <OffthreadVideo volume={0} src={vid.src} />
+            <OffthreadVideo volume={0} src={staticFile(vid.src)} />
           </Series.Sequence>
         );
       })}
@@ -86,7 +86,8 @@ export const calculateMetadata: CalculateMetadataFunction<MyCompProp> = async ({
   const videos = await Promise.all([
     ...props.videosSrc.map(async (video): Promise<VideoToEmbed> => {
       const {slowDurationInSeconds} = await parseMedia({
-        src: video.src,
+        // 1. AJOUTE staticFile ICI
+        src: staticFile(video.src), 
         fields: {
           slowDurationInSeconds: true,
         },
@@ -94,19 +95,19 @@ export const calculateMetadata: CalculateMetadataFunction<MyCompProp> = async ({
 
       return {
         durationInFrames: Math.min(Math.floor(slowDurationInSeconds * fps), Math.floor(7 * fps)),
-        src: video.src,
+        src: video.src, // On garde le texte brut dans l'objet retourné
       };
     }),
   ]);
 
-  // const totalDurationInFrames = videos.reduce((acc, video) => acc + (video.durationInFrames ?? 0), 0);
   const {slowDurationInSeconds} = await parseMedia({
-    src: props.audioSrc,
+    // 2. AJOUTE staticFile ICI POUR L'AUDIO
+    src: staticFile(props.audioSrc), 
     fields: {
       slowDurationInSeconds: true,
-      // dimensions: true,
     },
   });
+  
   return {
     props: {
       ...props,
