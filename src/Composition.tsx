@@ -1,5 +1,5 @@
 import React from 'react';
-import {Series, AbsoluteFill, OffthreadVideo, Html5Audio, Img, CalculateMetadataFunction} from 'remotion';
+import {Series, AbsoluteFill, OffthreadVideo, Html5Audio, Img, CalculateMetadataFunction, staticFile} from 'remotion';
 import {parseMedia} from '@remotion/media-parser';
 
 
@@ -72,7 +72,7 @@ export const VideosInSequence: React.FC<Props> = ({videos}) => {
 
         return (
           <Series.Sequence key={vid.src} durationInFrames={vid.durationInFrames}>
-            <OffthreadVideo src={vid.src} />
+            <OffthreadVideo volume={0} src={vid.src} />
           </Series.Sequence>
         );
       })}
