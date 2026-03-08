@@ -27,7 +27,7 @@ export const RemotionRoot: React.FC = () => {
           
           {
             durationInFrames: null,
-            src: 'video.mp4',
+            src: 'video0.mp4',
           },
           {          
             durationInFrames: null,
