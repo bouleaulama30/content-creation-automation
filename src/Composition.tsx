@@ -94,7 +94,7 @@ export const calculateMetadata: CalculateMetadataFunction<MyCompProp> = async ({
       });
 
       return {
-        durationInFrames: Math.min(Math.floor(slowDurationInSeconds * fps), Math.floor(7 * fps)),
+        durationInFrames: Math.min(Math.floor(slowDurationInSeconds * fps), Math.floor(2.5 * fps)),
         src: video.src, // On garde le texte brut dans l'objet retourné
       };
     }),
