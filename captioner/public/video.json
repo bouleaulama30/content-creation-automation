@@ -1,0 +1,471 @@
+[
+  {
+    "text": "Lorsque",
+    "startMs": 50,
+    "endMs": 330,
+    "timestampMs": 420,
+    "confidence": 0.018238
+  },
+  {
+    "text": " tu",
+    "startMs": 330,
+    "endMs": 430,
+    "timestampMs": 420,
+    "confidence": 0.499946
+  },
+  {
+    "text": " n'as",
+    "startMs": 430,
+    "endMs": 610,
+    "timestampMs": 420,
+    "confidence": 0.678317
+  },
+  {
+    "text": " pas",
+    "startMs": 610,
+    "endMs": 760,
+    "timestampMs": 680,
+    "confidence": 0.940733
+  },
+  {
+    "text": " d'argent,",
+    "startMs": 760,
+    "endMs": 1300,
+    "timestampMs": 780,
+    "confidence": 0.820137
+  },
+  {
+    "text": " tu",
+    "startMs": 1300,
+    "endMs": 1370,
+    "timestampMs": 1220,
+    "confidence": 0.802544
+  },
+  {
+    "text": " n'as",
+    "startMs": 1370,
+    "endMs": 1500,
+    "timestampMs": 1440,
+    "confidence": 0.9895
+  },
+  {
+    "text": " pas",
+    "startMs": 1500,
+    "endMs": 1620,
+    "timestampMs": 1540,
+    "confidence": 0.998009
+  },
+  {
+    "text": " de",
+    "startMs": 1620,
+    "endMs": 1680,
+    "timestampMs": 1740,
+    "confidence": 0.986799
+  },
+  {
+    "text": " famille",
+    "startMs": 1680,
+    "endMs": 2000,
+    "timestampMs": 2060,
+    "confidence": 0.957397
+  },
+  {
+    "text": " et",
+    "startMs": 2000,
+    "endMs": 2130,
+    "timestampMs": 2440,
+    "confidence": 0.479082
+  },
+  {
+    "text": " tu",
+    "startMs": 2130,
+    "endMs": 2260,
+    "timestampMs": 2560,
+    "confidence": 0.988751
+  },
+  {
+    "text": " n'as",
+    "startMs": 2260,
+    "endMs": 2510,
+    "timestampMs": 2760,
+    "confidence": 0.998641
+  },
+  {
+    "text": " pas",
+    "startMs": 2510,
+    "endMs": 2710,
+    "timestampMs": 2880,
+    "confidence": 0.997499
+  },
+  {
+    "text": " d'amis.",
+    "startMs": 2710,
+    "endMs": 3360,
+    "timestampMs": 3000,
+    "confidence": 0.993347
+  },
+  {
+    "text": " Tout",
+    "startMs": 3360,
+    "endMs": 3600,
+    "timestampMs": 3820,
+    "confidence": 0.973708
+  },
+  {
+    "text": " le",
+    "startMs": 3600,
+    "endMs": 3720,
+    "timestampMs": 3940,
+    "confidence": 0.9983
+  },
+  {
+    "text": " monde",
+    "startMs": 3720,
+    "endMs": 4010,
+    "timestampMs": 4140,
+    "confidence": 0.999722
+  },
+  {
+    "text": " te",
+    "startMs": 4010,
+    "endMs": 4130,
+    "timestampMs": 4420,
+    "confidence": 0.990949
+  },
+  {
+    "text": " voit",
+    "startMs": 4130,
+    "endMs": 4370,
+    "timestampMs": 4560,
+    "confidence": 0.968125
+  },
+  {
+    "text": " comme",
+    "startMs": 4370,
+    "endMs": 4660,
+    "timestampMs": 4780,
+    "confidence": 0.994736
+  },
+  {
+    "text": " quelqu'un",
+    "startMs": 4660,
+    "endMs": 5170,
+    "timestampMs": 5080,
+    "confidence": 0.993646
+  },
+  {
+    "text": " de",
+    "startMs": 5170,
+    "endMs": 5290,
+    "timestampMs": 5340,
+    "confidence": 0.997759
+  },
+  {
+    "text": " mauvais",
+    "startMs": 5290,
+    "endMs": 5760,
+    "timestampMs": 5720,
+    "confidence": 0.997145
+  },
+  {
+    "text": " parce",
+    "startMs": 5760,
+    "endMs": 5980,
+    "timestampMs": 6280,
+    "confidence": 0.466189
+  },
+  {
+    "text": " qu'il",
+    "startMs": 5980,
+    "endMs": 6190,
+    "timestampMs": 6400,
+    "confidence": 0.989791
+  },
+  {
+    "text": " ne",
+    "startMs": 6190,
+    "endMs": 6280,
+    "timestampMs": 6620,
+    "confidence": 0.994099
+  },
+  {
+    "text": " veut",
+    "startMs": 6280,
+    "endMs": 6460,
+    "timestampMs": 6740,
+    "confidence": 0.975065
+  },
+  {
+    "text": " pas",
+    "startMs": 6460,
+    "endMs": 6590,
+    "timestampMs": 6860,
+    "confidence": 0.995448
+  },
+  {
+    "text": " être",
+    "startMs": 6590,
+    "endMs": 6840,
+    "timestampMs": 7140,
+    "confidence": 0.987553
+  },
+  {
+    "text": " proche",
+    "startMs": 6840,
+    "endMs": 7280,
+    "timestampMs": 7300,
+    "confidence": 0.819426
+  },
+  {
+    "text": " de",
+    "startMs": 7280,
+    "endMs": 7500,
+    "timestampMs": 7580,
+    "confidence": 0.967671
+  },
+  {
+    "text": " toi.",
+    "startMs": 7500,
+    "endMs": 8020,
+    "timestampMs": 7800,
+    "confidence": 0.987374
+  },
+  {
+    "text": " Mais",
+    "startMs": 8020,
+    "endMs": 8300,
+    "timestampMs": 8400,
+    "confidence": 0.967722
+  },
+  {
+    "text": " quand",
+    "startMs": 8300,
+    "endMs": 8650,
+    "timestampMs": 8680,
+    "confidence": 0.958327
+  },
+  {
+    "text": " tu",
+    "startMs": 8650,
+    "endMs": 8790,
+    "timestampMs": 8800,
+    "confidence": 0.996957
+  },
+  {
+    "text": " as",
+    "startMs": 8790,
+    "endMs": 8930,
+    "timestampMs": 8900,
+    "confidence": 0.994863
+  },
+  {
+    "text": " l'argent,",
+    "startMs": 8930,
+    "endMs": 9630,
+    "timestampMs": 9060,
+    "confidence": 0.933059
+  },
+  {
+    "text": " tout",
+    "startMs": 9630,
+    "endMs": 9850,
+    "timestampMs": 9980,
+    "confidence": 0.951319
+  },
+  {
+    "text": " le",
+    "startMs": 9850,
+    "endMs": 9960,
+    "timestampMs": 10120,
+    "confidence": 0.998894
+  },
+  {
+    "text": " monde",
+    "startMs": 9960,
+    "endMs": 10230,
+    "timestampMs": 10280,
+    "confidence": 0.999722
+  },
+  {
+    "text": " te",
+    "startMs": 10230,
+    "endMs": 10340,
+    "timestampMs": 10500,
+    "confidence": 0.995306
+  },
+  {
+    "text": " voit",
+    "startMs": 10340,
+    "endMs": 10570,
+    "timestampMs": 10580,
+    "confidence": 0.987423
+  },
+  {
+    "text": " comme",
+    "startMs": 10570,
+    "endMs": 10830,
+    "timestampMs": 10800,
+    "confidence": 0.991978
+  },
+  {
+    "text": " quelqu'un",
+    "startMs": 10830,
+    "endMs": 11320,
+    "timestampMs": 11060,
+    "confidence": 0.997522
+  },
+  {
+    "text": " de",
+    "startMs": 11320,
+    "endMs": 11430,
+    "timestampMs": 11360,
+    "confidence": 0.998517
+  },
+  {
+    "text": " bon",
+    "startMs": 11430,
+    "endMs": 11620,
+    "timestampMs": 11540,
+    "confidence": 0.992568
+  },
+  {
+    "text": " et",
+    "startMs": 11620,
+    "endMs": 11730,
+    "timestampMs": 11840,
+    "confidence": 0.942015
+  },
+  {
+    "text": " on",
+    "startMs": 11730,
+    "endMs": 11840,
+    "timestampMs": 12020,
+    "confidence": 0.989044
+  },
+  {
+    "text": " aime",
+    "startMs": 11840,
+    "endMs": 12070,
+    "timestampMs": 12160,
+    "confidence": 0.99364
+  },
+  {
+    "text": " te",
+    "startMs": 12070,
+    "endMs": 12180,
+    "timestampMs": 12380,
+    "confidence": 0.976589
+  },
+  {
+    "text": " dire",
+    "startMs": 12180,
+    "endMs": 12410,
+    "timestampMs": 12520,
+    "confidence": 0.998483
+  },
+  {
+    "text": " que",
+    "startMs": 12410,
+    "endMs": 12580,
+    "timestampMs": 12680,
+    "confidence": 0.995387
+  },
+  {
+    "text": " tu",
+    "startMs": 12580,
+    "endMs": 12690,
+    "timestampMs": 12880,
+    "confidence": 0.997763
+  },
+  {
+    "text": " ressembles",
+    "startMs": 12690,
+    "endMs": 13260,
+    "timestampMs": 13120,
+    "confidence": 0.992644
+  },
+  {
+    "text": " à",
+    "startMs": 13260,
+    "endMs": 13370,
+    "timestampMs": 13440,
+    "confidence": 0.982729
+  },
+  {
+    "text": " Dieu",
+    "startMs": 13370,
+    "endMs": 13620,
+    "timestampMs": 13560,
+    "confidence": 0.918296
+  },
+  {
+    "text": " qui",
+    "startMs": 13620,
+    "endMs": 13770,
+    "timestampMs": 13720,
+    "confidence": 0.967645
+  },
+  {
+    "text": " est",
+    "startMs": 13770,
+    "endMs": 13940,
+    "timestampMs": 13900,
+    "confidence": 0.997012
+  },
+  {
+    "text": " descendu",
+    "startMs": 13940,
+    "endMs": 14400,
+    "timestampMs": 14140,
+    "confidence": 0.997978
+  },
+  {
+    "text": " sur",
+    "startMs": 14400,
+    "endMs": 14570,
+    "timestampMs": 14520,
+    "confidence": 0.999447
+  },
+  {
+    "text": " terre.",
+    "startMs": 14570,
+    "endMs": 15140,
+    "timestampMs": 14820,
+    "confidence": 0.584842
+  },
+  {
+    "text": " Mon",
+    "startMs": 15140,
+    "endMs": 15340,
+    "timestampMs": 15580,
+    "confidence": 0.96257
+  },
+  {
+    "text": " conseil",
+    "startMs": 15340,
+    "endMs": 15810,
+    "timestampMs": 15900,
+    "confidence": 0.998925
+  },
+  {
+    "text": " pour",
+    "startMs": 15810,
+    "endMs": 16080,
+    "timestampMs": 16220,
+    "confidence": 0.986515
+  },
+  {
+    "text": " toi,",
+    "startMs": 16080,
+    "endMs": 16420,
+    "timestampMs": 16360,
+    "confidence": 0.998079
+  },
+  {
+    "text": " c'est...",
+    "startMs": 16420,
+    "endMs": 16640,
+    "timestampMs": 16400,
+    "confidence": 0.769769
+  }
+]
