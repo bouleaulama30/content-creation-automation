@@ -4,7 +4,23 @@ import math
 from typing import TypedDict, List
 import shutil
 import random as rd
+from pathlib import Path
 from mutagen.mp3 import MP3
+from dotenv import load_dotenv
+
+load_dotenv()
+
+VIDEOS_SRC_PATH = os.getenv('VIDEOS_SRC_PATH')
+AUDIO_SRC_FOLDER_PATH = os.getenv('AUDIO_SRC_FOLDER_PATH')
+AUDIO_NAME = os.getenv('AUDIO_NAME')
+AUDIO_SRC_FILE_PATH= os.getenv('AUDIO_SRC_FILE_PATH')
+
+
+PROJECT_BASE_PATH = os.getenv('PROJECT_BASE_PATH')
+ASSEMBLER_PATH = os.getenv('ASSEMBLER_PATH')
+CAPTIONER_PATH = os.getenv('CAPTIONER_PATH')
+
+INTERMEDIAR_VIDEOS_PATH = os.getenv('INTERMEDIAR_VIDEOS_PATH')
 
 
 # L'équivalent de ton "type" ou "interface" en TypeScript
@@ -67,8 +83,9 @@ def write_data_json(folder_video_path):
 
 
 if __name__ == "__main__":
-    nbr_video = nbr_video_to_select('/home/leo/Videos/projet_secret/audio/audio.mp3', 2.5)
-    copy_and_rename("/home/leo/Videos/projet_secret/audio/", "/home/leo/content-creation-automation/public","audio.mp3", "audio.mp3")
-    videos = select_videos("/home/leo/Videos/projet_secret", nbr_video)
-    move_selected_videos("/home/leo/Videos/projet_secret", "/home/leo/content-creation-automation/public", videos)
-    write_data_json("/home/leo/content-creation-automation/public")
+    print(f"{AUDIO_NAME}, {AUDIO_SRC_FILE_PATH}")
+    nbr_video = nbr_video_to_select(f'{AUDIO_SRC_FILE_PATH}', 2.5)
+    copy_and_rename(f"{AUDIO_SRC_FOLDER_PATH}", f"{INTERMEDIAR_VIDEOS_PATH}",f"{AUDIO_NAME}", f"{AUDIO_NAME}")
+    videos = select_videos(f"{VIDEOS_SRC_PATH}", nbr_video)
+    move_selected_videos(f"{VIDEOS_SRC_PATH}", f"{INTERMEDIAR_VIDEOS_PATH}", videos)
+    write_data_json(f"{INTERMEDIAR_VIDEOS_PATH}")
