@@ -1,471 +1,1206 @@
 [
   {
-    "text": "Lorsque",
-    "startMs": 50,
-    "endMs": 330,
-    "timestampMs": 420,
-    "confidence": 0.018238
+    "text": "A",
+    "startMs": 60,
+    "endMs": 90,
+    "timestampMs": 240,
+    "confidence": 0.348825
   },
   {
-    "text": " tu",
-    "startMs": 330,
+    "text": " l'âge",
+    "startMs": 90,
     "endMs": 430,
-    "timestampMs": 420,
-    "confidence": 0.499946
+    "timestampMs": 300,
+    "confidence": 0.987946
   },
   {
-    "text": " n'as",
+    "text": " de",
     "startMs": 430,
-    "endMs": 610,
-    "timestampMs": 420,
-    "confidence": 0.678317
+    "endMs": 540,
+    "timestampMs": 640,
+    "confidence": 0.996352
   },
   {
-    "text": " pas",
-    "startMs": 610,
-    "endMs": 760,
-    "timestampMs": 680,
-    "confidence": 0.940733
+    "text": " 20",
+    "startMs": 540,
+    "endMs": 910,
+    "timestampMs": 860,
+    "confidence": 0.894495
   },
   {
-    "text": " d'argent,",
-    "startMs": 760,
-    "endMs": 1300,
-    "timestampMs": 780,
-    "confidence": 0.820137
+    "text": " ans,",
+    "startMs": 910,
+    "endMs": 1240,
+    "timestampMs": 1360,
+    "confidence": 0.995824
   },
   {
-    "text": " tu",
-    "startMs": 1300,
-    "endMs": 1370,
-    "timestampMs": 1220,
-    "confidence": 0.802544
-  },
-  {
-    "text": " n'as",
-    "startMs": 1370,
-    "endMs": 1500,
-    "timestampMs": 1440,
-    "confidence": 0.9895
-  },
-  {
-    "text": " pas",
-    "startMs": 1500,
-    "endMs": 1620,
-    "timestampMs": 1540,
-    "confidence": 0.998009
-  },
-  {
-    "text": " de",
-    "startMs": 1620,
-    "endMs": 1680,
-    "timestampMs": 1740,
-    "confidence": 0.986799
-  },
-  {
-    "text": " famille",
-    "startMs": 1680,
-    "endMs": 2000,
-    "timestampMs": 2060,
-    "confidence": 0.957397
-  },
-  {
-    "text": " et",
-    "startMs": 2000,
-    "endMs": 2130,
-    "timestampMs": 2440,
-    "confidence": 0.479082
-  },
-  {
-    "text": " tu",
-    "startMs": 2130,
-    "endMs": 2260,
-    "timestampMs": 2560,
-    "confidence": 0.988751
-  },
-  {
-    "text": " n'as",
-    "startMs": 2260,
-    "endMs": 2510,
-    "timestampMs": 2760,
-    "confidence": 0.998641
-  },
-  {
-    "text": " pas",
-    "startMs": 2510,
-    "endMs": 2710,
-    "timestampMs": 2880,
-    "confidence": 0.997499
-  },
-  {
-    "text": " d'amis.",
-    "startMs": 2710,
-    "endMs": 3360,
-    "timestampMs": 3000,
-    "confidence": 0.993347
-  },
-  {
-    "text": " Tout",
-    "startMs": 3360,
-    "endMs": 3600,
-    "timestampMs": 3820,
-    "confidence": 0.973708
-  },
-  {
-    "text": " le",
-    "startMs": 3600,
-    "endMs": 3720,
-    "timestampMs": 3940,
-    "confidence": 0.9983
-  },
-  {
-    "text": " monde",
-    "startMs": 3720,
-    "endMs": 4010,
-    "timestampMs": 4140,
-    "confidence": 0.999722
-  },
-  {
-    "text": " te",
-    "startMs": 4010,
-    "endMs": 4130,
-    "timestampMs": 4420,
-    "confidence": 0.990949
-  },
-  {
-    "text": " voit",
-    "startMs": 4130,
-    "endMs": 4370,
-    "timestampMs": 4560,
-    "confidence": 0.968125
-  },
-  {
-    "text": " comme",
-    "startMs": 4370,
-    "endMs": 4660,
-    "timestampMs": 4780,
-    "confidence": 0.994736
-  },
-  {
-    "text": " quelqu'un",
-    "startMs": 4660,
-    "endMs": 5170,
-    "timestampMs": 5080,
-    "confidence": 0.993646
-  },
-  {
-    "text": " de",
-    "startMs": 5170,
-    "endMs": 5290,
-    "timestampMs": 5340,
-    "confidence": 0.997759
-  },
-  {
-    "text": " mauvais",
-    "startMs": 5290,
-    "endMs": 5760,
-    "timestampMs": 5720,
-    "confidence": 0.997145
-  },
-  {
-    "text": " parce",
-    "startMs": 5760,
-    "endMs": 5980,
-    "timestampMs": 6280,
-    "confidence": 0.466189
-  },
-  {
-    "text": " qu'il",
-    "startMs": 5980,
-    "endMs": 6190,
-    "timestampMs": 6400,
-    "confidence": 0.989791
-  },
-  {
-    "text": " ne",
-    "startMs": 6190,
-    "endMs": 6280,
-    "timestampMs": 6620,
-    "confidence": 0.994099
-  },
-  {
-    "text": " veut",
-    "startMs": 6280,
-    "endMs": 6460,
-    "timestampMs": 6740,
-    "confidence": 0.975065
-  },
-  {
-    "text": " pas",
-    "startMs": 6460,
-    "endMs": 6590,
-    "timestampMs": 6860,
-    "confidence": 0.995448
-  },
-  {
-    "text": " être",
-    "startMs": 6590,
-    "endMs": 6840,
-    "timestampMs": 7140,
-    "confidence": 0.987553
-  },
-  {
-    "text": " proche",
-    "startMs": 6840,
-    "endMs": 7280,
-    "timestampMs": 7300,
-    "confidence": 0.819426
-  },
-  {
-    "text": " de",
-    "startMs": 7280,
-    "endMs": 7500,
-    "timestampMs": 7580,
-    "confidence": 0.967671
-  },
-  {
-    "text": " toi.",
-    "startMs": 7500,
-    "endMs": 8020,
-    "timestampMs": 7800,
-    "confidence": 0.987374
-  },
-  {
-    "text": " Mais",
-    "startMs": 8020,
-    "endMs": 8300,
-    "timestampMs": 8400,
-    "confidence": 0.967722
-  },
-  {
-    "text": " quand",
-    "startMs": 8300,
-    "endMs": 8650,
-    "timestampMs": 8680,
-    "confidence": 0.958327
-  },
-  {
-    "text": " tu",
-    "startMs": 8650,
-    "endMs": 8790,
-    "timestampMs": 8800,
-    "confidence": 0.996957
-  },
-  {
-    "text": " as",
-    "startMs": 8790,
-    "endMs": 8930,
-    "timestampMs": 8900,
-    "confidence": 0.994863
-  },
-  {
-    "text": " l'argent,",
-    "startMs": 8930,
-    "endMs": 9630,
-    "timestampMs": 9060,
-    "confidence": 0.933059
-  },
-  {
-    "text": " tout",
-    "startMs": 9630,
-    "endMs": 9850,
-    "timestampMs": 9980,
-    "confidence": 0.951319
-  },
-  {
-    "text": " le",
-    "startMs": 9850,
-    "endMs": 9960,
-    "timestampMs": 10120,
-    "confidence": 0.998894
-  },
-  {
-    "text": " monde",
-    "startMs": 9960,
-    "endMs": 10230,
-    "timestampMs": 10280,
-    "confidence": 0.999722
-  },
-  {
-    "text": " te",
-    "startMs": 10230,
-    "endMs": 10340,
-    "timestampMs": 10500,
-    "confidence": 0.995306
-  },
-  {
-    "text": " voit",
-    "startMs": 10340,
-    "endMs": 10570,
-    "timestampMs": 10580,
-    "confidence": 0.987423
-  },
-  {
-    "text": " comme",
-    "startMs": 10570,
-    "endMs": 10830,
-    "timestampMs": 10800,
-    "confidence": 0.991978
-  },
-  {
-    "text": " quelqu'un",
-    "startMs": 10830,
-    "endMs": 11320,
-    "timestampMs": 11060,
-    "confidence": 0.997522
-  },
-  {
-    "text": " de",
-    "startMs": 11320,
-    "endMs": 11430,
-    "timestampMs": 11360,
-    "confidence": 0.998517
-  },
-  {
-    "text": " bon",
-    "startMs": 11430,
-    "endMs": 11620,
-    "timestampMs": 11540,
-    "confidence": 0.992568
-  },
-  {
-    "text": " et",
-    "startMs": 11620,
-    "endMs": 11730,
-    "timestampMs": 11840,
-    "confidence": 0.942015
-  },
-  {
-    "text": " on",
-    "startMs": 11730,
-    "endMs": 11840,
-    "timestampMs": 12020,
-    "confidence": 0.989044
-  },
-  {
-    "text": " aime",
-    "startMs": 11840,
-    "endMs": 12070,
-    "timestampMs": 12160,
-    "confidence": 0.99364
-  },
-  {
-    "text": " te",
-    "startMs": 12070,
-    "endMs": 12180,
-    "timestampMs": 12380,
-    "confidence": 0.976589
-  },
-  {
-    "text": " dire",
-    "startMs": 12180,
-    "endMs": 12410,
-    "timestampMs": 12520,
-    "confidence": 0.998483
-  },
-  {
-    "text": " que",
-    "startMs": 12410,
-    "endMs": 12580,
-    "timestampMs": 12680,
-    "confidence": 0.995387
-  },
-  {
-    "text": " tu",
-    "startMs": 12580,
-    "endMs": 12690,
-    "timestampMs": 12880,
-    "confidence": 0.997763
-  },
-  {
-    "text": " ressembles",
-    "startMs": 12690,
-    "endMs": 13260,
-    "timestampMs": 13120,
-    "confidence": 0.992644
+    "text": " commence",
+    "startMs": 1240,
+    "endMs": 1740,
+    "timestampMs": 1700,
+    "confidence": 0.952011
   },
   {
     "text": " à",
-    "startMs": 13260,
-    "endMs": 13370,
-    "timestampMs": 13440,
-    "confidence": 0.982729
+    "startMs": 1740,
+    "endMs": 1860,
+    "timestampMs": 1900,
+    "confidence": 0.827858
   },
   {
-    "text": " Dieu",
-    "startMs": 13370,
-    "endMs": 13620,
-    "timestampMs": 13560,
-    "confidence": 0.918296
+    "text": " dire",
+    "startMs": 1860,
+    "endMs": 2110,
+    "timestampMs": 2060,
+    "confidence": 0.99186
   },
   {
-    "text": " qui",
-    "startMs": 13620,
-    "endMs": 13770,
-    "timestampMs": 13720,
-    "confidence": 0.967645
+    "text": " stop",
+    "startMs": 2110,
+    "endMs": 2410,
+    "timestampMs": 2480,
+    "confidence": 0.679877
   },
   {
-    "text": " est",
-    "startMs": 13770,
-    "endMs": 13940,
-    "timestampMs": 13900,
-    "confidence": 0.997012
+    "text": " à",
+    "startMs": 2410,
+    "endMs": 2480,
+    "timestampMs": 2720,
+    "confidence": 0.979139
   },
   {
-    "text": " descendu",
-    "startMs": 13940,
-    "endMs": 14400,
-    "timestampMs": 14140,
-    "confidence": 0.997978
+    "text": " ces",
+    "startMs": 2480,
+    "endMs": 2670,
+    "timestampMs": 2880,
+    "confidence": 0.980228
   },
   {
-    "text": " sur",
-    "startMs": 14400,
-    "endMs": 14570,
-    "timestampMs": 14520,
-    "confidence": 0.999447
+    "text": " trois",
+    "startMs": 2670,
+    "endMs": 2980,
+    "timestampMs": 3040,
+    "confidence": 0.777609
   },
   {
-    "text": " terre.",
-    "startMs": 14570,
-    "endMs": 15140,
-    "timestampMs": 14820,
-    "confidence": 0.584842
+    "text": " choses,",
+    "startMs": 2980,
+    "endMs": 3520,
+    "timestampMs": 3480,
+    "confidence": 0.994399
   },
   {
-    "text": " Mon",
-    "startMs": 15140,
-    "endMs": 15340,
-    "timestampMs": 15580,
-    "confidence": 0.96257
+    "text": " si",
+    "startMs": 3520,
+    "endMs": 3640,
+    "timestampMs": 3880,
+    "confidence": 0.656299
   },
   {
-    "text": " conseil",
-    "startMs": 15340,
-    "endMs": 15810,
-    "timestampMs": 15900,
-    "confidence": 0.998925
+    "text": " tu",
+    "startMs": 3640,
+    "endMs": 3760,
+    "timestampMs": 4020,
+    "confidence": 0.996561
+  },
+  {
+    "text": " veux",
+    "startMs": 3760,
+    "endMs": 4000,
+    "timestampMs": 4180,
+    "confidence": 0.992532
+  },
+  {
+    "text": " prendre",
+    "startMs": 4000,
+    "endMs": 4420,
+    "timestampMs": 4480,
+    "confidence": 0.98254
+  },
+  {
+    "text": " le",
+    "startMs": 4420,
+    "endMs": 4560,
+    "timestampMs": 4740,
+    "confidence": 0.987997
+  },
+  {
+    "text": " contrôle",
+    "startMs": 4560,
+    "endMs": 5000,
+    "timestampMs": 5020,
+    "confidence": 0.791556
+  },
+  {
+    "text": " de",
+    "startMs": 5000,
+    "endMs": 5180,
+    "timestampMs": 5240,
+    "confidence": 0.970417
+  },
+  {
+    "text": " ta",
+    "startMs": 5180,
+    "endMs": 5340,
+    "timestampMs": 5380,
+    "confidence": 0.996204
+  },
+  {
+    "text": " vie.",
+    "startMs": 5340,
+    "endMs": 6220,
+    "timestampMs": 5860,
+    "confidence": 0.998338
+  },
+  {
+    "text": " 1.",
+    "startMs": 6220,
+    "endMs": 7220,
+    "timestampMs": 6600,
+    "confidence": 0.708032
+  },
+  {
+    "text": " Stop",
+    "startMs": 7220,
+    "endMs": 7580,
+    "timestampMs": 7820,
+    "confidence": 0.833491
+  },
+  {
+    "text": " aux",
+    "startMs": 7580,
+    "endMs": 7910,
+    "timestampMs": 8100,
+    "confidence": 0.987251
+  },
+  {
+    "text": " relations",
+    "startMs": 7910,
+    "endMs": 8660,
+    "timestampMs": 8560,
+    "confidence": 0.995452
+  },
+  {
+    "text": " toxiques.",
+    "startMs": 8660,
+    "endMs": 9400,
+    "timestampMs": 8960,
+    "confidence": 0.998045
+  },
+  {
+    "text": " Tu",
+    "startMs": 9400,
+    "endMs": 9510,
+    "timestampMs": 9600,
+    "confidence": 0.993593
+  },
+  {
+    "text": " n'as",
+    "startMs": 9510,
+    "endMs": 9760,
+    "timestampMs": 9740,
+    "confidence": 0.999497
+  },
+  {
+    "text": " plus",
+    "startMs": 9760,
+    "endMs": 9940,
+    "timestampMs": 9940,
+    "confidence": 0.999093
+  },
+  {
+    "text": " le",
+    "startMs": 9940,
+    "endMs": 10050,
+    "timestampMs": 10100,
+    "confidence": 0.985312
+  },
+  {
+    "text": " temps",
+    "startMs": 10050,
+    "endMs": 10320,
+    "timestampMs": 10260,
+    "confidence": 0.999737
   },
   {
     "text": " pour",
-    "startMs": 15810,
-    "endMs": 16080,
-    "timestampMs": 16220,
-    "confidence": 0.986515
+    "startMs": 10320,
+    "endMs": 10540,
+    "timestampMs": 10520,
+    "confidence": 0.992934
   },
   {
-    "text": " toi,",
-    "startMs": 16080,
-    "endMs": 16420,
-    "timestampMs": 16360,
-    "confidence": 0.998079
+    "text": " ceux",
+    "startMs": 10540,
+    "endMs": 10760,
+    "timestampMs": 10720,
+    "confidence": 0.991847
   },
   {
-    "text": " c'est...",
-    "startMs": 16420,
-    "endMs": 16640,
-    "timestampMs": 16400,
-    "confidence": 0.769769
+    "text": " qui",
+    "startMs": 10760,
+    "endMs": 10920,
+    "timestampMs": 10900,
+    "confidence": 0.9979
+  },
+  {
+    "text": " te",
+    "startMs": 10920,
+    "endMs": 11030,
+    "timestampMs": 11120,
+    "confidence": 0.995627
+  },
+  {
+    "text": " tirent",
+    "startMs": 11030,
+    "endMs": 11360,
+    "timestampMs": 11220,
+    "confidence": 0.981659
+  },
+  {
+    "text": " vers",
+    "startMs": 11360,
+    "endMs": 11570,
+    "timestampMs": 11480,
+    "confidence": 0.999028
+  },
+  {
+    "text": " le",
+    "startMs": 11570,
+    "endMs": 11690,
+    "timestampMs": 11660,
+    "confidence": 0.99883
+  },
+  {
+    "text": " bas,",
+    "startMs": 11690,
+    "endMs": 12000,
+    "timestampMs": 11840,
+    "confidence": 0.997522
+  },
+  {
+    "text": " qui",
+    "startMs": 12000,
+    "endMs": 12210,
+    "timestampMs": 12280,
+    "confidence": 0.91413
+  },
+  {
+    "text": " doutent",
+    "startMs": 12210,
+    "endMs": 12700,
+    "timestampMs": 12400,
+    "confidence": 0.962819
+  },
+  {
+    "text": " de",
+    "startMs": 12700,
+    "endMs": 12840,
+    "timestampMs": 12780,
+    "confidence": 0.995448
+  },
+  {
+    "text": " toi",
+    "startMs": 12840,
+    "endMs": 13060,
+    "timestampMs": 13020,
+    "confidence": 0.997995
+  },
+  {
+    "text": " ou",
+    "startMs": 13060,
+    "endMs": 13190,
+    "timestampMs": 13260,
+    "confidence": 0.811012
+  },
+  {
+    "text": " qui",
+    "startMs": 13190,
+    "endMs": 13380,
+    "timestampMs": 13440,
+    "confidence": 0.994905
+  },
+  {
+    "text": " ne",
+    "startMs": 13380,
+    "endMs": 13530,
+    "timestampMs": 13560,
+    "confidence": 0.99854
+  },
+  {
+    "text": " t'encouragent",
+    "startMs": 13530,
+    "endMs": 14330,
+    "timestampMs": 13660,
+    "confidence": 0.997672
+  },
+  {
+    "text": " jamais.",
+    "startMs": 14330,
+    "endMs": 14980,
+    "timestampMs": 14600,
+    "confidence": 0.998426
+  },
+  {
+    "text": " Entoure-toi",
+    "startMs": 14980,
+    "endMs": 15660,
+    "timestampMs": 15300,
+    "confidence": 0.988008
+  },
+  {
+    "text": " de",
+    "startMs": 15660,
+    "endMs": 15770,
+    "timestampMs": 15700,
+    "confidence": 0.993923
+  },
+  {
+    "text": " personnes",
+    "startMs": 15770,
+    "endMs": 16300,
+    "timestampMs": 16040,
+    "confidence": 0.924517
+  },
+  {
+    "text": " qui",
+    "startMs": 16300,
+    "endMs": 16500,
+    "timestampMs": 16240,
+    "confidence": 0.99899
+  },
+  {
+    "text": " t'inspirent,",
+    "startMs": 16500,
+    "endMs": 17300,
+    "timestampMs": 16340,
+    "confidence": 0.997691
+  },
+  {
+    "text": " te",
+    "startMs": 17300,
+    "endMs": 17450,
+    "timestampMs": 17660,
+    "confidence": 0.937691
+  },
+  {
+    "text": " respectent",
+    "startMs": 17450,
+    "endMs": 18230,
+    "timestampMs": 18040,
+    "confidence": 0.99898
+  },
+  {
+    "text": " et",
+    "startMs": 18230,
+    "endMs": 18380,
+    "timestampMs": 18560,
+    "confidence": 0.941095
+  },
+  {
+    "text": " te",
+    "startMs": 18380,
+    "endMs": 18530,
+    "timestampMs": 18820,
+    "confidence": 0.996318
+  },
+  {
+    "text": " poussent",
+    "startMs": 18530,
+    "endMs": 19150,
+    "timestampMs": 19000,
+    "confidence": 0.992684
+  },
+  {
+    "text": " à",
+    "startMs": 19150,
+    "endMs": 19300,
+    "timestampMs": 19280,
+    "confidence": 0.998228
+  },
+  {
+    "text": " devenir",
+    "startMs": 19300,
+    "endMs": 19840,
+    "timestampMs": 19520,
+    "confidence": 0.999493
+  },
+  {
+    "text": " meilleur.",
+    "startMs": 19840,
+    "endMs": 20760,
+    "timestampMs": 20000,
+    "confidence": 0.905346
+  },
+  {
+    "text": " 2.",
+    "startMs": 20760,
+    "endMs": 21280,
+    "timestampMs": 21400,
+    "confidence": 0.995968
+  },
+  {
+    "text": " Stop",
+    "startMs": 21280,
+    "endMs": 21630,
+    "timestampMs": 21920,
+    "confidence": 0.996611
+  },
+  {
+    "text": " à",
+    "startMs": 21630,
+    "endMs": 21800,
+    "timestampMs": 22060,
+    "confidence": 0.947912
+  },
+  {
+    "text": " la",
+    "startMs": 21800,
+    "endMs": 21970,
+    "timestampMs": 22200,
+    "confidence": 0.998791
+  },
+  {
+    "text": " peur",
+    "startMs": 21970,
+    "endMs": 22320,
+    "timestampMs": 22320,
+    "confidence": 0.999096
+  },
+  {
+    "text": " de",
+    "startMs": 22320,
+    "endMs": 22490,
+    "timestampMs": 22460,
+    "confidence": 0.995828
+  },
+  {
+    "text": " l'échec.",
+    "startMs": 22490,
+    "endMs": 23500,
+    "timestampMs": 22560,
+    "confidence": 0.999306
+  },
+  {
+    "text": " À",
+    "startMs": 23500,
+    "endMs": 23670,
+    "timestampMs": 23760,
+    "confidence": 0.649723
+  },
+  {
+    "text": " 20",
+    "startMs": 23670,
+    "endMs": 24180,
+    "timestampMs": 24000,
+    "confidence": 0.974345
+  },
+  {
+    "text": " ans,",
+    "startMs": 24180,
+    "endMs": 24600,
+    "timestampMs": 24460,
+    "confidence": 0.998365
+  },
+  {
+    "text": " échouer",
+    "startMs": 24600,
+    "endMs": 25280,
+    "timestampMs": 25100,
+    "confidence": 0.9889
+  },
+  {
+    "text": " fait",
+    "startMs": 25280,
+    "endMs": 25620,
+    "timestampMs": 25400,
+    "confidence": 0.998235
+  },
+  {
+    "text": " partie",
+    "startMs": 25620,
+    "endMs": 26130,
+    "timestampMs": 25740,
+    "confidence": 0.974695
+  },
+  {
+    "text": " du",
+    "startMs": 26130,
+    "endMs": 26300,
+    "timestampMs": 26000,
+    "confidence": 0.997775
+  },
+  {
+    "text": " processus.",
+    "startMs": 26300,
+    "endMs": 27340,
+    "timestampMs": 26360,
+    "confidence": 0.998117
+  },
+  {
+    "text": " Tomber",
+    "startMs": 27340,
+    "endMs": 27840,
+    "timestampMs": 27640,
+    "confidence": 0.655449
+  },
+  {
+    "text": " ne",
+    "startMs": 27840,
+    "endMs": 28020,
+    "timestampMs": 27960,
+    "confidence": 0.997387
+  },
+  {
+    "text": " fait",
+    "startMs": 28020,
+    "endMs": 28330,
+    "timestampMs": 28060,
+    "confidence": 0.996839
+  },
+  {
+    "text": " pas",
+    "startMs": 28330,
+    "endMs": 28580,
+    "timestampMs": 28260,
+    "confidence": 0.990403
+  },
+  {
+    "text": " de",
+    "startMs": 28580,
+    "endMs": 28740,
+    "timestampMs": 28420,
+    "confidence": 0.995611
+  },
+  {
+    "text": " toi",
+    "startMs": 28740,
+    "endMs": 28990,
+    "timestampMs": 28540,
+    "confidence": 0.998963
+  },
+  {
+    "text": " un",
+    "startMs": 28990,
+    "endMs": 29150,
+    "timestampMs": 28760,
+    "confidence": 0.994207
+  },
+  {
+    "text": " perdant,",
+    "startMs": 29150,
+    "endMs": 29890,
+    "timestampMs": 28980,
+    "confidence": 0.977334
+  },
+  {
+    "text": " mais",
+    "startMs": 29890,
+    "endMs": 30220,
+    "timestampMs": 29780,
+    "confidence": 0.994566
+  },
+  {
+    "text": " rester",
+    "startMs": 30220,
+    "endMs": 30720,
+    "timestampMs": 30100,
+    "confidence": 0.996736
+  },
+  {
+    "text": " au",
+    "startMs": 30720,
+    "endMs": 30880,
+    "timestampMs": 30400,
+    "confidence": 0.996622
+  },
+  {
+    "text": " sol,",
+    "startMs": 30880,
+    "endMs": 31290,
+    "timestampMs": 30780,
+    "confidence": 0.998289
+  },
+  {
+    "text": " oui.",
+    "startMs": 31290,
+    "endMs": 31900,
+    "timestampMs": 31300,
+    "confidence": 0.991214
+  },
+  {
+    "text": " Chaque",
+    "startMs": 31900,
+    "endMs": 32380,
+    "timestampMs": 32260,
+    "confidence": 0.994237
+  },
+  {
+    "text": " échec",
+    "startMs": 32380,
+    "endMs": 32860,
+    "timestampMs": 32540,
+    "confidence": 0.998692
+  },
+  {
+    "text": " est",
+    "startMs": 32860,
+    "endMs": 33100,
+    "timestampMs": 32980,
+    "confidence": 0.996698
+  },
+  {
+    "text": " une",
+    "startMs": 33100,
+    "endMs": 33340,
+    "timestampMs": 33180,
+    "confidence": 0.999359
+  },
+  {
+    "text": " leçon.",
+    "startMs": 33340,
+    "endMs": 34140,
+    "timestampMs": 33400,
+    "confidence": 0.997324
+  },
+  {
+    "text": " Chaque",
+    "startMs": 34140,
+    "endMs": 34620,
+    "timestampMs": 34480,
+    "confidence": 0.731985
+  },
+  {
+    "text": " erreur",
+    "startMs": 34620,
+    "endMs": 35100,
+    "timestampMs": 34780,
+    "confidence": 0.999434
+  },
+  {
+    "text": " est",
+    "startMs": 35100,
+    "endMs": 35340,
+    "timestampMs": 35400,
+    "confidence": 0.99268
+  },
+  {
+    "text": " un",
+    "startMs": 35340,
+    "endMs": 35530,
+    "timestampMs": 35620,
+    "confidence": 0.9995
+  },
+  {
+    "text": " pas",
+    "startMs": 35530,
+    "endMs": 35740,
+    "timestampMs": 35760,
+    "confidence": 0.997681
+  },
+  {
+    "text": " vers",
+    "startMs": 35740,
+    "endMs": 36060,
+    "timestampMs": 36000,
+    "confidence": 0.997995
+  },
+  {
+    "text": " la",
+    "startMs": 36060,
+    "endMs": 36220,
+    "timestampMs": 36240,
+    "confidence": 0.997048
+  },
+  {
+    "text": " réussite.",
+    "startMs": 36220,
+    "endMs": 37260,
+    "timestampMs": 36500,
+    "confidence": 0.997714
+  },
+  {
+    "text": " N'aie",
+    "startMs": 37260,
+    "endMs": 37760,
+    "timestampMs": 37480,
+    "confidence": 0.993589
+  },
+  {
+    "text": " pas",
+    "startMs": 37760,
+    "endMs": 38060,
+    "timestampMs": 37820,
+    "confidence": 0.998296
+  },
+  {
+    "text": " peur",
+    "startMs": 38060,
+    "endMs": 38460,
+    "timestampMs": 38100,
+    "confidence": 0.999005
+  },
+  {
+    "text": " d'essayer.",
+    "startMs": 38460,
+    "endMs": 39680,
+    "timestampMs": 38300,
+    "confidence": 0.998133
+  },
+  {
+    "text": " 3.",
+    "startMs": 39680,
+    "endMs": 40260,
+    "timestampMs": 40020,
+    "confidence": 0.998852
+  },
+  {
+    "text": " Stop",
+    "startMs": 40260,
+    "endMs": 40690,
+    "timestampMs": 40960,
+    "confidence": 0.997077
+  },
+  {
+    "text": " à",
+    "startMs": 40690,
+    "endMs": 40840,
+    "timestampMs": 41300,
+    "confidence": 0.994867
+  },
+  {
+    "text": " vivre",
+    "startMs": 40840,
+    "endMs": 41330,
+    "timestampMs": 41680,
+    "confidence": 0.998003
+  },
+  {
+    "text": " pour",
+    "startMs": 41330,
+    "endMs": 41720,
+    "timestampMs": 42100,
+    "confidence": 0.988681
+  },
+  {
+    "text": " plaire",
+    "startMs": 41720,
+    "endMs": 42300,
+    "timestampMs": 42240,
+    "confidence": 0.978795
+  },
+  {
+    "text": " aux",
+    "startMs": 42300,
+    "endMs": 42590,
+    "timestampMs": 42560,
+    "confidence": 0.998593
+  },
+  {
+    "text": " autres.",
+    "startMs": 42590,
+    "endMs": 43320,
+    "timestampMs": 42900,
+    "confidence": 0.999546
+  },
+  {
+    "text": " Tu",
+    "startMs": 43320,
+    "endMs": 43450,
+    "timestampMs": 43500,
+    "confidence": 0.997193
+  },
+  {
+    "text": " ne",
+    "startMs": 43450,
+    "endMs": 43600,
+    "timestampMs": 43640,
+    "confidence": 0.998525
+  },
+  {
+    "text": " peux",
+    "startMs": 43600,
+    "endMs": 43850,
+    "timestampMs": 43880,
+    "confidence": 0.997417
+  },
+  {
+    "text": " pas",
+    "startMs": 43850,
+    "endMs": 44050,
+    "timestampMs": 44080,
+    "confidence": 0.982943
+  },
+  {
+    "text": " construire",
+    "startMs": 44050,
+    "endMs": 44730,
+    "timestampMs": 44460,
+    "confidence": 0.997061
+  },
+  {
+    "text": " ta",
+    "startMs": 44730,
+    "endMs": 44860,
+    "timestampMs": 44800,
+    "confidence": 0.997607
+  },
+  {
+    "text": " vie",
+    "startMs": 44860,
+    "endMs": 45060,
+    "timestampMs": 45140,
+    "confidence": 0.999634
+  },
+  {
+    "text": " selon",
+    "startMs": 45060,
+    "endMs": 45400,
+    "timestampMs": 45500,
+    "confidence": 0.972689
+  },
+  {
+    "text": " les",
+    "startMs": 45400,
+    "endMs": 45600,
+    "timestampMs": 45800,
+    "confidence": 0.997809
+  },
+  {
+    "text": " attentes",
+    "startMs": 45600,
+    "endMs": 46140,
+    "timestampMs": 46000,
+    "confidence": 0.984085
+  },
+  {
+    "text": " de",
+    "startMs": 46140,
+    "endMs": 46270,
+    "timestampMs": 46300,
+    "confidence": 0.99838
+  },
+  {
+    "text": " ta",
+    "startMs": 46270,
+    "endMs": 46430,
+    "timestampMs": 46440,
+    "confidence": 0.989146
+  },
+  {
+    "text": " famille,",
+    "startMs": 46430,
+    "endMs": 47100,
+    "timestampMs": 46880,
+    "confidence": 0.997946
+  },
+  {
+    "text": " de",
+    "startMs": 47100,
+    "endMs": 47260,
+    "timestampMs": 47340,
+    "confidence": 0.972396
+  },
+  {
+    "text": " tes",
+    "startMs": 47260,
+    "endMs": 47500,
+    "timestampMs": 47480,
+    "confidence": 0.997101
+  },
+  {
+    "text": " amis",
+    "startMs": 47500,
+    "endMs": 47820,
+    "timestampMs": 47820,
+    "confidence": 0.989727
+  },
+  {
+    "text": " ou",
+    "startMs": 47820,
+    "endMs": 47970,
+    "timestampMs": 48000,
+    "confidence": 0.953657
+  },
+  {
+    "text": " de",
+    "startMs": 47970,
+    "endMs": 48130,
+    "timestampMs": 48220,
+    "confidence": 0.998308
+  },
+  {
+    "text": " la",
+    "startMs": 48130,
+    "endMs": 48290,
+    "timestampMs": 48440,
+    "confidence": 0.998601
+  },
+  {
+    "text": " société.",
+    "startMs": 48290,
+    "endMs": 49260,
+    "timestampMs": 48840,
+    "confidence": 0.998864
+  },
+  {
+    "text": " À",
+    "startMs": 49260,
+    "endMs": 49380,
+    "timestampMs": 49400,
+    "confidence": 0.907327
+  },
+  {
+    "text": " un",
+    "startMs": 49380,
+    "endMs": 49500,
+    "timestampMs": 49600,
+    "confidence": 0.999634
+  },
+  {
+    "text": " moment,",
+    "startMs": 49500,
+    "endMs": 49980,
+    "timestampMs": 49900,
+    "confidence": 0.9996
+  },
+  {
+    "text": " tu",
+    "startMs": 49980,
+    "endMs": 50100,
+    "timestampMs": 50180,
+    "confidence": 0.999253
+  },
+  {
+    "text": " dois",
+    "startMs": 50100,
+    "endMs": 50390,
+    "timestampMs": 50360,
+    "confidence": 0.997948
+  },
+  {
+    "text": " faire",
+    "startMs": 50390,
+    "endMs": 50640,
+    "timestampMs": 50540,
+    "confidence": 0.998807
+  },
+  {
+    "text": " des",
+    "startMs": 50640,
+    "endMs": 50820,
+    "timestampMs": 50800,
+    "confidence": 0.99704
+  },
+  {
+    "text": " choix",
+    "startMs": 50820,
+    "endMs": 51120,
+    "timestampMs": 50960,
+    "confidence": 0.998811
+  },
+  {
+    "text": " pour",
+    "startMs": 51120,
+    "endMs": 51360,
+    "timestampMs": 51260,
+    "confidence": 0.998734
+  },
+  {
+    "text": " toi.",
+    "startMs": 51360,
+    "endMs": 51780,
+    "timestampMs": 51500,
+    "confidence": 0.998182
+  },
+  {
+    "text": " Ta",
+    "startMs": 51780,
+    "endMs": 51920,
+    "timestampMs": 52000,
+    "confidence": 0.846796
+  },
+  {
+    "text": " vie",
+    "startMs": 51920,
+    "endMs": 52130,
+    "timestampMs": 52120,
+    "confidence": 0.999825
+  },
+  {
+    "text": " t'appartient.",
+    "startMs": 52130,
+    "endMs": 53180,
+    "timestampMs": 52320,
+    "confidence": 0.978579
+  },
+  {
+    "text": " Assume-la",
+    "startMs": 53180,
+    "endMs": 53810,
+    "timestampMs": 53520,
+    "confidence": 0.598813
+  },
+  {
+    "text": " avec",
+    "startMs": 53810,
+    "endMs": 54100,
+    "timestampMs": 54000,
+    "confidence": 0.997116
+  },
+  {
+    "text": " fierté",
+    "startMs": 54100,
+    "endMs": 54600,
+    "timestampMs": 54120,
+    "confidence": 0.993638
+  },
+  {
+    "text": " et",
+    "startMs": 54600,
+    "endMs": 54740,
+    "timestampMs": 54720,
+    "confidence": 0.997775
+  },
+  {
+    "text": " courage.",
+    "startMs": 54740,
+    "endMs": 55520,
+    "timestampMs": 55220,
+    "confidence": 0.998868
+  },
+  {
+    "text": " À",
+    "startMs": 55520,
+    "endMs": 55660,
+    "timestampMs": 55720,
+    "confidence": 0.972565
+  },
+  {
+    "text": " 20",
+    "startMs": 55660,
+    "endMs": 56090,
+    "timestampMs": 55980,
+    "confidence": 0.96811
+  },
+  {
+    "text": " ans,",
+    "startMs": 56090,
+    "endMs": 56440,
+    "timestampMs": 56460,
+    "confidence": 0.99527
+  },
+  {
+    "text": " tu",
+    "startMs": 56440,
+    "endMs": 56580,
+    "timestampMs": 56640,
+    "confidence": 0.996972
+  },
+  {
+    "text": " ne",
+    "startMs": 56580,
+    "endMs": 56720,
+    "timestampMs": 56760,
+    "confidence": 0.998011
+  },
+  {
+    "text": " dois",
+    "startMs": 56720,
+    "endMs": 57010,
+    "timestampMs": 56940,
+    "confidence": 0.992222
+  },
+  {
+    "text": " plus",
+    "startMs": 57010,
+    "endMs": 57300,
+    "timestampMs": 57180,
+    "confidence": 0.998719
+  },
+  {
+    "text": " subir.",
+    "startMs": 57300,
+    "endMs": 57920,
+    "timestampMs": 57600,
+    "confidence": 0.994975
+  },
+  {
+    "text": " Tu",
+    "startMs": 57920,
+    "endMs": 58060,
+    "timestampMs": 58080,
+    "confidence": 0.944124
+  },
+  {
+    "text": " dois",
+    "startMs": 58060,
+    "endMs": 58340,
+    "timestampMs": 58260,
+    "confidence": 0.993386
+  },
+  {
+    "text": " diriger.",
+    "startMs": 58340,
+    "endMs": 59060,
+    "timestampMs": 58680,
+    "confidence": 0.981976
+  },
+  {
+    "text": " Sous-titres",
+    "startMs": 59500,
+    "endMs": 59780,
+    "timestampMs": 62480,
+    "confidence": 0.188979
+  },
+  {
+    "text": " réalisés",
+    "startMs": 59780,
+    "endMs": 60440,
+    "timestampMs": 62480,
+    "confidence": 0.591965
+  },
+  {
+    "text": " para",
+    "startMs": 60440,
+    "endMs": 60710,
+    "timestampMs": 62480,
+    "confidence": 0.921622
+  },
+  {
+    "text": " la",
+    "startMs": 60710,
+    "endMs": 60840,
+    "timestampMs": 62480,
+    "confidence": 0.904927
+  },
+  {
+    "text": " communauté",
+    "startMs": 60840,
+    "endMs": 61580,
+    "timestampMs": 62480,
+    "confidence": 0.938759
+  },
+  {
+    "text": " d'Amara.org",
+    "startMs": 61580,
+    "endMs": 62500,
+    "timestampMs": 62480,
+    "confidence": 0.995856
+  },
+  {
+    "text": " [sonnerie",
+    "startMs": 62500,
+    "endMs": 63470,
+    "timestampMs": 63260,
+    "confidence": 0.174629
+  },
+  {
+    "text": " d'appareil]",
+    "startMs": 63470,
+    "endMs": 64500,
+    "timestampMs": 63260,
+    "confidence": 0.115214
   }
 ]

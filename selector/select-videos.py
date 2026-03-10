@@ -77,7 +77,7 @@ def write_data_json(folder_video_path):
         })
         idx += 1
 
-    with open('props.json', 'w') as f:
+    with open(f"{ASSEMBLER_PATH}/props.json", 'w') as f:
         json.dump({"videosSrc": videos}, f)
         print(videos)
 

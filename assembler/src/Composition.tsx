@@ -1,6 +1,5 @@
 import React from 'react';
 import {Series, AbsoluteFill, OffthreadVideo, Html5Audio, Img, CalculateMetadataFunction, staticFile} from 'remotion';
-import {parseMedia} from '@remotion/media-parser';
 
 
 type MediaSrcProp = {
@@ -20,15 +19,6 @@ export const MyComp: React.FC<MyCompProp> = ({videosSrc, audioSrc, logoSrc}) => 
       <Audio src={audioSrc} />
       <Logo src={logoSrc} />
     </AbsoluteFill>
-  );
-};
-
-
-export const Video: React.FC<MediaSrcProp> = ({src}) => {
-  return (
-      <AbsoluteFill>
-        <OffthreadVideo src={src} />
-      </AbsoluteFill>
   );
 };
 
@@ -83,38 +73,17 @@ export const VideosInSequence: React.FC<Props> = ({videos}) => {
 
 export const calculateMetadata: CalculateMetadataFunction<MyCompProp> = async ({props}) => {
   const fps = 30;
-  const videos = await Promise.all([
-    ...props.videosSrc.map(async (video): Promise<VideoToEmbed> => {
-      const {slowDurationInSeconds} = await parseMedia({
-        // 1. AJOUTE staticFile ICI
-        src: staticFile(video.src), 
-        fields: {
-          slowDurationInSeconds: true,
-        },
-      });
 
-      return {
-        durationInFrames: Math.min(Math.floor(slowDurationInSeconds * fps), Math.floor(2.5 * fps)),
-        src: video.src, // On garde le texte brut dans l'objet retourné
-      };
-    }),
-  ]);
+  // On additionne simplement les durées que Python a mises dans le JSON
+  const totalDurationInFrames = props.videosSrc.reduce(
+    (acc, video) => acc + (video.durationInFrames ?? 0), 
+    0
+  );
 
-  const {slowDurationInSeconds} = await parseMedia({
-    // 2. AJOUTE staticFile ICI POUR L'AUDIO
-    src: staticFile(props.audioSrc), 
-    fields: {
-      slowDurationInSeconds: true,
-    },
-  });
-  
   return {
-    props: {
-      ...props,
-      videosSrc: videos,
-    },
+    props, // On transmet les données reçues sans les modifier
     fps,
-    durationInFrames: Math.floor(slowDurationInSeconds * fps),
+    durationInFrames: totalDurationInFrames,
   };
 };
 

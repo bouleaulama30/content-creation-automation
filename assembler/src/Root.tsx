@@ -1,6 +1,6 @@
 import "./index.css";
-import { Composition, staticFile } from "remotion";
-import {MyComp, calculateMetadata, VideoToEmbed } from "./Composition";
+import { Composition } from "remotion";
+import {MyComp, calculateMetadata } from "./Composition";
 
 
 const fps = 30;
@@ -43,18 +43,6 @@ export const RemotionRoot: React.FC = () => {
       }}
         calculateMetadata={calculateMetadata}
       />
-
-      {/* <Composition
-        id="Logo"
-        component={Logo}
-        durationInFrames={60}
-        fps={30}
-        width={1080}
-        height={1920}
-        defaultProps={{
-          src: 'logo.png',
-      }}
-      /> */}
     </>
   );
 };
