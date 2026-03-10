@@ -7,4 +7,5 @@ dist
 # Ignore the output video from Git but not videos you import into src/.
 out
 assembler/public/
+assembler/props.json
 captioner/public/video.mp4

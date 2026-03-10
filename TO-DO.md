@@ -4,6 +4,7 @@
 
 * à partir du type de reel que l'on veut faire (oogway, animaux, paysage etc) sélectionne les videos dans le bon dossier et format, et calcule les duration frame de la bonne manière
 
+
 ## Remotion
 
 * séparer le projet en plusieurs fichier et dossier pour que ça soit plus clean

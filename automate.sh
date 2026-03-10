@@ -1,6 +1,9 @@
 #!/bin/bash
 
 TYPE_REEL=$1
+echo "suppression des video dans le dossier public de l'assembleur"
+
+rm /home/leo/content-creation-automation/assembler/public/video*
 
 echo "🐍 Génération du fichier props.json via Python..."
 python3 selector/select-videos-${TYPE_REEL}.py || exit
