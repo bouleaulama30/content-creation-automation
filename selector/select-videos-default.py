@@ -10,6 +10,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+PIECE_VIDEO_DURATION = float(os.getenv('PIECE_VIDEO_DURATION'))
+FPS = int(os.getenv('FPS'))
+
 VIDEOS_SRC_PATH = os.getenv('VIDEOS_SRC_PATH')
 AUDIO_SRC_FOLDER_PATH = os.getenv('AUDIO_SRC_FOLDER_PATH')
 AUDIO_NAME = os.getenv('AUDIO_NAME')
@@ -72,7 +75,7 @@ def write_data_json(folder_video_path):
         # print(f"la video{idx} existe !")
         videos.append({
             # pour avoir 4 plan toute les 10 sec
-            "durationInFrames": math.floor(2.5 * 30), 
+            "durationInFrames": math.floor(PIECE_VIDEO_DURATION * FPS), 
             "src": f"video{idx}.mp4"
         })
         idx += 1
@@ -84,7 +87,7 @@ def write_data_json(folder_video_path):
 
 if __name__ == "__main__":
     print(f"{AUDIO_NAME}, {AUDIO_SRC_FILE_PATH}")
-    nbr_video = nbr_video_to_select(f'{AUDIO_SRC_FILE_PATH}', 2.5)
+    nbr_video = nbr_video_to_select(f'{AUDIO_SRC_FILE_PATH}', PIECE_VIDEO_DURATION)
     copy_and_rename(f"{AUDIO_SRC_FOLDER_PATH}", f"{INTERMEDIAR_VIDEOS_PATH}",f"{AUDIO_NAME}", f"{AUDIO_NAME}")
     videos = select_videos(f"{VIDEOS_SRC_PATH}", nbr_video)
     move_selected_videos(f"{VIDEOS_SRC_PATH}", f"{INTERMEDIAR_VIDEOS_PATH}", videos)

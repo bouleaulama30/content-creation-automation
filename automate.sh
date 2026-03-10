@@ -1,8 +1,9 @@
 #!/bin/bash
 
+TYPE_REEL=$1
 
 echo "🐍 Génération du fichier props.json via Python..."
-python3 selector/select-videos.py
+python3 selector/select-videos-${TYPE_REEL}.py || exit
 
 # On s'assure d'être dans le bon dossier pour commencer
 cd /home/leo/content-creation-automation/assembler/ || exit
@@ -14,7 +15,7 @@ echo "🎬 Rendu de la vidéo brute..."
 npx remotion render MyComp \
     --props=./props.json \
     --concurrency=2 \
-    --output=/home/leo/content-creation-automation/captioner/public/video.mp4
+    --output=/home/leo/content-creation-automation/captioner/public/video.mp4 || exit
 
 # --- 4. Passage au projet de sous-titrage ---
 echo "📂 Passage au projet captioner..."
@@ -26,7 +27,7 @@ rm -f public/video.json
 
 echo "🎙️ Génération des sous-titres (Whisper/Node)..."
 # Ce script doit générer le nouveau public/video.json
-node sub.mjs public/video.mp4
+node sub.mjs public/video.mp4 
 
 # --- 6. Rendu Final (Vidéo avec sous-titres) ---
 echo "🚀 Rendu final du Reel avec sous-titres..."

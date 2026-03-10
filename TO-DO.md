@@ -1,12 +1,8 @@
 # TO DO
 
 ## Selection des video (Python)
-* faire un code python qui lit les videos d'un dossier, en choisi de manière random et les place dans un dossier
-    * à partir du type de reel que l'on veut faire (oogway, animaux, paysage etc) sélectionne les videos dans le bon dossier et format, et calcule les duration frame de la bonne manière
 
-* lier la durer des videos c'est à dire que si la video est en dessous de la durée voulu alors prendre la durée de la video dans duration frame
-
-* faire une varible d'environnement pour la durée des plans videos
+* à partir du type de reel que l'on veut faire (oogway, animaux, paysage etc) sélectionne les videos dans le bon dossier et format, et calcule les duration frame de la bonne manière
 
 ## Remotion
 
