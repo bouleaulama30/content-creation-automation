@@ -1,6 +1,6 @@
 import React from 'react';
-import {Series, AbsoluteFill, OffthreadVideo, Html5Audio, Img, CalculateMetadataFunction, staticFile} from 'remotion';
-
+import {Series, AbsoluteFill, OffthreadVideo, Html5Audio, Img, CalculateMetadataFunction, staticFile, } from 'remotion';
+import {parseMedia} from '@remotion/media-parser';
 
 type MediaSrcProp = {
   src: string;
@@ -74,17 +74,23 @@ export const VideosInSequence: React.FC<Props> = ({videos}) => {
 export const calculateMetadata: CalculateMetadataFunction<MyCompProp> = async ({props}) => {
   const fps = 30;
 
-  // On additionne simplement les durées que Python a mises dans le JSON
-  const totalDurationInFrames = props.videosSrc.reduce(
-    (acc, video) => acc + (video.durationInFrames ?? 0), 
-    0
-  );
+  // // On additionne simplement les durées que Python a mises dans le JSON
+  // const totalDurationInFrames = props.videosSrc.reduce(
+  //   (acc, video) => acc + (video.durationInFrames ?? 0), 
+  //   0
+  // );
+
+  const {slowDurationInSeconds} = await parseMedia({
+    // 2. AJOUTE staticFile ICI POUR L'AUDIO
+    src: staticFile(props.audioSrc), 
+    fields: {
+      slowDurationInSeconds: true,
+    },
+  });
 
   return {
     props, // On transmet les données reçues sans les modifier
     fps,
-    durationInFrames: totalDurationInFrames,
-  };
+    durationInFrames: Math.floor(slowDurationInSeconds * fps),  };
 };
-
 

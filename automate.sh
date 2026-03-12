@@ -3,7 +3,7 @@
 TYPE_REEL=$1
 echo "suppression des video dans le dossier public de l'assembleur"
 
-rm /home/leo/content-creation-automation/assembler/public/video*
+rm /home/leo/content-creation-automation/assembler/public/*.mp4
 
 echo "🐍 Génération du fichier props.json via Python..."
 python3 selector/select-videos-${TYPE_REEL}.py || exit
@@ -37,6 +37,10 @@ echo "🚀 Rendu final du Reel avec sous-titres..."
 # Ici on lance le rendu du projet captioner
 npx remotion render \
     --concurrency=2 \
-    --output=./out/final_reel_$(date +%Y%m%d_%H%M%S).mp4
+    --output=./out/video.mp4
+
+echo "Envoie de la video, de la description et de la miniature..."
+cd /home/leo/content-creation-automation/ || exit
+python deliver/deliver.py
 
 echo "✅ Terminé ! Ton Reel est prêt dans le dossier out/ de captioner."

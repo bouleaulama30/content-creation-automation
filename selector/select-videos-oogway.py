@@ -78,7 +78,7 @@ def select_oogway_videos(video_path_oogway, video_path_transi, duration_transi_v
             oogway_video = oogway_videos.pop()
             oogway_video_duration = get_video_duration(f"{video_path_oogway}/{oogway_video}") 
             total_duration += oogway_video_duration 
-            selected_videos.append((oogway_video, oogway_video_duration))
+            selected_videos.append((oogway_video, oogway_video_duration, False))
 
     # suite du pattern
     is_transi_video = True
@@ -87,60 +87,67 @@ def select_oogway_videos(video_path_oogway, video_path_transi, duration_transi_v
             transi_video = transi_videos.pop()
             transi_video_duration = duration_transi_videos
             total_duration += transi_video_duration 
-            selected_videos.append((transi_video, transi_video_duration))
+            selected_videos.append((transi_video, transi_video_duration, is_transi_video))
             is_transi_video =  False
         else:
             oogway_video = oogway_videos.pop()
             oogway_video_duration = get_video_duration(f"{video_path_oogway}/{oogway_video}") 
             total_duration += oogway_video_duration 
-            selected_videos.append((oogway_videos.pop(), oogway_video_duration))
+            selected_videos.append((oogway_video, oogway_video_duration, is_transi_video))
             is_transi_video =  True
 
     
     print(selected_videos, sep="\n")
     return selected_videos
 
-def copy_and_rename(src_path, dst_path, src_name, dst_name):
+     
+def move_selected_videos(video_path_oogway, video_path_transi, folder_video_dst_path, selected_videos):
+    for idx, (video_src_name, _, is_transi_video) in enumerate(selected_videos):
+        print(f"{idx}, {video_src_name}")
+        if (is_transi_video):
+            copy_video(video_path_transi, folder_video_dst_path, video_src_name)
+        else:
+            copy_video(video_path_oogway, folder_video_dst_path, video_src_name)
+     
+def copy_video(src_path, dst_path, src_name):
+	# Copy the file
+	shutil.copy(f"{src_path}/{src_name}", dst_path)
+
+def copy_and_rename_audio(src_path, dst_path, src_name, dst_name):
 	# Copy the file
 	shutil.copy(f"{src_path}/{src_name}", dst_path)
 
 	# Rename the copied file
 	new_name = f"{dst_path}/{dst_name}"
 	shutil.move(f"{dst_path}/{src_name}", new_name)
-     
-def move_selected_videos(folder_video_src_path, folder_video_dst_path, selected_videos):
-    for idx, video_name in enumerate(selected_videos):
-        print(f"{idx}, {video_name}")
-        copy_and_rename(folder_video_src_path, folder_video_dst_path, video_name, f"video{idx}.mp4")
-     
 
 def file_exists(path: str):
     """Vérifie si un fichier existe à l'emplacement donné."""
     return os.path.exists(path)
 
-# def write_data_json(folder_video_path):
-#     videos: List[VideoToEmbed] = []
-#     idx = 0
-#     # On boucle tant que le fichier existe
-#     while file_exists(f"{folder_video_path}/video{idx}.mp4"):
-#         # print(f"la video{idx} existe !")
-#         videos.append({
-#             # pour avoir 4 plan toute les 10 sec
-#             "durationInFrames": math.floor(PIECE_VIDEO_OOGWAY_DURATION * FPS), 
-#             "src": f"video{idx}.mp4"
-#         })
-#         idx += 1
+def write_data_json(selected_videos):
+    videos: List[VideoToEmbed] = []
+    # On boucle tant que le fichier existe
+        # print(f"la video{idx} existe !")
+    for (video_src_name, video_duration, _) in selected_videos: 
+        # ffprobe retourne une durée en secondes, Remotion attend des frames.
+        duration_in_frames = max(1, math.floor(video_duration * FPS))
+        videos.append({
+            # pour avoir 4 plan toute les 10 sec
+            "durationInFrames": duration_in_frames,
+            "src": video_src_name
+        })
 
-#     with open(f"{ASSEMBLER_PATH}/props.json", 'w') as f:
-#         json.dump({"videosSrc": videos}, f)
-#         print(videos)
+    with open(f"{ASSEMBLER_PATH}/props.json", 'w') as f:
+        json.dump({"videosSrc": videos}, f)
+        print(videos)
 
 
 if __name__ == "__main__":
     # print(f"{AUDIO_NAME}, {AUDIO_SRC_FILE_PATH}")
     duration = get_video_duration(f"{VIDEOS_SRC_OOGWAY_PATH}/oogway1.mp4")
     videos = select_oogway_videos(f"{VIDEOS_SRC_OOGWAY_PATH}", f"{VIDEOS_SRC_TRANSI_PATH}", PIECE_VIDEO_TRANSI_DURATION, NBR_BEGIN_OOGWAY_VIDEO, f"{AUDIO_SRC_FILE_PATH}")
+    move_selected_videos(f"{VIDEOS_SRC_OOGWAY_PATH}", f"{VIDEOS_SRC_TRANSI_PATH}", f"{INTERMEDIAR_VIDEOS_PATH}", videos)
+    copy_and_rename_audio(f"{AUDIO_SRC_FOLDER_PATH}", f"{INTERMEDIAR_VIDEOS_PATH}",f"{AUDIO_NAME}", f"{AUDIO_NAME}")
+    write_data_json(videos)
     # print(videos)
-    # copy_and_rename(f"{AUDIO_SRC_FOLDER_PATH}", f"{INTERMEDIAR_VIDEOS_PATH}",f"{AUDIO_NAME}", f"{AUDIO_NAME}")
-    # move_selected_videos(f"{VIDEOS_SRC_OOGWAY_PATH}", f"{INTERMEDIAR_VIDEOS_PATH}", videos)
-    # write_data_json(f"{INTERMEDIAR_VIDEOS_PATH}")
