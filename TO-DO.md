@@ -8,7 +8,6 @@
 
 ## Remotion
 
-* vraiment comprendre le code remotion
 * clean le code pour remotion 
 
 ## Deliver
@@ -16,10 +15,32 @@
 * clean le code
 * mettre varible environnement etc...
 
-## Autres
-* faire une orga de dossier et de fichier ou je classe les videos par thème (landscape, animals, master oogway)
-* faire un script qui lance les commandes:
-    * utiliser les variables d'environnement
+## OrderTaker
 
-* trouver un moyen de générer une description avec les hashtags de manière dynamique pour chaque video
+* site web react de base avec un champ lien et un champ pour le template
+* backend doi juste trigger le script automate.sh et renvoie un code au client 
+
+## Extension
+* Envoyer la miniature à faire selon le type de template (sur telegramme)
+    * un image (toujours la même selon le template)
+    * le logo inclut
+    * un titre
+
+* voir si c'est nécessaire de faire des stories à chaque nouvelles publie
+    * si c'est le cas envoyer une story via telegramme
+
+* faire un parseur tik tok qui va automatique télécharger les videos nouvelles videos tendances dans le domaine etc...
+
+* voir si possible de publier automatiquement
+
+* voir pour faire une automatisation pour créer du contenu original
+
+## Autres
+
+* faire une orga de dossier et de fichier ou je classe les videos par thème (landscape, animals, master oogway)
+* utiliser les variables d'environnement pour déployer facilement le projet sur une plateforme, voir pour dockeriser ça, faire l'inventaire des dépendances:
+    * librairies python
+    * yt dlp 
 * faire variable d'environnement mutualisé pour le noms de la video final etccc 
+* rendre l'infra globale plus clean
+* faire un repo github vraiment clean et le rendre ouvert à tous donc faire un readme clean

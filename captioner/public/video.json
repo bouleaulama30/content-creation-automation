@@ -1,310 +1,184 @@
 [
   {
-    "text": "Maintenant",
-    "startMs": 270,
-    "endMs": 860,
-    "timestampMs": 660,
-    "confidence": 0.740139
+    "text": "\"Si",
+    "startMs": 40,
+    "endMs": 200,
+    "timestampMs": 280,
+    "confidence": 0.0815167
   },
   {
-    "text": " j'ai",
-    "startMs": 860,
-    "endMs": 1150,
-    "timestampMs": 820,
-    "confidence": 0.855783
+    "text": " tu",
+    "startMs": 200,
+    "endMs": 330,
+    "timestampMs": 500,
+    "confidence": 0.996364
   },
   {
-    "text": " compris",
-    "startMs": 1150,
-    "endMs": 1720,
-    "timestampMs": 1260,
-    "confidence": 0.996864
+    "text": " vois",
+    "startMs": 330,
+    "endMs": 600,
+    "timestampMs": 720,
+    "confidence": 0.993849
   },
   {
-    "text": " que,",
-    "startMs": 1720,
-    "endMs": 2150,
-    "timestampMs": 1760,
-    "confidence": 0.936234
+    "text": " quelqu'un",
+    "startMs": 600,
+    "endMs": 1200,
+    "timestampMs": 1080,
+    "confidence": 0.991592
   },
   {
-    "text": " il",
-    "startMs": 2150,
-    "endMs": 2300,
-    "timestampMs": 2580,
-    "confidence": 0.598786
+    "text": " te",
+    "startMs": 1200,
+    "endMs": 1330,
+    "timestampMs": 1460,
+    "confidence": 0.99212
   },
   {
-    "text": " faut",
-    "startMs": 2300,
-    "endMs": 2610,
-    "timestampMs": 2740,
-    "confidence": 0.997512
+    "text": " détester",
+    "startMs": 1330,
+    "endMs": 1940,
+    "timestampMs": 1740,
+    "confidence": 0.997877
   },
   {
-    "text": " vivre",
-    "startMs": 2610,
-    "endMs": 3000,
-    "timestampMs": 3060,
-    "confidence": 0.988425
+    "text": " sans",
+    "startMs": 1940,
+    "endMs": 2210,
+    "timestampMs": 2260,
+    "confidence": 0.993019
   },
   {
-    "text": " les",
-    "startMs": 3000,
-    "endMs": 3150,
-    "timestampMs": 3240,
-    "confidence": 0.973374
+    "text": " raison,",
+    "startMs": 2210,
+    "endMs": 2850,
+    "timestampMs": 2940,
+    "confidence": 0.985438
   },
   {
-    "text": " moments",
-    "startMs": 3150,
-    "endMs": 3490,
-    "timestampMs": 3600,
-    "confidence": 0.986485
+    "text": " sache",
+    "startMs": 2850,
+    "endMs": 3210,
+    "timestampMs": 3420,
+    "confidence": 0.695191
   },
   {
-    "text": " difficiles",
-    "startMs": 3490,
-    "endMs": 4000,
-    "timestampMs": 4040,
-    "confidence": 0.985521
+    "text": " que",
+    "startMs": 3210,
+    "endMs": 3420,
+    "timestampMs": 3660,
+    "confidence": 0.996067
   },
   {
-    "text": " dans",
-    "startMs": 4000,
-    "endMs": 4440,
-    "timestampMs": 4360,
-    "confidence": 0.980305
+    "text": " tu",
+    "startMs": 3420,
+    "endMs": 3560,
+    "timestampMs": 3840,
+    "confidence": 0.997628
   },
   {
-    "text": " ta",
-    "startMs": 4440,
-    "endMs": 4660,
-    "timestampMs": 4540,
-    "confidence": 0.995218
+    "text": " as",
+    "startMs": 3560,
+    "endMs": 3700,
+    "timestampMs": 4020,
+    "confidence": 0.989234
   },
   {
-    "text": " vie,",
-    "startMs": 4660,
-    "endMs": 5150,
-    "timestampMs": 5000,
-    "confidence": 0.995004
+    "text": " quelque",
+    "startMs": 3700,
+    "endMs": 4190,
+    "timestampMs": 4440,
+    "confidence": 0.994816
   },
   {
-    "text": " pour",
-    "startMs": 5150,
-    "endMs": 5440,
-    "timestampMs": 5500,
-    "confidence": 0.661231
+    "text": " chose",
+    "startMs": 4190,
+    "endMs": 4560,
+    "timestampMs": 4700,
+    "confidence": 0.996174
   },
   {
-    "text": " savoir",
-    "startMs": 5440,
-    "endMs": 5800,
-    "timestampMs": 5840,
-    "confidence": 0.973626
+    "text": " qu'il",
+    "startMs": 4560,
+    "endMs": 5010,
+    "timestampMs": 4860,
+    "confidence": 0.833057
   },
   {
-    "text": " qui",
-    "startMs": 5800,
-    "endMs": 6040,
-    "timestampMs": 6080,
-    "confidence": 0.927991
+    "text": " admire,",
+    "startMs": 5010,
+    "endMs": 5720,
+    "timestampMs": 5540,
+    "confidence": 0.982123
   },
   {
-    "text": " est",
-    "startMs": 6040,
-    "endMs": 6310,
-    "timestampMs": 6180,
-    "confidence": 0.990955
+    "text": " mais",
+    "startMs": 5720,
+    "endMs": 6050,
+    "timestampMs": 5940,
+    "confidence": 0.753673
   },
   {
-    "text": " ta",
-    "startMs": 6310,
-    "endMs": 6440,
-    "timestampMs": 6340,
-    "confidence": 0.982206
+    "text": " refuse",
+    "startMs": 6050,
+    "endMs": 6540,
+    "timestampMs": 6460,
+    "confidence": 0.944219
   },
   {
-    "text": " famille,",
-    "startMs": 6440,
-    "endMs": 7370,
-    "timestampMs": 6900,
-    "confidence": 0.98441
+    "text": " d'apprécier.",
+    "startMs": 6540,
+    "endMs": 7760,
+    "timestampMs": 6680,
+    "confidence": 0.990682
   },
   {
-    "text": " ton",
-    "startMs": 7370,
-    "endMs": 7930,
-    "timestampMs": 7940,
-    "confidence": 0.837114
+    "text": " Derrière",
+    "startMs": 7760,
+    "endMs": 8420,
+    "timestampMs": 8060,
+    "confidence": 0.700441
   },
   {
-    "text": " ami,",
-    "startMs": 7930,
-    "endMs": 8830,
-    "timestampMs": 8360,
-    "confidence": 0.823689
+    "text": " chaque",
+    "startMs": 8420,
+    "endMs": 8860,
+    "timestampMs": 8720,
+    "confidence": 0.988834
   },
   {
-    "text": " et",
-    "startMs": 8830,
-    "endMs": 9160,
-    "timestampMs": 9540,
-    "confidence": 0.919342
+    "text": " méchanceté",
+    "startMs": 8860,
+    "endMs": 9730,
+    "timestampMs": 8940,
+    "confidence": 0.998378
   },
   {
-    "text": " le",
-    "startMs": 9160,
-    "endMs": 9490,
-    "timestampMs": 9720,
-    "confidence": 0.996227
+    "text": " se",
+    "startMs": 9730,
+    "endMs": 9870,
+    "timestampMs": 9840,
+    "confidence": 0.968941
   },
   {
-    "text": " vrai",
-    "startMs": 9490,
-    "endMs": 10140,
-    "timestampMs": 9860,
-    "confidence": 0.980858
+    "text": " cache",
+    "startMs": 9870,
+    "endMs": 10240,
+    "timestampMs": 10180,
+    "confidence": 0.997927
   },
   {
-    "text": " amour,",
-    "startMs": 10140,
-    "endMs": 11140,
-    "timestampMs": 10160,
-    "confidence": 0.981663
+    "text": " une",
+    "startMs": 10240,
+    "endMs": 10460,
+    "timestampMs": 10500,
+    "confidence": 0.99835
   },
   {
-    "text": " oui",
-    "startMs": 11140,
-    "endMs": 11360,
-    "timestampMs": 11540,
-    "confidence": 0.925805
-  },
-  {
-    "text": " c'est",
-    "startMs": 11360,
-    "endMs": 11720,
-    "timestampMs": 11780,
-    "confidence": 0.794579
-  },
-  {
-    "text": " les",
-    "startMs": 11720,
-    "endMs": 11940,
-    "timestampMs": 11920,
-    "confidence": 0.986606
-  },
-  {
-    "text": " règles",
-    "startMs": 11940,
-    "endMs": 12450,
-    "timestampMs": 12180,
-    "confidence": 0.975662
-  },
-  {
-    "text": " de",
-    "startMs": 12450,
-    "endMs": 12590,
-    "timestampMs": 12440,
-    "confidence": 0.999085
-  },
-  {
-    "text": " la",
-    "startMs": 12590,
-    "endMs": 12730,
-    "timestampMs": 12580,
-    "confidence": 0.997021
-  },
-  {
-    "text": " vie.",
-    "startMs": 12730,
-    "endMs": 13000,
-    "timestampMs": 12980,
-    "confidence": 0.998818
-  },
-  {
-    "text": " Sous-titres",
-    "startMs": 13000,
-    "endMs": 13610,
-    "timestampMs": 15980,
-    "confidence": 0.0591355
-  },
-  {
-    "text": " réalisés",
-    "startMs": 13610,
-    "endMs": 14190,
-    "timestampMs": 15980,
-    "confidence": 0.57848
-  },
-  {
-    "text": " para",
-    "startMs": 14190,
-    "endMs": 14420,
-    "timestampMs": 15980,
-    "confidence": 0.921026
-  },
-  {
-    "text": " la",
-    "startMs": 14420,
-    "endMs": 14530,
-    "timestampMs": 15980,
-    "confidence": 0.913058
-  },
-  {
-    "text": " communauté",
-    "startMs": 14530,
-    "endMs": 15170,
-    "timestampMs": 15980,
-    "confidence": 0.929783
-  },
-  {
-    "text": " d'Amara.org",
-    "startMs": 15170,
-    "endMs": 16000,
-    "timestampMs": 15980,
-    "confidence": 0.988631
-  },
-  {
-    "text": " [Sous-titres",
-    "startMs": 16000,
-    "endMs": 16420,
-    "timestampMs": 17940,
-    "confidence": 0.913185
-  },
-  {
-    "text": " réalisés",
-    "startMs": 16420,
-    "endMs": 16770,
-    "timestampMs": 17940,
-    "confidence": 0.976373
-  },
-  {
-    "text": " para",
-    "startMs": 16770,
-    "endMs": 16930,
-    "timestampMs": 17940,
-    "confidence": 1
-  },
-  {
-    "text": " la",
-    "startMs": 16930,
-    "endMs": 17000,
-    "timestampMs": 17940,
-    "confidence": 1
-  },
-  {
-    "text": " communauté",
-    "startMs": 17000,
-    "endMs": 17410,
-    "timestampMs": 17940,
-    "confidence": 1
-  },
-  {
-    "text": " d'Amara.org]",
-    "startMs": 17410,
-    "endMs": 18000,
-    "timestampMs": 17940,
-    "confidence": 1
+    "text": " jalousie.\"",
+    "startMs": 10460,
+    "endMs": 11400,
+    "timestampMs": 10700,
+    "confidence": 0.981122
   }
 ]
