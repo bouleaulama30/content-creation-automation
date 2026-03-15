@@ -9,4 +9,5 @@ out
 assembler/public/
 assembler/props.json
 captioner/public/video.mp4
-# test/
+captioner/test/
+captioner/public/video.json
