@@ -1,8 +1,6 @@
 # TO DO
 
-## Selection des video (Python)
-
-* à partir du type de reel que l'on veut faire (oogway, animaux, paysage etc) sélectionne les videos dans le bon dossier et format, et calcule les duration frame de la bonne manière
+## Selector
 
 * demander conseil pour rendre mon code de projet plus clean, sur le plan de l'architecture et du contenue
 
@@ -31,13 +29,9 @@ il va piocher dans un des fichiers scripts (relatif au personnage) et il va util
 * faire un projet minimaliste pour ne pas à avoir à utiliser tout le repo github
 
 ## Extension
-
-
 * faire un template joker 
 
 * voir si possible de publier automatiquement
-
-
 
 ### à faire une fois la nouvelle DA
 * Envoyer la miniature à faire selon le type de template (sur telegramme)
@@ -52,11 +46,13 @@ il va piocher dans un des fichiers scripts (relatif au personnage) et il va util
 ## Autres
 
 * faire une orga de dossier et de fichier ou je classe les videos par thème (landscape, animals, master oogway)
-* faire variable d'environnement mutualisé pour le noms de la video final etccc 
-* utiliser les variables d'environnement pour déployer facilement le projet sur une plateforme, voir pour dockeriser ça, faire l'inventaire des dépendances:
+* refaire une orga du .env avec la nouvelle architecture et adapter le code en conséquence
+* voir pour dockeriser ça ou faire un script qui fait l'installation, faire l'inventaire des dépendances:
     * librairies python
     * yt dlp 
     * google/genai
+    * remotion
+
 * rendre l'infra globale plus clean
 * quand les 1500 abonnées seront atteint, reprendre la video de 4h et se faire une vrai DA complète (joué le jeu)
 * faire un repo github vraiment clean et le rendre ouvert à tous donc faire un readme clean

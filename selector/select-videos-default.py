@@ -23,7 +23,7 @@ PROJECT_BASE_PATH = os.getenv('PROJECT_BASE_PATH')
 ASSEMBLER_PATH = os.getenv('ASSEMBLER_PATH')
 CAPTIONER_PATH = os.getenv('CAPTIONER_PATH')
 
-INTERMEDIAR_VIDEOS_PATH = os.getenv('INTERMEDIAR_VIDEOS_PATH')
+INTERMEDIAR_VIDEOS_ASSEMBLER_PATH = os.getenv('INTERMEDIAR_VIDEOS_ASSEMBLER_PATH')
 
 
 # L'équivalent de ton "type" ou "interface" en TypeScript
@@ -88,7 +88,7 @@ def write_data_json(folder_video_path):
 if __name__ == "__main__":
     print(f"{AUDIO_NAME}, {AUDIO_SRC_FILE_PATH}")
     nbr_video = nbr_video_to_select(f'{AUDIO_SRC_FILE_PATH}', PIECE_VIDEO_DURATION)
-    copy_and_rename(f"{AUDIO_SRC_FOLDER_PATH}", f"{INTERMEDIAR_VIDEOS_PATH}",f"{AUDIO_NAME}", f"{AUDIO_NAME}")
+    copy_and_rename(f"{AUDIO_SRC_FOLDER_PATH}", f"{INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}",f"{AUDIO_NAME}", f"{AUDIO_NAME}")
     videos = select_videos(f"{VIDEOS_SRC_PATH}", nbr_video)
-    move_selected_videos(f"{VIDEOS_SRC_PATH}", f"{INTERMEDIAR_VIDEOS_PATH}", videos)
-    write_data_json(f"{INTERMEDIAR_VIDEOS_PATH}")
+    move_selected_videos(f"{VIDEOS_SRC_PATH}", f"{INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}", videos)
+    write_data_json(f"{INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}")

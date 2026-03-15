@@ -26,7 +26,7 @@ PROJECT_BASE_PATH = os.getenv('PROJECT_BASE_PATH')
 ASSEMBLER_PATH = os.getenv('ASSEMBLER_PATH')
 CAPTIONER_PATH = os.getenv('CAPTIONER_PATH')
 
-INTERMEDIAR_VIDEOS_PATH = os.getenv('INTERMEDIAR_VIDEOS_PATH')
+INTERMEDIAR_VIDEOS_ASSEMBLER_PATH = os.getenv('INTERMEDIAR_VIDEOS_ASSEMBLER_PATH')
 
 
 # L'équivalent de ton "type" ou "interface" en TypeScript
@@ -147,7 +147,7 @@ if __name__ == "__main__":
     # print(f"{AUDIO_NAME}, {AUDIO_SRC_FILE_PATH}")
     duration = get_video_duration(f"{VIDEOS_SRC_OOGWAY_PATH}/oogway1.mp4")
     videos = select_oogway_videos(f"{VIDEOS_SRC_OOGWAY_PATH}", f"{VIDEOS_SRC_TRANSI_PATH}", PIECE_VIDEO_TRANSI_DURATION, NBR_BEGIN_OOGWAY_VIDEO, f"{AUDIO_SRC_FILE_PATH}")
-    move_selected_videos(f"{VIDEOS_SRC_OOGWAY_PATH}", f"{VIDEOS_SRC_TRANSI_PATH}", f"{INTERMEDIAR_VIDEOS_PATH}", videos)
-    copy_and_rename_audio(f"{AUDIO_SRC_FOLDER_PATH}", f"{INTERMEDIAR_VIDEOS_PATH}",f"{AUDIO_NAME}", f"{AUDIO_NAME}")
+    move_selected_videos(f"{VIDEOS_SRC_OOGWAY_PATH}", f"{VIDEOS_SRC_TRANSI_PATH}", f"{INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}", videos)
+    copy_and_rename_audio(f"{AUDIO_SRC_FOLDER_PATH}", f"{INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}",f"{AUDIO_NAME}", f"{AUDIO_NAME}")
     write_data_json(videos)
     # print(videos)

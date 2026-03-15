@@ -6,8 +6,10 @@ from google import genai
 
 dotenv.load_dotenv()
 
-TOKEN = os.getenv('TOKEN')
+INTERMEDIAR_VIDEOS_CAPTIONER_PATH = os.getenv('INTERMEDIAR_VIDEOS_CAPTIONER_PATH')
+FINAL_VIDEO_PATH = os.getenv('FINAL_VIDEO_PATH')
 
+TOKEN = os.getenv('TOKEN')
 GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
 
 client = genai.Client()
@@ -15,7 +17,7 @@ client = genai.Client()
 chat_id = "7921150744"
 
 
-with open('/home/leo/content-creation-automation/captioner/public/video.json', 'r') as f:
+with open(f"{INTERMEDIAR_VIDEOS_CAPTIONER_PATH}/video.json", 'r') as f:
     caption = json.load(f)
 word_list = [elm['text'] for elm in caption ]
 transcription = ' '.join(word_list) 
@@ -53,7 +55,7 @@ status_txt = r.get(url, data=data).json
 # status_photo = r.post(f"https://api.telegram.org/bot{TOKEN}/sendPhoto?chat_id={chat_id}", files=files)
 
 # send video
-files = {'video': open("/home/leo/content-creation-automation/captioner/out/video.mp4", 'rb')}
+files = {'video': open(f"{FINAL_VIDEO_PATH}/video.mp4", 'rb')}
 status_video = r.post(f"https://api.telegram.org/bot{TOKEN}/sendVideo?chat_id={chat_id}", files=files)
 
 print(status_txt)
