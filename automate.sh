@@ -3,11 +3,13 @@
 TYPE_REEL=$1
 LINK_AUDIO=$2
 
-echo "suppresion de l'ancien audio"
-rm /home/leo/Videos/projet_secret/audio/audio.mp3
+if [ -n "$LINK_AUDIO" ]; then
+    echo "suppresion de l'ancien audio"
+    rm /home/leo/Videos/projet_secret/audio/audio.mp3
+    echo "Téléchargement de l'audio du lien ${LINK_AUDIO}"
+    yt-dlp -t mp3 "${LINK_AUDIO}" -o /home/leo/Videos/projet_secret/audio/audio.mp3
+fi
 
-echo "Téléchargement de l'audio du lien ${LINK_AUDIO}"
-yt-dlp -t mp3 "${LINK_AUDIO}" -o /home/leo/Videos/projet_secret/audio/audio.mp3
 
 echo "suppression des video dans le dossier public de l'assembleur"
 rm /home/leo/content-creation-automation/assembler/public/*.mp4

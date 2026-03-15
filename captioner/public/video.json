@@ -1,184 +1,387 @@
 [
   {
-    "text": "\"Si",
-    "startMs": 40,
-    "endMs": 200,
-    "timestampMs": 280,
-    "confidence": 0.0815167
+    "text": "\"Il",
+    "startMs": 50,
+    "endMs": 250,
+    "timestampMs": 480,
+    "confidence": 0.122852
+  },
+  {
+    "text": " arrivera",
+    "startMs": 250,
+    "endMs": 620,
+    "timestampMs": 820,
+    "confidence": 0.99169
+  },
+  {
+    "text": " un",
+    "startMs": 620,
+    "endMs": 730,
+    "timestampMs": 1100,
+    "confidence": 0.994996
+  },
+  {
+    "text": " matin",
+    "startMs": 730,
+    "endMs": 1020,
+    "timestampMs": 1280,
+    "confidence": 0.997889
+  },
+  {
+    "text": " où",
+    "startMs": 1020,
+    "endMs": 1190,
+    "timestampMs": 1420,
+    "confidence": 0.878428
   },
   {
     "text": " tu",
-    "startMs": 200,
-    "endMs": 330,
-    "timestampMs": 500,
-    "confidence": 0.996364
+    "startMs": 1190,
+    "endMs": 1300,
+    "timestampMs": 1600,
+    "confidence": 0.998117
   },
   {
-    "text": " vois",
-    "startMs": 330,
-    "endMs": 600,
-    "timestampMs": 720,
-    "confidence": 0.993849
+    "text": " attendras",
+    "startMs": 1300,
+    "endMs": 1820,
+    "timestampMs": 1820,
+    "confidence": 0.9564
   },
   {
-    "text": " quelqu'un",
-    "startMs": 600,
-    "endMs": 1200,
-    "timestampMs": 1080,
-    "confidence": 0.991592
+    "text": " mon",
+    "startMs": 1820,
+    "endMs": 1990,
+    "timestampMs": 2080,
+    "confidence": 0.994395
   },
   {
-    "text": " te",
-    "startMs": 1200,
-    "endMs": 1330,
-    "timestampMs": 1460,
-    "confidence": 0.99212
-  },
-  {
-    "text": " détester",
-    "startMs": 1330,
-    "endMs": 1940,
-    "timestampMs": 1740,
-    "confidence": 0.997877
-  },
-  {
-    "text": " sans",
-    "startMs": 1940,
-    "endMs": 2210,
-    "timestampMs": 2260,
-    "confidence": 0.993019
-  },
-  {
-    "text": " raison,",
-    "startMs": 2210,
-    "endMs": 2850,
-    "timestampMs": 2940,
-    "confidence": 0.985438
-  },
-  {
-    "text": " sache",
-    "startMs": 2850,
-    "endMs": 3210,
-    "timestampMs": 3420,
-    "confidence": 0.695191
-  },
-  {
-    "text": " que",
-    "startMs": 3210,
-    "endMs": 3420,
-    "timestampMs": 3660,
-    "confidence": 0.996067
-  },
-  {
-    "text": " tu",
-    "startMs": 3420,
-    "endMs": 3560,
-    "timestampMs": 3840,
-    "confidence": 0.997628
-  },
-  {
-    "text": " as",
-    "startMs": 3560,
-    "endMs": 3700,
-    "timestampMs": 4020,
-    "confidence": 0.989234
-  },
-  {
-    "text": " quelque",
-    "startMs": 3700,
-    "endMs": 4190,
-    "timestampMs": 4440,
-    "confidence": 0.994816
-  },
-  {
-    "text": " chose",
-    "startMs": 4190,
-    "endMs": 4560,
-    "timestampMs": 4700,
-    "confidence": 0.996174
-  },
-  {
-    "text": " qu'il",
-    "startMs": 4560,
-    "endMs": 5010,
-    "timestampMs": 4860,
-    "confidence": 0.833057
-  },
-  {
-    "text": " admire,",
-    "startMs": 5010,
-    "endMs": 5720,
-    "timestampMs": 5540,
-    "confidence": 0.982123
+    "text": " message",
+    "startMs": 1990,
+    "endMs": 2490,
+    "timestampMs": 2560,
+    "confidence": 0.988668
   },
   {
     "text": " mais",
-    "startMs": 5720,
-    "endMs": 6050,
-    "timestampMs": 5940,
-    "confidence": 0.753673
+    "startMs": 2490,
+    "endMs": 2760,
+    "timestampMs": 3020,
+    "confidence": 0.464004
   },
   {
-    "text": " refuse",
-    "startMs": 6050,
-    "endMs": 6540,
-    "timestampMs": 6460,
-    "confidence": 0.944219
+    "text": " ton",
+    "startMs": 2760,
+    "endMs": 2950,
+    "timestampMs": 3200,
+    "confidence": 0.992475
   },
   {
-    "text": " d'apprécier.",
-    "startMs": 6540,
-    "endMs": 7760,
-    "timestampMs": 6680,
-    "confidence": 0.990682
+    "text": " écran",
+    "startMs": 2950,
+    "endMs": 3330,
+    "timestampMs": 3420,
+    "confidence": 0.986005
   },
   {
-    "text": " Derrière",
-    "startMs": 7760,
-    "endMs": 8420,
-    "timestampMs": 8060,
-    "confidence": 0.700441
+    "text": " restera",
+    "startMs": 3330,
+    "endMs": 3800,
+    "timestampMs": 3780,
+    "confidence": 0.969665
   },
   {
-    "text": " chaque",
-    "startMs": 8420,
-    "endMs": 8860,
-    "timestampMs": 8720,
-    "confidence": 0.988834
+    "text": " désespérément",
+    "startMs": 3800,
+    "endMs": 4480,
+    "timestampMs": 4240,
+    "confidence": 0.817891
   },
   {
-    "text": " méchanceté",
-    "startMs": 8860,
-    "endMs": 9730,
-    "timestampMs": 8940,
-    "confidence": 0.998378
+    "text": " noir.",
+    "startMs": 4480,
+    "endMs": 5000,
+    "timestampMs": 5000,
+    "confidence": 0.940248
   },
   {
-    "text": " se",
-    "startMs": 9730,
-    "endMs": 9870,
-    "timestampMs": 9840,
-    "confidence": 0.968941
+    "text": " Tu",
+    "startMs": 5000,
+    "endMs": 5110,
+    "timestampMs": 5600,
+    "confidence": 0.867528
   },
   {
-    "text": " cache",
-    "startMs": 9870,
-    "endMs": 10240,
-    "timestampMs": 10180,
-    "confidence": 0.997927
+    "text": " chercheras",
+    "startMs": 5110,
+    "endMs": 5680,
+    "timestampMs": 5840,
+    "confidence": 0.923428
   },
   {
-    "text": " une",
-    "startMs": 10240,
-    "endMs": 10460,
-    "timestampMs": 10500,
-    "confidence": 0.99835
+    "text": " mon",
+    "startMs": 5680,
+    "endMs": 5850,
+    "timestampMs": 6180,
+    "confidence": 0.980793
   },
   {
-    "text": " jalousie.\"",
-    "startMs": 10460,
-    "endMs": 11400,
-    "timestampMs": 10700,
-    "confidence": 0.981122
+    "text": " attention,",
+    "startMs": 5850,
+    "endMs": 6500,
+    "timestampMs": 6720,
+    "confidence": 0.987234
+  },
+  {
+    "text": " celle",
+    "startMs": 6500,
+    "endMs": 6750,
+    "timestampMs": 7060,
+    "confidence": 0.930612
+  },
+  {
+    "text": " que",
+    "startMs": 6750,
+    "endMs": 6900,
+    "timestampMs": 7200,
+    "confidence": 0.998772
+  },
+  {
+    "text": " je",
+    "startMs": 6900,
+    "endMs": 7000,
+    "timestampMs": 7320,
+    "confidence": 0.990921
+  },
+  {
+    "text": " t'offrais",
+    "startMs": 7000,
+    "endMs": 7420,
+    "timestampMs": 7440,
+    "confidence": 0.958588
+  },
+  {
+    "text": " sans",
+    "startMs": 7420,
+    "endMs": 7620,
+    "timestampMs": 7860,
+    "confidence": 0.983779
+  },
+  {
+    "text": " compter,",
+    "startMs": 7620,
+    "endMs": 8170,
+    "timestampMs": 8100,
+    "confidence": 0.990573
+  },
+  {
+    "text": " mais",
+    "startMs": 8170,
+    "endMs": 8510,
+    "timestampMs": 8680,
+    "confidence": 0.900797
+  },
+  {
+    "text": " je",
+    "startMs": 8510,
+    "endMs": 8680,
+    "timestampMs": 8900,
+    "confidence": 0.996892
+  },
+  {
+    "text": " serai",
+    "startMs": 8680,
+    "endMs": 9110,
+    "timestampMs": 9000,
+    "confidence": 0.995623
+  },
+  {
+    "text": " déjà",
+    "startMs": 9110,
+    "endMs": 9630,
+    "timestampMs": 9280,
+    "confidence": 0.988453
+  },
+  {
+    "text": " loin.",
+    "startMs": 9630,
+    "endMs": 10000,
+    "timestampMs": 9620,
+    "confidence": 0.988193
+  },
+  {
+    "text": " Et",
+    "startMs": 10000,
+    "endMs": 10090,
+    "timestampMs": 10300,
+    "confidence": 0.980262
+  },
+  {
+    "text": " quand",
+    "startMs": 10090,
+    "endMs": 10320,
+    "timestampMs": 10480,
+    "confidence": 0.98844
+  },
+  {
+    "text": " ce",
+    "startMs": 10320,
+    "endMs": 10410,
+    "timestampMs": 10620,
+    "confidence": 0.999279
+  },
+  {
+    "text": " silence",
+    "startMs": 10410,
+    "endMs": 10740,
+    "timestampMs": 10880,
+    "confidence": 0.998696
+  },
+  {
+    "text": " te",
+    "startMs": 10740,
+    "endMs": 10830,
+    "timestampMs": 11100,
+    "confidence": 0.995281
+  },
+  {
+    "text": " pèsera,",
+    "startMs": 10830,
+    "endMs": 11240,
+    "timestampMs": 11200,
+    "confidence": 0.830517
+  },
+  {
+    "text": " n'oublie",
+    "startMs": 11240,
+    "endMs": 11600,
+    "timestampMs": 11820,
+    "confidence": 0.992324
+  },
+  {
+    "text": " pas",
+    "startMs": 11600,
+    "endMs": 11740,
+    "timestampMs": 12160,
+    "confidence": 0.995478
+  },
+  {
+    "text": " que",
+    "startMs": 11740,
+    "endMs": 11880,
+    "timestampMs": 12240,
+    "confidence": 0.997973
+  },
+  {
+    "text": " j'ai",
+    "startMs": 11880,
+    "endMs": 12050,
+    "timestampMs": 12360,
+    "confidence": 0.995809
+  },
+  {
+    "text": " tout",
+    "startMs": 12050,
+    "endMs": 12240,
+    "timestampMs": 12580,
+    "confidence": 0.998936
+  },
+  {
+    "text": " fait",
+    "startMs": 12240,
+    "endMs": 12430,
+    "timestampMs": 12700,
+    "confidence": 0.993009
+  },
+  {
+    "text": " pour",
+    "startMs": 12430,
+    "endMs": 12620,
+    "timestampMs": 12860,
+    "confidence": 0.998376
+  },
+  {
+    "text": " rester.",
+    "startMs": 12620,
+    "endMs": 13000,
+    "timestampMs": 13220,
+    "confidence": 0.99767
+  },
+  {
+    "text": " Mais",
+    "startMs": 13000,
+    "endMs": 13220,
+    "timestampMs": 13660,
+    "confidence": 0.962131
+  },
+  {
+    "text": " c'est",
+    "startMs": 13220,
+    "endMs": 13480,
+    "timestampMs": 13840,
+    "confidence": 0.994962
+  },
+  {
+    "text": " ton",
+    "startMs": 13480,
+    "endMs": 13650,
+    "timestampMs": 14000,
+    "confidence": 0.99038
+  },
+  {
+    "text": " indifférence",
+    "startMs": 13650,
+    "endMs": 14370,
+    "timestampMs": 14240,
+    "confidence": 0.997383
+  },
+  {
+    "text": " qui",
+    "startMs": 14370,
+    "endMs": 14530,
+    "timestampMs": 14700,
+    "confidence": 0.991439
+  },
+  {
+    "text": " m'a",
+    "startMs": 14530,
+    "endMs": 14690,
+    "timestampMs": 14760,
+    "confidence": 0.995197
+  },
+  {
+    "text": " poussé",
+    "startMs": 14690,
+    "endMs": 15070,
+    "timestampMs": 15020,
+    "confidence": 0.998119
+  },
+  {
+    "text": " vers",
+    "startMs": 15070,
+    "endMs": 15290,
+    "timestampMs": 15260,
+    "confidence": 0.997139
+  },
+  {
+    "text": " la",
+    "startMs": 15290,
+    "endMs": 15400,
+    "timestampMs": 15440,
+    "confidence": 0.987961
+  },
+  {
+    "text": " sortie.",
+    "startMs": 15400,
+    "endMs": 15530,
+    "timestampMs": 15500,
+    "confidence": 0.965483
+  },
+  {
+    "text": " \"",
+    "startMs": 15530,
+    "endMs": 16000,
+    "timestampMs": 15500,
+    "confidence": 0.476942
   }
 ]

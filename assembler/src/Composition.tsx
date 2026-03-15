@@ -74,14 +74,7 @@ export const VideosInSequence: React.FC<Props> = ({videos}) => {
 export const calculateMetadata: CalculateMetadataFunction<MyCompProp> = async ({props}) => {
   const fps = 30;
 
-  // // On additionne simplement les durées que Python a mises dans le JSON
-  // const totalDurationInFrames = props.videosSrc.reduce(
-  //   (acc, video) => acc + (video.durationInFrames ?? 0), 
-  //   0
-  // );
-
   const {slowDurationInSeconds} = await parseMedia({
-    // 2. AJOUTE staticFile ICI POUR L'AUDIO
     src: staticFile(props.audioSrc), 
     fields: {
       slowDurationInSeconds: true,

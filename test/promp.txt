@@ -1,0 +1,71 @@
+je fais de la création de contenu de motivation sur tik tok des thèmes comme la depression, la solitude, l'amour, l'espoir, la raison, la discipline etc.... j'ai une pipeline automatisé qui me permet de générer des réels, je veux maintenant générer des scripts original
+
+
+
+import random
+
+# 1. Tes listes de variables pour automatiser la diversité
+themes = ["la dépression silencieuse", "la solitude moderne", "l'espoir après un échec", "la discipline froide", "l'amour rationnel"]
+angles = ["Brutalement honnête et stoïque", "Doux, empathique mais ferme", "Scientifique (explication psychologique)", "Philosophique et sombre", "Grand frère qui te recadre"]
+hooks = ["Poser une question inconfortable", "Donner une statistique choquante", "Commencer par 'On t'a menti sur...'", "Un silence de 2 secondes puis une vérité brutale", "Détruire une croyance populaire"]
+
+# Paramètres fixes ou tirés au sort
+nombre_scripts = 3
+duree = "45 secondes"
+
+# Variables tirées au hasard pour cette génération
+theme_choisi = random.choice(themes)
+angle_choisi = random.choice(angles)
+hook_choisi = random.choice(hooks)
+
+# =====================================================================
+# PROMPT 1 : GÉNÉRATION BASÉE SUR UN THÈME
+# =====================================================================
+
+prompt_theme = f"""Tu es un expert en création de contenu TikTok percutant et psychologique.
+Ta mission : Écrire {nombre_scripts} script(s) original(aux) prêt(s) à être enregistré(s).
+
+PARAMÈTRES DU SCRIPT :
+- Durée visée par script : environ {duree} (environ 110 à 130 mots).
+- Thème central : {theme_choisi}.
+- Ton / Angle : {angle_choisi}.
+- Type d'accroche (Hook) : {hook_choisi}.
+
+RÈGLES STRICTES :
+1. Aucun cliché de développement personnel (Interdit d'utiliser "sors de ta zone de confort", "n'abandonne jamais", "crois en toi").
+2. Utilise un vocabulaire brut, authentique et conversationnel.
+3. Fais des phrases courtes et percutantes.
+4. Ne mets pas de didascalies complexes, juste le texte à prononcer.
+
+Sépare clairement chaque script généré avec "--- SCRIPT [Numéro] ---"."""
+
+
+# =====================================================================
+# PROMPT 2 : GÉNÉRATION BASÉE SUR UN SCRIPT EXISTANT (L'EXEMPLE)
+# =====================================================================
+
+script_viral_exemple = """
+(Exemple de script) : "Tu te sens seul en ce moment ? C'est normal. Ton cerveau te fait croire que tu es isolé parce que tu ne vois personne, mais la réalité, c'est que tu es en train de te construire. La plupart des gens fuient la solitude parce qu'ils sont terrifiés à l'idée de se retrouver seuls avec leurs propres pensées. Toi, tu es en train d'apprendre à devenir ta propre fondation. Ne cherche pas à remplir le vide avec des gens qui ne te méritent pas. Remplis-le avec toi-même."
+"""
+
+prompt_exemple = f"""Tu es un expert en création de contenu TikTok percutant.
+Voici un script vidéo qui a fait des millions de vues (Script de référence) :
+"{script_viral_exemple}"
+
+Ta mission : Écrire {nombre_scripts} NOUVEAU(X) script(s) de {duree}.
+Tu dois conserver EXACTEMENT la même ambiance globale, le même rythme et le même thème sous-jacent que le script de référence, MAIS tu dois appliquer ces nouvelles contraintes :
+
+NOUVEAUX PARAMÈTRES :
+- Ton / Angle : {angle_choisi}.
+- Type d'accroche (Hook) : {hook_choisi}.
+
+RÈGLES STRICTES :
+1. Ne copie/colle aucune phrase du script de référence. Inspire-toi de sa "vibe" émotionnelle et de son format d'impact.
+2. Formule des concepts totalement nouveaux autour du même sujet.
+3. Reste brut et sans clichés. Phrases courtes.
+
+Sépare clairement chaque script généré avec "--- SCRIPT [Numéro] ---"."""
+
+# Affichage pour vérifier (Dans ton vrai code, tu envoies ça à l'API de Gemma-3)
+print("PROMPT SÉLECTIONNÉ PRÊT POUR L'API :\n")
+print(prompt_exemple)

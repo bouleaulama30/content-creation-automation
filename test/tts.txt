@@ -1,0 +1,42 @@
+Je suis un survivant. Pas parce que la vie m'a épargné, mais parce qu'elle m'a frappé et que je suis resté debout. J'ai connu les déceptions silencieuses, les promesses brisées, les nuits où le cœur parle plus fort que les mots. J'ai donné sans compter, j'ai fait confiance sans douter, et parfois j'ai payé le prix de ma sincérité. Mais chaque chute m'a appris à me relever. Chaque blessure m'a rendu plus conscient. Aujourd'hui, si je me protège, ce n'est pas par froideur, c'est par sagesse. Je ne fuis pas l'amour, je choisis simplement où je le dépose. Car un survivant n'a pas un cœur fermé. Il a un cœur qui a appris à se préserver.
+Ne fais pas tomber quelqu'un amoureux de toi, si tu n'es pas capable de l'aimer en retour. Ne fais pas espérer à quelqu'un que tu seras là pour le soutenir, si tu n'as pas l'intention de le faire. S'il te plaît, ne laisse pas penser que tu vas guérir ses blessures, si tes mensonges laissent des cicatrices que personne ne pourra jamais effacer
+Tu te préoccupes trop de ce qui a été ou de ce qui sera. Un dicton dit : hier est derrière, demain est un mystère, mais aujourd'hui est un cadeau. C'est pourquoi on l'appelle le présent.
+
+Tu te préoccupes trop... de ce qui a été... ou de ce qui sera. Un dicton dit...Hier... est derrière. Demain... est un mystère. Mais aujourd'hui... est un cadeau.
+
+C'est pourquoi... on l'appelle... le présent
+
+Tu te préoccupes trop de ce qui a été ou de ce qui sera
+
+Ne fais pas tomber quelqu'un amoureux de toi, si tu n'es pas capable de l'aimer en retour.
+Ne fais pas tomber quelqu'un amoureux de toi si tu n'es pas capable de l'aimer en retour. Ne fais pas espérer à quelqu'un que tu seras là pour le soutenir si tu n'as pas l'intention de le faire. S'il te plaît.
+Ne fais pas espérer à quelqu'un que tu seras là pour le soutenir si tu n'as pas l'intention de le faire. S'il te plaît.
+Ne fais pas tomber quelqu'un amoureux de toi... si tu n'es pas capable de l'aimer en retour. Ne fais pas espérer à quelqu'un... que tu seras là pour le soutenir... si tu n'as pas l'intention de le faire. S'il te plaît.
+
+Et un jour je ne te dérangerai plus, je ne t'appellerai plus, je ne t'écrirai plus non plus. Tu n'entendras plus jamais ma voix. Et si un jour je te manque, rappelle-toi que j'étais là un jour. Et c'est toi qui m'as laissé partir. Si ce message te fait penser à quelqu'un, aime et suis-moi.
+
+Il arrivera un matin où tu attendras mon message, mais ton écran restera désespérément noir. Tu chercheras mon attention, celle que je t'offrais sans compter, mais je serai déjà loin. Et quand ce silence te pèsera, n'oublie pas que j'ai tout fait pour rester. Mais c'est ton indifférence qui m'a poussé vers la sortie
+
+#oogway
+cargo run --release --features cli --bin generate_audio --   --model-dir ./modele-base-06b   --text "Un dicton dit...Hier... est derrière."   --ref-audio oogway_cut.wav   --x-vector-only --language french
+cargo run --release --features cli --bin generate_audio --   --model-dir ./modele-base-06b   --text "Un dicton dit...Hier... est derrière."   --ref-audio oogway_cut.wav   --ref-text "Ne fais pas tomber quelqu'un amoureux de toi, si tu n'es pas capable de l'aimer en retour." --language french
+cargo run --release --features cli --bin generate_audio --   --model-dir ./modele-base-1.7b   --text "Un dicton dit...Hier... est derrière."   --ref-audio oogway_cut.wav   --x-vector-only --language french
+cargo run --release --features cli --bin generate_audio --   --model-dir ./modele-base-1.7b   --text "Un dicton dit...Hier... est derrière."   --ref-audio oogway_cut_17.wav   --ref-text "Ne fais pas tomber quelqu'un amoureux de toi, si tu n'es pas capable de l'aimer en retour." --language french
+
+# Test 1.7B
+#pass pas 
+cargo run --release --features cli --bin generate_audio --   --model-dir ./modele-base-1.7b   --text "Tu te préoccupes trop... de ce qui a été... ou de ce qui sera. Un dicton dit...Hier... est derrière. Demain... est un mystère. Mais aujourd'hui... est un cadeau.
+"   --ref-audio oogway_cut_17.wav   --ref-text "Ne fais pas tomber quelqu'un amoureux de toi... si tu n'es pas capable de l'aimer en retour. Ne fais pas espérer à quelqu'un... que tu seras là pour le soutenir... si tu n'as pas l'intention de le faire. S'il te plaît.
+" --language french
+
+# perfect
+cargo run --release --features cli --bin generate_audio --   --model-dir ./modele-base-1.7b   --text "Tu te préoccupes trop... de ce qui a été... ou de ce qui sera. Un dicton dit...Hier... est derrière. Demain... est un mystère. Mais aujourd'hui... est un cadeau.
+"   --ref-audio oogway_cut_9.wav   --ref-text "Ne fais pas espérer à quelqu'un que tu seras là pour le soutenir si tu n'as pas l'intention de le faire. S'il te plaît.
+" --language french
+
+
+#default voice
+#parfait mais il faut down tout pour le faire fonctionner
+cargo run --release --features cli --bin generate_audio --   --model-dir ./modele-base-06b   --text "Il arrivera un matin où tu attendras mon message, mais ton écran restera désespérément noir. Tu chercheras mon attention, celle que je t'offrais sans compter, mais je serai déjà loin. Et quand ce silence te pèsera, n'oublie pas que j'ai tout fait pour rester. Mais c'est ton indifférence qui m'a poussé vers la sortie
+"   --ref-audio default.wav   --ref-text "Et un jour je ne te dérangerai plus, je ne t'appellerai plus, je ne t'écrirai plus non plus. Tu n'entendras plus jamais ma voix. Et si un jour je te manque, rappelle-toi que j'étais là un jour. Et c'est toi qui m'as laissé partir. Si ce message te fait penser à quelqu'un, aime et suis-moi.
+" --language french

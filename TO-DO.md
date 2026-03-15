@@ -8,7 +8,7 @@
 
 ## Remotion
 
-* clean le code pour remotion 
+* enlever les sous-titre commun de nanana
 
 ## Deliver
 
@@ -21,6 +21,14 @@
 * backend doi juste trigger le script automate.sh et renvoie un code au client 
 
 ## Extension
+* faire un template joker 
+* faire un parseur tik tok qui va automatique télécharger les videos nouvelles videos tendances dans le domaine etc...
+
+* voir si possible de publier automatiquement
+
+* voir pour faire une automatisation pour créer du contenu original
+
+### à faire une fois la nouvelle DA
 * Envoyer la miniature à faire selon le type de template (sur telegramme)
     * un image (toujours la même selon le template)
     * le logo inclut
@@ -29,11 +37,6 @@
 * voir si c'est nécessaire de faire des stories à chaque nouvelles publie
     * si c'est le cas envoyer une story via telegramme
 
-* faire un parseur tik tok qui va automatique télécharger les videos nouvelles videos tendances dans le domaine etc...
-
-* voir si possible de publier automatiquement
-
-* voir pour faire une automatisation pour créer du contenu original
 
 ## Autres
 
@@ -43,4 +46,5 @@
     * yt dlp 
 * faire variable d'environnement mutualisé pour le noms de la video final etccc 
 * rendre l'infra globale plus clean
+* quand les 1500 abonnées seront atteint, reprendre la video de 4h et se faire une vrai DA complète (joué le jeu)
 * faire un repo github vraiment clean et le rendre ouvert à tous donc faire un readme clean
