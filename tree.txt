@@ -1,0 +1,25 @@
+.
+├── Audio
+│   └── audio.mp3
+├── LinksSrc
+│   ├── default-links.txt
+│   ├── default-links-used.txt
+│   ├── oogway-links.txt
+│   └── oogway-links-used.txt
+├── OriginalContent
+│   ├── audio-script.mp3
+│   ├── Musiques
+│   └── scripts
+│       ├── default-scripts.txt
+│       └── oogway-scripts.txt
+├── Production
+│   ├── final_video.mp4
+│   └── thumbnail.png
+└── VideosSrc
+    ├── animals
+    ├── default
+    ├── landscape
+    ├── oogway
+    └── transi
+
+13 directories, 10 files
