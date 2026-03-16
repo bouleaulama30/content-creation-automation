@@ -45,8 +45,6 @@ il va piocher dans un des fichiers scripts (relatif au personnage) et il va util
 
 ## Autres
 
-* faire une orga de dossier et de fichier ou je classe les videos par thème (landscape, animals, master oogway)
-* refaire une orga du .env avec la nouvelle architecture et adapter le code en conséquence
 * voir pour dockeriser ça ou faire un script qui fait l'installation, faire l'inventaire des dépendances:
     * librairies python
     * yt dlp 

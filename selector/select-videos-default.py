@@ -13,10 +13,10 @@ load_dotenv()
 PIECE_VIDEO_DURATION = float(os.getenv('PIECE_VIDEO_DURATION'))
 FPS = int(os.getenv('FPS'))
 
-VIDEOS_SRC_PATH = os.getenv('VIDEOS_SRC_PATH')
-AUDIO_SRC_FOLDER_PATH = os.getenv('AUDIO_SRC_FOLDER_PATH')
+SRC_CONTENT_PATH = os.getenv('SRC_CONTENT_PATH')
+AUDIO_FOLDER_PATH = os.getenv('AUDIO_FOLDER_PATH')
 AUDIO_NAME = os.getenv('AUDIO_NAME')
-AUDIO_SRC_FILE_PATH= os.getenv('AUDIO_SRC_FILE_PATH')
+AUDIO_FILE_PATH= os.getenv('AUDIO_FILE_PATH')
 
 
 PROJECT_BASE_PATH = os.getenv('PROJECT_BASE_PATH')
@@ -86,9 +86,9 @@ def write_data_json(folder_video_path):
 
 
 if __name__ == "__main__":
-    print(f"{AUDIO_NAME}, {AUDIO_SRC_FILE_PATH}")
-    nbr_video = nbr_video_to_select(f'{AUDIO_SRC_FILE_PATH}', PIECE_VIDEO_DURATION)
-    copy_and_rename(f"{AUDIO_SRC_FOLDER_PATH}", f"{INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}",f"{AUDIO_NAME}", f"{AUDIO_NAME}")
-    videos = select_videos(f"{VIDEOS_SRC_PATH}", nbr_video)
-    move_selected_videos(f"{VIDEOS_SRC_PATH}", f"{INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}", videos)
+    print(f"{AUDIO_NAME}, {AUDIO_FILE_PATH}")
+    nbr_video = nbr_video_to_select(f'{AUDIO_FILE_PATH}', PIECE_VIDEO_DURATION)
+    copy_and_rename(f"{AUDIO_FOLDER_PATH}", f"{INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}",f"{AUDIO_NAME}", f"{AUDIO_NAME}")
+    videos = select_videos(f"{SRC_CONTENT_PATH}", nbr_video)
+    move_selected_videos(f"{SRC_CONTENT_PATH}", f"{INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}", videos)
     write_data_json(f"{INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}")

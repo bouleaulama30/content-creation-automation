@@ -20,9 +20,9 @@ set +o allexport
 
 if [ -n "$LINK_AUDIO" ]; then
     echo "suppresion de l'ancien audio"
-    rm ${AUDIO_SRC_FILE_PATH}
+    rm ${AUDIO_FILE_PATH}
     echo "Téléchargement de l'audio du lien ${LINK_AUDIO}"
-    yt-dlp -t mp3 "${LINK_AUDIO}" -o ${AUDIO_SRC_FILE_PATH}
+    yt-dlp -t mp3 "${LINK_AUDIO}" -o ${AUDIO_FILE_PATH}
 fi
 
 
@@ -61,10 +61,10 @@ echo "🚀 Rendu final du Reel avec sous-titres..."
 # Ici on lance le rendu du projet captioner
 npx remotion render \
     --concurrency=2 \
-    --output=${FINAL_VIDEO_PATH}/video.mp4
+    --output=${PRODUCTION_FOLDER_PATH}/video.mp4
 
 echo "Envoie de la video, de la description et de la miniature..."
 cd ${PROJECT_BASE_PATH} || exit
 python ${DELIVER_PATH}/deliver.py
 
-echo "✅ Terminé ! Ton Reel est prêt dans le dossier ${FINAL_VIDEO_PATH}."
+echo "✅ Terminé ! Ton Reel est prêt dans le dossier ${PRODUCTION_FOLDER_PATH}."

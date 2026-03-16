@@ -1,7 +1,7 @@
 .
 ├── Audio
 │   └── audio.mp3
-├── LinksSrc
+├── Links
 │   ├── default-links.txt
 │   ├── default-links-used.txt
 │   ├── oogway-links.txt

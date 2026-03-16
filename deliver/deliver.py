@@ -7,7 +7,7 @@ from google import genai
 dotenv.load_dotenv()
 
 INTERMEDIAR_VIDEOS_CAPTIONER_PATH = os.getenv('INTERMEDIAR_VIDEOS_CAPTIONER_PATH')
-FINAL_VIDEO_PATH = os.getenv('FINAL_VIDEO_PATH')
+PRODUCTION_FOLDER_PATH = os.getenv('PRODUCTION_FOLDER_PATH')
 
 TOKEN = os.getenv('TOKEN')
 GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
@@ -55,7 +55,7 @@ status_txt = r.get(url, data=data).json
 # status_photo = r.post(f"https://api.telegram.org/bot{TOKEN}/sendPhoto?chat_id={chat_id}", files=files)
 
 # send video
-files = {'video': open(f"{FINAL_VIDEO_PATH}/video.mp4", 'rb')}
+files = {'video': open(f"{PRODUCTION_FOLDER_PATH}/video.mp4", 'rb')}
 status_video = r.post(f"https://api.telegram.org/bot{TOKEN}/sendVideo?chat_id={chat_id}", files=files)
 
 print(status_txt)
