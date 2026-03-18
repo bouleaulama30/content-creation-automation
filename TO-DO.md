@@ -6,17 +6,14 @@
 
 ## Remotion
 
-* enlever les sous-titre commun de nanana
-
 ## Deliver
 
 * clean le code
-* mettre varible environnement etc...
 
 ## OrderTaker
 
+* continuer l'implem du site et faire un css de base pour que ça soit propre
 * site web react de base avec un champ lien et un champ pour le template (cf dessin brouillon)
-* backend 
 
 ## Creator
 ### script creator
@@ -41,7 +38,6 @@ il va piocher dans un des fichiers scripts (relatif au personnage) et il va util
 
 * voir si c'est nécessaire de faire des stories à chaque nouvelles publie
     * si c'est le cas envoyer une story via telegramme
-
 
 ## Autres
 
