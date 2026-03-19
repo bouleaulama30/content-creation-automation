@@ -2,14 +2,24 @@ import React, {useState} from 'react'
 
 function MyForm() {
   const [link, setLink] = useState("");
-  const [template, setTemplate] = useState("");
+  const [template, setTemplate] = useState("default");
+  const [addLinkPool, setAddLinkPool] = useState(false);
+  const [createFromLinkPool, setcreateFromLinkPool] = useState(false);
 
   const handleLink = (e) => {
     setLink(e.target.value);
   }
-
+ 
   const handleTemplate = (e) => {
     setTemplate(e.target.value);
+  }
+
+  const handleAddLinkPool = (e) => {
+    setAddLinkPool(e.target.checked);
+  }
+
+  const handlecreateFromLinkPool = (e) => {
+    setcreateFromLinkPool(e.target.checked);
   }
 
   const handleSubmit = async (e) => {
@@ -17,6 +27,8 @@ function MyForm() {
     const userData = {
       link: link,
       template: template,
+      addLinkPool: addLinkPool,
+      createFromLinkPool: createFromLinkPool
     };
     try {
       const add = await fetch("/test", {
@@ -32,36 +44,50 @@ function MyForm() {
     }
   return (
     <form onSubmit={handleSubmit}>
+          <label for="link">Link: </label>
           <input
+            id="link"
             placeholder=" Enter Link"
             type="url"
             onChange={handleLink}
           />
-          <input
+          <br></br>
+          <br></br>
+          <label for="template">Template: </label>
+          <select
+            id="template"
             placeholder=" Enter Template"
             type="text"
             onChange={handleTemplate}
+          >
+          <option value="default">default</option>
+          <option value="oogway">oogway</option>
+          </select>
+          <br></br>
+          <label for="addLinkPool">Add link to pool: </label>
+          <input 
+            id="addLinkPool"
+            type="checkbox"
+            onChange={handleAddLinkPool}
+            checked={addLinkPool}
           />
+          <br></br>
+          <label for="createFromLinkPool">Create from link pool: </label>
+          <input 
+            id="createFromLinkPool"
+            type="checkbox"
+            onChange={handlecreateFromLinkPool}
+            checked={createFromLinkPool}
+          />
+          <br></br>
           <button type="submit">
-            Create
+            Create content
           </button>
         </form>
   );
 }
 
 function App() {
-
-  // const [backendData, setBackenData] = useState([{}])
-
-  // useEffect(() => {
-  //   fetch("/api").then(
-  //     response => response.json()
-  //   ).then(
-  //     data => {
-  //       setBackenData(data)
-  //     }
-  //   )
-  // }, [])
 
   return (
     <div>
@@ -70,12 +96,4 @@ function App() {
     </div>
   )
 }
-
-      // {(typeof backendData.users === 'undefined') ? (
-      //   <p>Loading...</p>
-      // ): (
-      //   backendData.users.map((user, i) => 
-      //     <p key={i}>{user}</p>
-      //   )
-      // )}
 export default App

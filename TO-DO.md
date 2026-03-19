@@ -13,6 +13,9 @@
 ## OrderTaker
 
 * continuer l'implem du site et faire un css de base pour que ça soit propre
+* me renvoyer des erreurs:  
+    * si il n'y a plus de liens dispo dans le pool de liens
+* mettre variable environnement pour le path du automate.sh
 * site web react de base avec un champ lien et un champ pour le template (cf dessin brouillon)
 
 ## Creator
