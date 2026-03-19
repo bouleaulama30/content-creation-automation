@@ -12,9 +12,11 @@
 
 ## OrderTaker
 
+* continuer de lire la doc de react
 * continuer l'implem du site et faire un css de base pour que ça soit propre
 * me renvoyer des erreurs:  
     * si il n'y a plus de liens dispo dans le pool de liens
+* mettre les checked box dans une fonction pour que ça soit plus propre
 * mettre variable environnement pour le path du automate.sh
 * site web react de base avec un champ lien et un champ pour le template (cf dessin brouillon)
 

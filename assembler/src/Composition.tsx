@@ -16,6 +16,23 @@ export const MyComp: React.FC<MyCompProp> = ({videosSrc, audioSrc, logoSrc}) => 
   return (
     <AbsoluteFill>
       <VideosInSequence videos={videosSrc}/>
+      {/* 2. Filtre de couleur "Sagesse / Cinématique" (Teinte chaude et profonde) */}
+      <AbsoluteFill 
+        style={{
+          backgroundColor: '#3b240e', // Un marron chaud / doré sombre (Ambiance Kung Fu Panda)
+          mixBlendMode: 'soft-light', // Fusion douce avec la vidéo
+          opacity: 0.4, // Assez présent pour lier toutes les vidéos ensemble
+        }} 
+      />
+
+      {/* 3. Dégradé sombre pour faire ressortir les sous-titres et centrer l'attention */}
+      <AbsoluteFill 
+        style={{
+          // Dégradé : transparent en haut, noir à 80% en bas
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.6) 100%)',
+          pointerEvents: 'none',
+        }} 
+      />
       <Audio src={audioSrc} />
       <Logo src={logoSrc} />
     </AbsoluteFill>
@@ -62,7 +79,13 @@ export const VideosInSequence: React.FC<Props> = ({videos}) => {
 
         return (
           <Series.Sequence key={vid.src} durationInFrames={vid.durationInFrames}>
-            <OffthreadVideo volume={0} src={staticFile(vid.src)} />
+            <OffthreadVideo volume={0} src={staticFile(vid.src)}  style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                // On baisse la saturation de 15% et on augmente le contraste pour un look "dramatique"
+                filter: 'saturate(0.85) contrast(1.15)',
+              }}/>
           </Series.Sequence>
         );
       })}

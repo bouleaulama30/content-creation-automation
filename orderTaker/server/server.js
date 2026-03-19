@@ -40,6 +40,7 @@ app.post("/test", (req, res) => {
     const template = req.body.template;
     const addLinkPool = req.body.addLinkPool
     const createFromLinkPool = req.body.createFromLinkPool
+    const createOriginalContent = req.body.createOriginalContent
 
     if (addLinkPool && link !== '') {
         // console.log(`${process.env.LINKS_FOLDER_PATH}/${template}-links.txt`)
@@ -51,6 +52,9 @@ app.post("/test", (req, res) => {
         const linkPool = ReadLinkAndMoveIt(`${process.env.LINKS_FOLDER_PATH}/${template}-links.txt`, `${process.env.LINKS_FOLDER_PATH}/${template}-links-used.txt`,);
         console.log(`create from pool link: ${linkPool}`)
         shell.exec(`../../automate.sh ${template} ${linkPool}`)
+    }
+    else if (createOriginalContent){
+        console.log("create original content")
     }
     else
         shell.exec(`../../automate.sh ${template} ${link}`)

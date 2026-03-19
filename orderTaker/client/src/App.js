@@ -5,6 +5,7 @@ function MyForm() {
   const [template, setTemplate] = useState("default");
   const [addLinkPool, setAddLinkPool] = useState(false);
   const [createFromLinkPool, setcreateFromLinkPool] = useState(false);
+  const [createOriginalContent, setcreateOriginalContent] = useState(false);
 
   const handleLink = (e) => {
     setLink(e.target.value);
@@ -22,13 +23,18 @@ function MyForm() {
     setcreateFromLinkPool(e.target.checked);
   }
 
+  const handlecreateOriginalContent = (e) => {
+    setcreateOriginalContent(e.target.checked);
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const userData = {
       link: link,
       template: template,
       addLinkPool: addLinkPool,
-      createFromLinkPool: createFromLinkPool
+      createFromLinkPool: createFromLinkPool,
+      createOriginalContent: createOriginalContent
     };
     try {
       const add = await fetch("/test", {
@@ -78,6 +84,14 @@ function MyForm() {
             type="checkbox"
             onChange={handlecreateFromLinkPool}
             checked={createFromLinkPool}
+          />
+          <br></br>
+          <label for="createOriginalContent">Create original content: </label>
+          <input 
+            id="createOriginalContent"
+            type="checkbox"
+            onChange={handlecreateOriginalContent}
+            checked={createOriginalContent}
           />
           <br></br>
           <button type="submit">
