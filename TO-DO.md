@@ -6,19 +6,23 @@
 
 ## Remotion
 
+* faire en sorte de pouvoir accueillir un deuxième audio mais pas à chaque fois pour régler son volume
+* faire en sorte d'avoir un profile de filtre selon le template que l'on passe props
+
 ## Deliver
 
 * clean le code
 
 ## OrderTaker
 
+* continuer l'archi en suivant le dessin
 * continuer de lire la doc de react
 * continuer l'implem du site et faire un css de base pour que ça soit propre
 * me renvoyer des erreurs:  
     * si il n'y a plus de liens dispo dans le pool de liens
 * mettre les checked box dans une fonction pour que ça soit plus propre
 * mettre variable environnement pour le path du automate.sh
-* site web react de base avec un champ lien et un champ pour le template (cf dessin brouillon)
+
 
 ## Creator
 ### script creator

@@ -25,7 +25,7 @@ if [ -n "$LINK_AUDIO" ]; then
     echo "suppresion de l'ancien audio"
     rm ${AUDIO_FILE_PATH}
     echo "Téléchargement de l'audio du lien ${LINK_AUDIO}"
-    yt-dlp -t mp3 "${LINK_AUDIO}" -o ${AUDIO_FILE_PATH}
+    yt-dlp -t mp3 --cookies-from-browser firefox "${LINK_AUDIO}" -o ${AUDIO_FILE_PATH}
 fi
 
 
