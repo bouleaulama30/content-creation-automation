@@ -1,30 +1,48 @@
 import React, {useState} from 'react'
 
+function CheckBox({id, setState, checked}){
+  const handleEvent = (e) => {
+    setState(e.target.checked);
+  }
+
+  return (
+      <input 
+    id={id}
+    type="checkbox"
+    onChange={handleEvent}
+    checked={checked}
+    />
+  )
+}
+
 function MyForm() {
   const [link, setLink] = useState("");
   const [template, setTemplate] = useState("default");
   const [addLinkPool, setAddLinkPool] = useState(false);
   const [createFromLinkPool, setcreateFromLinkPool] = useState(false);
   const [createOriginalContent, setcreateOriginalContent] = useState(false);
+  const [createScriptFromLink, setcreateScriptFromLink] = useState(false);
+  const [createScriptFromInput, setcreateScriptFromInput] = useState(false);
+  const [scriptNumber, setscriptNumber] = useState(false);
+  const [wordNumber, setwordNumber] = useState(false);
 
   const handleLink = (e) => {
     setLink(e.target.value);
   }
+
+  const handlecreateScriptFromInput = (e) => {
+    setcreateScriptFromInput(e.target.value);
+  }
+
+  const handlescriptNumber = (e) => {
+    setscriptNumber(e.target.value);
+  }
+  const handlewordNumber = (e) => {
+    setwordNumber(e.target.value);
+  }
  
   const handleTemplate = (e) => {
     setTemplate(e.target.value);
-  }
-
-  const handleAddLinkPool = (e) => {
-    setAddLinkPool(e.target.checked);
-  }
-
-  const handlecreateFromLinkPool = (e) => {
-    setcreateFromLinkPool(e.target.checked);
-  }
-
-  const handlecreateOriginalContent = (e) => {
-    setcreateOriginalContent(e.target.checked);
   }
 
   const handleSubmit = async (e) => {
@@ -34,7 +52,11 @@ function MyForm() {
       template: template,
       addLinkPool: addLinkPool,
       createFromLinkPool: createFromLinkPool,
-      createOriginalContent: createOriginalContent
+      createOriginalContent: createOriginalContent,
+      createScriptFromLink: createScriptFromLink,
+      createScriptFromInput: createScriptFromInput,
+      scriptNumber: scriptNumber,
+      wordNumber: wordNumber
     };
     try {
       const add = await fetch("/test", {
@@ -49,55 +71,82 @@ function MyForm() {
 
     }
   return (
-    <form onSubmit={handleSubmit}>
-          <label for="link">Link: </label>
-          <input
-            id="link"
-            placeholder=" Enter Link"
-            type="url"
-            onChange={handleLink}
-          />
-          <br></br>
-          <br></br>
-          <label for="template">Template: </label>
-          <select
-            id="template"
-            placeholder=" Enter Template"
-            type="text"
-            onChange={handleTemplate}
-          >
+    <form className="content-form" onSubmit={handleSubmit}>
+      <div className="form-row">
+        <label htmlFor="link">Link: </label>
+        <input
+          id="link"
+          placeholder=" Enter Link"
+          type="url"
+          onChange={handleLink}
+        />
+      </div>
+
+      <div className="form-row">
+        <label htmlFor="template">Template: </label>
+        <select
+          id="template"
+          placeholder=" Enter Template"
+          type="text"
+          onChange={handleTemplate}
+        >
           <option value="default">default</option>
           <option value="oogway">oogway</option>
-          </select>
-          <br></br>
-          <label for="addLinkPool">Add link to pool: </label>
-          <input 
-            id="addLinkPool"
-            type="checkbox"
-            onChange={handleAddLinkPool}
-            checked={addLinkPool}
-          />
-          <br></br>
-          <label for="createFromLinkPool">Create from link pool: </label>
-          <input 
-            id="createFromLinkPool"
-            type="checkbox"
-            onChange={handlecreateFromLinkPool}
-            checked={createFromLinkPool}
-          />
-          <br></br>
-          <label for="createOriginalContent">Create original content: </label>
-          <input 
-            id="createOriginalContent"
-            type="checkbox"
-            onChange={handlecreateOriginalContent}
-            checked={createOriginalContent}
-          />
-          <br></br>
-          <button type="submit">
-            Create content
-          </button>
-        </form>
+        </select>
+      </div>
+
+      <div className="form-row checkbox-row">
+        <label htmlFor="addLinkPool">Add link to pool: </label>
+        <CheckBox id="addLinkPool" setState={setAddLinkPool} checked={addLinkPool}/>
+      </div>
+ 
+      <div className="form-row checkbox-row">
+        <label htmlFor="createFromLinkPool">Create from link pool: </label>
+        <CheckBox id="createFromLinkPool" setState={setcreateFromLinkPool} checked={createFromLinkPool}/>
+      </div>
+
+      <div className="form-row checkbox-row">
+        <label htmlFor="createOriginalContent">Create original content: </label>
+        <CheckBox id="createOriginalContent" setState={setcreateOriginalContent} checked={createOriginalContent}/>
+      </div>
+
+      <div className="form-row checkbox-row">
+        <label htmlFor="createScriptFromLink">Create script from link: </label>
+        <CheckBox id="createScriptFromLink" setState={setcreateScriptFromLink} checked={createScriptFromLink}/>
+      </div>
+
+      <div className="form-row">
+        <label htmlFor="createScriptFromInput">Create script from input: </label>
+        <input
+          id="input"
+          placeholder=" Enter input"
+          type="text"
+          onChange={handlecreateScriptFromInput}
+        />      
+      </div>
+      <div className="form-row">
+        <label htmlFor="createScriptFromInput">Script parameters: </label>
+      </div>
+      <div className="form-row">
+        <input
+          id="numberOfScript"
+          placeholder=" Enter number of script"
+          type="number"
+          onChange={handlescriptNumber}
+        />      
+      </div>
+      <div className="form-row">
+        <input
+          id="numberOfWord"
+          placeholder=" Enter number of word"
+          type="number"
+          onChange={handlewordNumber}
+        />      
+      </div>
+      <button className="form-row" type="submit">
+        Create content
+      </button>
+    </form>
   );
 }
 
@@ -105,7 +154,7 @@ function App() {
 
   return (
     <div>
-      <h1>Welcome to content creation automation</h1>
+      <h1>Content Creation Automation</h1>
       <MyForm />
     </div>
   )

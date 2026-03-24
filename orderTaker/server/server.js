@@ -41,23 +41,27 @@ app.post("/test", (req, res) => {
     const addLinkPool = req.body.addLinkPool
     const createFromLinkPool = req.body.createFromLinkPool
     const createOriginalContent = req.body.createOriginalContent
+    const createScriptFromLink = req.body.createScriptFromLink
+    const createScriptFromInput = req.body.createScriptFromInput
+    const scriptNumber = req.body.scriptNumber
+    const wordNumber = req.body.wordNumber
 
-    if (addLinkPool && link !== '') {
-        // console.log(`${process.env.LINKS_FOLDER_PATH}/${template}-links.txt`)
-        WriteLink(`${process.env.LINKS_FOLDER_PATH}/${template}-links.txt`, link);
-        // WriteLink("link.txt", link);
-    }
-    else if (createFromLinkPool && !addLinkPool){
-        // const linkPool = ReadLinkAndMoveIt("link.txt", "link-used.txt");
-        const linkPool = ReadLinkAndMoveIt(`${process.env.LINKS_FOLDER_PATH}/${template}-links.txt`, `${process.env.LINKS_FOLDER_PATH}/${template}-links-used.txt`,);
-        console.log(`create from pool link: ${linkPool}`)
-        shell.exec(`../../automate.sh ${template} ${linkPool}`)
-    }
-    else if (createOriginalContent){
-        console.log("create original content")
-    }
-    else
-        shell.exec(`../../automate.sh ${template} ${link}`)
+    // if (addLinkPool && link !== '') {
+    //     // console.log(`${process.env.LINKS_FOLDER_PATH}/${template}-links.txt`)
+    //     WriteLink(`${process.env.LINKS_FOLDER_PATH}/${template}-links.txt`, link);
+    //     // WriteLink("link.txt", link);
+    // }
+    // else if (createFromLinkPool && !addLinkPool){
+    //     // const linkPool = ReadLinkAndMoveIt("link.txt", "link-used.txt");
+    //     const linkPool = ReadLinkAndMoveIt(`${process.env.LINKS_FOLDER_PATH}/${template}-links.txt`, `${process.env.LINKS_FOLDER_PATH}/${template}-links-used.txt`,);
+    //     console.log(`create from pool link: ${linkPool}`)
+    //     shell.exec(`../../automate.sh ${template} ${linkPool}`)
+    // }
+    // else if (createOriginalContent){
+    //     console.log("create original content")
+    // }
+    // else
+    //     shell.exec(`../../automate.sh ${template} ${link}`)
     console.log(req.body);
 })
 
