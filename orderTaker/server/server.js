@@ -55,7 +55,7 @@ app.post("/test", (req, res) => {
         const linkPool = ReadLinkAndMoveIt("link.txt", "link-used.txt");
         // const linkPool = ReadLinkAndMoveIt(`${process.env.LINKS_FOLDER_PATH}/${template}-links.txt`, `${process.env.LINKS_FOLDER_PATH}/${template}-links-used.txt`,);
         console.log(`create from pool link: ${linkPool}`)
-        // shell.exec(`../../automate.sh ${template} ${linkPool}`)
+        // shell.exec(``${process.env.PROJECT_BASE_PATH}/automate.sh ${template} ${linkPool}`)
     }
     else if (createOriginalContent){
         console.log("create original content")
@@ -64,10 +64,10 @@ app.post("/test", (req, res) => {
         console.log("create script from link");
         const dataString = JSON.stringify(req.body, null);
         fs.writeFileSync(`${process.env.CREATOR_PATH}/data.json`, dataString);
-        shell.exec(`../../test.sh ${link}`);
+        shell.exec(`${process.env.PROJECT_BASE_PATH}/script-creator.sh ${link}`);
     }
     else
-        // shell.exec(`../../automate.sh ${template} ${link}`)
+        // shell.exec(``${process.env.PROJECT_BASE_PATH}/automate.sh ${template} ${link}`)
     console.log(req.body);
 })
 
