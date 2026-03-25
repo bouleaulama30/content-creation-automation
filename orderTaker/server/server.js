@@ -61,7 +61,10 @@ app.post("/test", (req, res) => {
         console.log("create original content")
     }
     else if (createScriptFromLink && link != '') {
-        shell.exec(`../../test.sh ${template} ${link}`)
+        console.log("create script from link");
+        const dataString = JSON.stringify(req.body, null);
+        fs.writeFileSync(`${process.env.CREATOR_PATH}/data.json`, dataString);
+        shell.exec(`../../test.sh ${link}`);
     }
     else
         // shell.exec(`../../automate.sh ${template} ${link}`)

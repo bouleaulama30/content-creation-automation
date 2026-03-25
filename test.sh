@@ -2,8 +2,7 @@
 
 echo "test script is running"
 
-TYPE_REEL=$1
-LINK_AUDIO=$2
+LINK_AUDIO=$1
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ENV_FILE="${SCRIPT_DIR}/.env"
@@ -28,6 +27,7 @@ yt-dlp -t mp4 --cookies-from-browser firefox "${LINK_AUDIO}" -o ${INTERMEDIAR_VI
 
 cd ${CAPTIONER_PATH} || exit
 node sub.mjs public/video.mp4 
+python ${CREATOR_PATH}/script-creator.py
 
 
 

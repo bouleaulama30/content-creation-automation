@@ -16,15 +16,18 @@ function CheckBox({id, setState, checked}){
 }
 
 function MyForm() {
+  const defaultNumberOfWords = 30;
+  const defaultNumberOfScripts = 1;
+
   const [link, setLink] = useState("");
   const [template, setTemplate] = useState("default");
   const [addLinkPool, setAddLinkPool] = useState(false);
   const [createFromLinkPool, setcreateFromLinkPool] = useState(false);
   const [createOriginalContent, setcreateOriginalContent] = useState(false);
   const [createScriptFromLink, setcreateScriptFromLink] = useState(false);
-  const [createScriptFromInput, setcreateScriptFromInput] = useState(false);
-  const [scriptNumber, setscriptNumber] = useState(false);
-  const [wordNumber, setwordNumber] = useState(false);
+  const [createScriptFromInput, setcreateScriptFromInput] = useState("");
+  const [scriptNumber, setscriptNumber] = useState(defaultNumberOfScripts);
+  const [wordNumber, setwordNumber] = useState(defaultNumberOfWords);
 
   const handleLink = (e) => {
     setLink(e.target.value);
@@ -130,7 +133,7 @@ function MyForm() {
       <div className="form-row">
         <input
           id="numberOfScript"
-          placeholder=" Enter number of script"
+          placeholder={` Nbr of scripts (default ${defaultNumberOfScripts})`}
           type="number"
           onChange={handlescriptNumber}
         />      
@@ -138,7 +141,7 @@ function MyForm() {
       <div className="form-row">
         <input
           id="numberOfWord"
-          placeholder=" Enter number of word"
+          placeholder={` Nbr of words (default ${defaultNumberOfWords})`}
           type="number"
           onChange={handlewordNumber}
         />      
