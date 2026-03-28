@@ -40,7 +40,7 @@ export const MyComp: React.FC<MyCompProp> = ({videosSrc, audioSrc1, audioSrc2Pro
           pointerEvents: 'none',
         }} 
       />
-      <Audio src={audioSrc1} volume={0} />
+      <Audio src={audioSrc1} volume={1} />
       <Audio src={audioSrc2Prop.src} volume={volume}/>
       <Logo src={logoSrc} />
     </AbsoluteFill>

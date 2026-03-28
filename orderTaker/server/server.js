@@ -64,6 +64,7 @@ app.post("/test", (req, res) => {
     else if (createOriginalContent){
         console.log("create original content")
         shell.exec(`${process.env.PROJECT_BASE_PATH}/content-creator.sh ${template}`);
+        shell.exec(`${process.env.PROJECT_BASE_PATH}/automate.sh ${template} ${link}`)
     }
     else if (createScriptFromLink && link != '') {
         console.log("create script from link");
