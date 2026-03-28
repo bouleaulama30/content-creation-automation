@@ -40,3 +40,8 @@ cargo run --release --features cli --bin generate_audio --   --model-dir ./model
 cargo run --release --features cli --bin generate_audio --   --model-dir ./modele-base-06b   --text "Il arrivera un matin où tu attendras mon message, mais ton écran restera désespérément noir. Tu chercheras mon attention, celle que je t'offrais sans compter, mais je serai déjà loin. Et quand ce silence te pèsera, n'oublie pas que j'ai tout fait pour rester. Mais c'est ton indifférence qui m'a poussé vers la sortie
 "   --ref-audio default.wav   --ref-text "Et un jour je ne te dérangerai plus, je ne t'appellerai plus, je ne t'écrirai plus non plus. Tu n'entendras plus jamais ma voix. Et si un jour je te manque, rappelle-toi que j'étais là un jour. Et c'est toi qui m'as laissé partir. Si ce message te fait penser à quelqu'un, aime et suis-moi.
 " --language french
+
+
+cargo run --release --features cli --bin generate_audio --   --model-dir ~/IA/modele-base-06b   --text "Il arrivera un matin où tu attendras mon message, mais ton écran restera désespérément noir. Tu chercheras mon attention, celle que je t'offrais sans compter, mais je serai déjà loin. Et quand ce silence te pèsera, n'oublie pas que j'ai tout fait pour rester. Mais c'est ton indifférence qui m'a poussé vers la sortie
+"   --ref-audio default.wav   --ref-text "Et un jour je ne te dérangerai plus, je ne t'appellerai plus, je ne t'écrirai plus non plus. Tu n'entendras plus jamais ma voix. Et si un jour je te manque, rappelle-toi que j'étais là un jour. Et c'est toi qui m'as laissé partir. Si ce message te fait penser à quelqu'un, aime et suis-moi.
+" --language french

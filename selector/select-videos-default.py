@@ -17,6 +17,11 @@ VIDEOS_SRC_DEFAULT_PATH = os.getenv('VIDEOS_SRC_DEFAULT_PATH')
 AUDIO_FOLDER_PATH = os.getenv('AUDIO_FOLDER_PATH')
 AUDIO_NAME = os.getenv('AUDIO_NAME')
 AUDIO_FILE_PATH= os.getenv('AUDIO_FILE_PATH')
+ORIGINAL_CONTENT_MUSIQUES_DEFAULT_FOLDER_PATH= os.getenv('ORIGINAL_CONTENT_MUSIQUES_DEFAULT_FOLDER_PATH')
+ORIGINAL_CONTENT_MUSIQUE_NAME= os.getenv('ORIGINAL_CONTENT_MUSIQUE_NAME')
+DATA_CLIENT_FILE= os.getenv('DATA_CLIENT_FILE')
+VOLUME_MUSIQUE= float(os.getenv('VOLUME_MUSIQUE'))
+
 
 
 PROJECT_BASE_PATH = os.getenv('PROJECT_BASE_PATH')
@@ -49,6 +54,13 @@ def select_videos(video_path, nbr_video):
     print(selected_videos, sep="\n")
     return selected_videos
 
+def select_musique(musiques_path): 
+    files = os.listdir(musiques_path)
+    files = [f for f in files if os.path.isfile(musiques_path+'/'+f)]
+    rd.shuffle(files)
+    print(files[0], sep="\n")
+    return files[0]
+
 def copy_and_rename(src_path, dst_path, src_name, dst_name):
 	# Copy the file
 	shutil.copy(f"{src_path}/{src_name}", dst_path)
@@ -67,9 +79,10 @@ def file_exists(path: str):
     """Vérifie si un fichier existe à l'emplacement donné."""
     return os.path.exists(path)
 
-def write_data_json(folder_video_path):
+def write_data_json(folder_video_path, is_original):
     videos: List[VideoToEmbed] = []
     idx = 0
+    props = {"videosSrc" : []}
     # On boucle tant que le fichier existe
     while file_exists(f"{folder_video_path}/video{idx}.mp4"):
         # print(f"la video{idx} existe !")
@@ -79,17 +92,28 @@ def write_data_json(folder_video_path):
             "src": f"video{idx}.mp4"
         })
         idx += 1
+    props["videosSrc"] = videos
+
+    if is_original:
+        props["audioSrc2Prop"] = {"src": f"{ORIGINAL_CONTENT_MUSIQUE_NAME}", "volume": VOLUME_MUSIQUE}
 
     with open(f"{ASSEMBLER_PATH}/props.json", 'w') as f:
-        json.dump({"videosSrc": videos}, f)
-        print(videos)
+        json.dump(props, f)
+    print(props)
 
 
 if __name__ == "__main__":
-    print(f"{AUDIO_NAME}, {AUDIO_FILE_PATH}")
     nbr_video = nbr_video_to_select(f'{AUDIO_FILE_PATH}', PIECE_VIDEO_DURATION)
     copy_and_rename(f"{AUDIO_FOLDER_PATH}", f"{INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}",f"{AUDIO_NAME}", f"{AUDIO_NAME}")
     videos = select_videos(f"{VIDEOS_SRC_DEFAULT_PATH}", nbr_video)
     print(videos)
     move_selected_videos(f"{VIDEOS_SRC_DEFAULT_PATH}", f"{INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}", videos)
-    write_data_json(f"{INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}")
+    
+    with open(f"{DATA_CLIENT_FILE}", 'r') as json_data:
+        data = json.load(json_data)
+        original = data["createOriginalContent"]
+    if original:
+        musique = select_musique(ORIGINAL_CONTENT_MUSIQUES_DEFAULT_FOLDER_PATH)
+        copy_and_rename(f"{ORIGINAL_CONTENT_MUSIQUES_DEFAULT_FOLDER_PATH}", f"{INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}",musique, ORIGINAL_CONTENT_MUSIQUE_NAME)
+
+    write_data_json(f"{INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}", original)

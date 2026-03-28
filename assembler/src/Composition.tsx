@@ -6,13 +6,20 @@ type MediaSrcProp = {
   src: string;
 };
 
+type AudioSrcProp = {
+  src: string;
+  volume: number;
+};
+
 type MyCompProp = {
   videosSrc: VideoToEmbed[];
-  audioSrc: string;
+  audioSrc1: string;
+  audioSrc2Prop: AudioSrcProp;
   logoSrc: string;
 }
 
-export const MyComp: React.FC<MyCompProp> = ({videosSrc, audioSrc, logoSrc}) => {
+export const MyComp: React.FC<MyCompProp> = ({videosSrc, audioSrc1, audioSrc2Prop, logoSrc}) => {
+  const volume: number = audioSrc2Prop.volume;
   return (
     <AbsoluteFill>
       <VideosInSequence videos={videosSrc}/>
@@ -33,7 +40,8 @@ export const MyComp: React.FC<MyCompProp> = ({videosSrc, audioSrc, logoSrc}) => 
           pointerEvents: 'none',
         }} 
       />
-      <Audio src={audioSrc} />
+      <Audio src={audioSrc1} volume={0} />
+      <Audio src={audioSrc2Prop.src} volume={volume}/>
       <Logo src={logoSrc} />
     </AbsoluteFill>
   );
@@ -51,10 +59,10 @@ export const Logo: React.FC<MediaSrcProp> = ({src}) => {
   );
 };
 
-export const Audio: React.FC<MediaSrcProp> = ({src}) => {
+export const Audio: React.FC<AudioSrcProp> = ({src, volume}) => {
   return (
     <AbsoluteFill>
-      <Html5Audio src={staticFile(src)} />
+      <Html5Audio src={staticFile(src)} volume={volume} />
     </AbsoluteFill>
   );
 };
@@ -98,7 +106,7 @@ export const calculateMetadata: CalculateMetadataFunction<MyCompProp> = async ({
   const fps = 30;
 
   const {slowDurationInSeconds} = await parseMedia({
-    src: staticFile(props.audioSrc), 
+    src: staticFile(props.audioSrc1), 
     fields: {
       slowDurationInSeconds: true,
     },

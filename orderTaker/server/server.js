@@ -46,28 +46,31 @@ app.post("/test", (req, res) => {
     const scriptNumber = req.body.scriptNumber
     const wordNumber = req.body.wordNumber
 
+    const dataString = JSON.stringify(req.body, null);
+    fs.writeFileSync(`${process.env.DATA_CLIENT_FILE}`, dataString);
+
+
     if (addLinkPool && link !== '') {
-        // console.log(`${process.env.LINKS_FOLDER_PATH}/${template}-links.txt`)
-        // WriteLink(`${process.env.LINKS_FOLDER_PATH}/${template}-links.txt`, link);
+        console.log(`${process.env.LINKS_FOLDER_PATH}/${template}-links.txt`)
+        WriteLink(`${process.env.LINKS_FOLDER_PATH}/${template}-links.txt`, link);
         WriteLink("link.txt", link);
     }
     else if (createFromLinkPool && !addLinkPool){
-        const linkPool = ReadLinkAndMoveIt("link.txt", "link-used.txt");
-        // const linkPool = ReadLinkAndMoveIt(`${process.env.LINKS_FOLDER_PATH}/${template}-links.txt`, `${process.env.LINKS_FOLDER_PATH}/${template}-links-used.txt`,);
+        // const linkPool = ReadLinkAndMoveIt("link.txt", "link-used.txt");
+        const linkPool = ReadLinkAndMoveIt(`${process.env.LINKS_FOLDER_PATH}/${template}-links.txt`, `${process.env.LINKS_FOLDER_PATH}/${template}-links-used.txt`,);
         console.log(`create from pool link: ${linkPool}`)
-        // shell.exec(``${process.env.PROJECT_BASE_PATH}/automate.sh ${template} ${linkPool}`)
+        shell.exec(`${process.env.PROJECT_BASE_PATH}/automate.sh ${template} ${linkPool}`)
     }
     else if (createOriginalContent){
         console.log("create original content")
+        shell.exec(`${process.env.PROJECT_BASE_PATH}/content-creator.sh ${template}`);
     }
     else if (createScriptFromLink && link != '') {
         console.log("create script from link");
-        const dataString = JSON.stringify(req.body, null);
-        fs.writeFileSync(`${process.env.CREATOR_PATH}/data.json`, dataString);
         shell.exec(`${process.env.PROJECT_BASE_PATH}/script-creator.sh ${link}`);
     }
     else
-        // shell.exec(``${process.env.PROJECT_BASE_PATH}/automate.sh ${template} ${link}`)
+        shell.exec(`${process.env.PROJECT_BASE_PATH}/automate.sh ${template} ${link}`)
     console.log(req.body);
 })
 

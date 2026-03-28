@@ -21,6 +21,11 @@ AUDIO_FOLDER_PATH = os.getenv('AUDIO_FOLDER_PATH')
 AUDIO_NAME = os.getenv('AUDIO_NAME')
 AUDIO_FILE_PATH= os.getenv('AUDIO_FILE_PATH')
 
+ORIGINAL_CONTENT_MUSIQUES_OOGWAY_FOLDER_PATH= os.getenv('ORIGINAL_CONTENT_MUSIQUES_OOGWAY_FOLDER_PATH')
+ORIGINAL_CONTENT_MUSIQUE_NAME= os.getenv('ORIGINAL_CONTENT_MUSIQUE_NAME')
+DATA_CLIENT_FILE= os.getenv('DATA_CLIENT_FILE')
+VOLUME_MUSIQUE= float(os.getenv('VOLUME_MUSIQUE'))
+
 
 PROJECT_BASE_PATH = os.getenv('PROJECT_BASE_PATH')
 ASSEMBLER_PATH = os.getenv('ASSEMBLER_PATH')
@@ -55,6 +60,12 @@ def nbr_video_to_select(audio_path, duration_per_video):
     audioDuration = audio.info.length
     return int(audioDuration/duration_per_video + 1)
 
+def select_musique(musiques_path): 
+    files = os.listdir(musiques_path)
+    files = [f for f in files if os.path.isfile(musiques_path+'/'+f)]
+    rd.shuffle(files)
+    print(files[0], sep="\n")
+    return files[0]
 
 
 def select_oogway_videos(video_path_oogway, video_path_transi, duration_transi_videos, nbr_begin_oogway_video, audio_path): 
@@ -125,8 +136,10 @@ def file_exists(path: str):
     """Vérifie si un fichier existe à l'emplacement donné."""
     return os.path.exists(path)
 
-def write_data_json(selected_videos):
+def write_data_json(selected_videos, is_original):
     videos: List[VideoToEmbed] = []
+    props = {"videosSrc" : []}
+
     # On boucle tant que le fichier existe
         # print(f"la video{idx} existe !")
     for (video_src_name, video_duration, _) in selected_videos: 
@@ -138,16 +151,27 @@ def write_data_json(selected_videos):
             "src": video_src_name
         })
 
+    props["videosSrc"] = videos
+
+    if is_original:
+        props["audioSrc2Prop"] = {"src": f"{ORIGINAL_CONTENT_MUSIQUE_NAME}", "volume": VOLUME_MUSIQUE}
+
     with open(f"{ASSEMBLER_PATH}/props.json", 'w') as f:
-        json.dump({"videosSrc": videos}, f)
-        print(videos)
+        json.dump(props, f)
+    print(props)
 
 
 if __name__ == "__main__":
-    # print(f"{AUDIO_NAME}, {AUDIO_FILE_PATH}")
     duration = get_video_duration(f"{VIDEOS_SRC_OOGWAY_PATH}/oogway1.mp4")
     videos = select_oogway_videos(f"{VIDEOS_SRC_OOGWAY_PATH}", f"{VIDEOS_SRC_TRANSI_PATH}", PIECE_VIDEO_TRANSI_DURATION, NBR_BEGIN_OOGWAY_VIDEO, f"{AUDIO_FILE_PATH}")
     move_selected_videos(f"{VIDEOS_SRC_OOGWAY_PATH}", f"{VIDEOS_SRC_TRANSI_PATH}", f"{INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}", videos)
     copy_and_rename_audio(f"{AUDIO_FOLDER_PATH}", f"{INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}",f"{AUDIO_NAME}", f"{AUDIO_NAME}")
-    write_data_json(videos)
-    # print(videos)
+    with open(f"{DATA_CLIENT_FILE}", 'r') as json_data:
+        data = json.load(json_data)
+        original = data["createOriginalContent"]
+    if original:
+        musique = select_musique(ORIGINAL_CONTENT_MUSIQUES_OOGWAY_FOLDER_PATH)
+        copy_and_rename_audio(f"{ORIGINAL_CONTENT_MUSIQUES_OOGWAY_FOLDER_PATH}", f"{INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}",musique, ORIGINAL_CONTENT_MUSIQUE_NAME)
+
+    write_data_json(videos, original)
+    print(videos)

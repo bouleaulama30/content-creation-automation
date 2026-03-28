@@ -44,8 +44,7 @@ il va piocher dans un des fichiers scripts (relatif au personnage) et il va util
     * le logo inclut
     * un titre
 
-* voir si c'est nécessaire de faire des stories à chaque nouvelles publie
-    * si c'est le cas envoyer une story via telegramme
+* si c'est le cas envoyer une story via telegramme
 
 ## Autres
 

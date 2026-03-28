@@ -11,7 +11,7 @@ dotenv.load_dotenv()
 TOKEN = os.getenv('TOKEN')
 GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
 INTERMEDIAR_VIDEOS_CAPTIONER_PATH = os.getenv('INTERMEDIAR_VIDEOS_CAPTIONER_PATH')
-CREATOR_PATH = os.getenv('CREATOR_PATH')
+DATA_CLIENT_FILE = os.getenv('DATA_CLIENT_FILE')
 ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH = os.getenv('ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH')
 client = genai.Client()
 
@@ -32,7 +32,7 @@ angle_choisi = random.choice(angles)
 hook_choisi = random.choice(hooks)
 
 # lecture des données du client
-with open(f"{CREATOR_PATH}/data.json", 'r') as json_data:
+with open(f"{DATA_CLIENT_FILE}", 'r') as json_data:
     data = json.load(json_data)
 
 # Paramètres fixes

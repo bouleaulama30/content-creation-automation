@@ -38,7 +38,8 @@ export const RemotionRoot: React.FC = () => {
             src: 'video4.mp4',
           },
         ],
-        audioSrc: 'audio.mp3',
+        audioSrc1: 'audio.mp3',
+        audioSrc2Prop: {src: 'audio.mp3', volume: 0},
         logoSrc: 'logo.png',
       }}
         calculateMetadata={calculateMetadata}
