@@ -70,6 +70,10 @@ app.post("/test", (req, res) => {
         console.log("create script from link");
         shell.exec(`${process.env.PROJECT_BASE_PATH}/script-creator.sh ${link}`);
     }
+    else if (createScriptFromInput != '' && link == '') {
+        console.log("create script from input");
+        shell.exec(`python ${process.env.CREATOR_PATH}/script-creator.py`);
+    }
     else
         shell.exec(`${process.env.PROJECT_BASE_PATH}/automate.sh ${template} ${link}`)
     console.log(req.body);

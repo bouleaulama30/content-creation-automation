@@ -38,8 +38,8 @@ with open(f"{DATA_CLIENT_FILE}", 'r') as json_data:
 # Paramètres fixes
 nombre_scripts = data["scriptNumber"]
 wordNumber = data["wordNumber"] 
-# wordNumber = 100
 template = data["template"]
+input_prompt = data["createScriptFromInput"]
 
 # transcription du lien
 with open(f"{INTERMEDIAR_VIDEOS_CAPTIONER_PATH}/video.json", 'r') as f:
@@ -59,7 +59,7 @@ Ta mission : Écrire {nombre_scripts} script(s) original(aux) prêt(s) à être 
 
 PARAMÈTRES DU SCRIPT :
 - Durée visée par script : environ {wordNumber} mots.
-- Thème central : {theme_choisi}.
+- Thème central : {input_prompt}.
 - Ton / Angle : {angle_choisi}.
 - Type d'accroche (Hook) : {hook_choisi}.
 
@@ -69,7 +69,7 @@ RÈGLES STRICTES :
 3. Fais des phrases courtes et percutantes.
 4. Ne mets pas de didascalies complexes, juste le texte à prononcer.
 
-Sépare clairement chaque script généré avec "--- SCRIPT [Numéro] ---"."""
+Sépare clairement chaque script généré avec "--", ne place aucun mot en dehors du script entres les "--", respecte le nombre de script qui est de {nombre_scripts} et mets les scripts entre guillemets. Et si tu dois mettres des guillements dans un script utilise "'" """
 
 
 # =====================================================================
@@ -95,12 +95,16 @@ RÈGLES STRICTES :
 Sépare clairement chaque script généré avec "--", respecte le nombre de script qui est de {nombre_scripts} et mets les scripts entre guillemets."""
 
 # Affichage pour vérifier (Dans ton vrai code, tu envoies ça à l'API de Gemma-3)
+
+prompts_dico = {"default": [prompt_exemple, prompt_theme], "oogway": None}
+
 print("PROMPT SÉLECTIONNÉ PRÊT POUR L'API :\n")
-print(prompt_exemple)
+prompt_select = prompts_dico[template][0] if (data["createFromLinkPool"] == True) else prompts_dico[template][1]
+print(prompt_select)
 
 reponse = client.models.generate_content(
     model="gemma-3-27b-it",
-    contents=prompt_exemple,
+    contents=prompt_select,
 )
 
 print("Réponse de l'IA\n")
