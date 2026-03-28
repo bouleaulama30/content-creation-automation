@@ -18,7 +18,7 @@
 * continuer de lire la doc de react
 * me renvoyer des erreurs:  
     * si il n'y a plus de liens dispo dans le pool de liens
-* me renvoyer des logs sur le client
+    * si des combinaisons de cases ne sont pas bonnes
 
 
 ## Creator

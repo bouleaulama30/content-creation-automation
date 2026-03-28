@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
+import './App.css';
 
 function CheckBox({id, setState, checked}){
   const handleEvent = (e) => {
@@ -15,7 +16,7 @@ function CheckBox({id, setState, checked}){
   )
 }
 
-function MyForm() {
+function MyForm({onSubmitted}) {
   const defaultNumberOfWords = 30;
   const defaultNumberOfScripts = 1;
 
@@ -68,10 +69,10 @@ function MyForm() {
         body: JSON.stringify(userData),
       });
       console.log(add)
+      onSubmitted();
     }catch(err){
       console.error()
     };
-
     }
   return (
     <form className="content-form" onSubmit={handleSubmit}>
@@ -153,12 +154,38 @@ function MyForm() {
   );
 }
 
+function Logs ({refreshKey}) {
+  const [log, setLog] = useState("")
+
+  useEffect(()=>{
+    const getData= async() => {
+      const response = await fetch("/logs")
+      const text = await response.text();
+      setLog(text);
+    }
+    getData();
+  }, [refreshKey]);
+
+  return (
+    <section className="logs-panel" aria-label="Execution logs">
+      <h2 className="logs-title">Logs</h2>
+      <pre className="logs-output">{log}</pre>
+    </section>
+  )
+}
+
 function App() {
+  const [logsRefreshKey, setLogsRefreshKey] = useState(0);
+
+  const handleSubmitComplete = () => {
+    setLogsRefreshKey((prev) => prev + 1);
+  }
 
   return (
     <div>
       <h1>Content Creation Automation</h1>
-      <MyForm />
+      <MyForm onSubmitted={handleSubmitComplete} />
+      <Logs refreshKey={logsRefreshKey} />
     </div>
   )
 }

@@ -34,6 +34,12 @@ function ReadLinkAndMoveIt(fileSrc, fileDst){
 const app = express()
 app.use(express.json())
 
+app.get("/logs", (req, res) => {
+    console.log("logs")
+    const logs = fs.readFileSync("logs.txt", "utf-8")
+    res.send(logs)
+    // res.send({"log": {logs}})
+})
 
 app.post("/test", (req, res) => {
     const link = req.body.link;
@@ -43,39 +49,48 @@ app.post("/test", (req, res) => {
     const createOriginalContent = req.body.createOriginalContent
     const createScriptFromLink = req.body.createScriptFromLink
     const createScriptFromInput = req.body.createScriptFromInput
-    const scriptNumber = req.body.scriptNumber
-    const wordNumber = req.body.wordNumber
 
     const dataString = JSON.stringify(req.body, null);
     fs.writeFileSync(`${process.env.DATA_CLIENT_FILE}`, dataString);
 
-
     if (addLinkPool && link !== '') {
+        fs.writeFileSync("logs.txt", "Task in progress: adding link to pool...");
         console.log(`${process.env.LINKS_FOLDER_PATH}/${template}-links.txt`)
         WriteLink(`${process.env.LINKS_FOLDER_PATH}/${template}-links.txt`, link);
-        WriteLink("link.txt", link);
+        fs.writeFileSync("logs.txt", "Case addLinkPool: link added to pool");
     }
     else if (createFromLinkPool && !addLinkPool){
+        fs.writeFileSync("logs.txt", "Task in progress: creating content from link pool...");
         // const linkPool = ReadLinkAndMoveIt("link.txt", "link-used.txt");
         const linkPool = ReadLinkAndMoveIt(`${process.env.LINKS_FOLDER_PATH}/${template}-links.txt`, `${process.env.LINKS_FOLDER_PATH}/${template}-links-used.txt`,);
         console.log(`create from pool link: ${linkPool}`)
         shell.exec(`${process.env.PROJECT_BASE_PATH}/automate.sh ${template} ${linkPool}`)
+        fs.writeFileSync("logs.txt", `Case createFromLinkPool: used link ${linkPool}`);
     }
     else if (createOriginalContent){
+        fs.writeFileSync("logs.txt", "Task in progress: creating original content...");
         console.log("create original content")
         shell.exec(`${process.env.PROJECT_BASE_PATH}/content-creator.sh ${template}`);
         shell.exec(`${process.env.PROJECT_BASE_PATH}/automate.sh ${template} ${link}`)
+        fs.writeFileSync("logs.txt", "Case createOriginalContent: content generated");
     }
     else if (createScriptFromLink && link != '') {
+        fs.writeFileSync("logs.txt", "Task in progress: creating script from link...");
         console.log("create script from link");
         shell.exec(`${process.env.PROJECT_BASE_PATH}/script-creator.sh ${link}`);
+        fs.writeFileSync("logs.txt", `Case createScriptFromLink: script created from link ${link}`);
     }
     else if (createScriptFromInput != '' && link == '') {
+        fs.writeFileSync("logs.txt", "Task in progress: creating script from input...");
         console.log("create script from input");
         shell.exec(`python ${process.env.CREATOR_PATH}/script-creator.py`);
+        fs.writeFileSync("logs.txt", "Case createScriptFromInput: script created from input");
     }
-    else
+    else {
+        fs.writeFileSync("logs.txt", "Task in progress: running default automation...");
         shell.exec(`${process.env.PROJECT_BASE_PATH}/automate.sh ${template} ${link}`)
+        fs.writeFileSync("logs.txt", "Case default: automate script executed");
+    }
     console.log(req.body);
 })
 
