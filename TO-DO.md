@@ -18,7 +18,7 @@
 * continuer de lire la doc de react
 * me renvoyer des erreurs:  
     * si il n'y a plus de liens dispo dans le pool de liens
-    * si des combinaisons de cases ne sont pas bonnes
+    * si des combinaisons de cases ne sont pas bonnes   
 
 
 ## Creator
@@ -52,4 +52,6 @@
 * faire le set up sur la machine du bureau:
     * penser à update le tree et le .env.bak sur le github
 * quand les 1500 abonnées seront atteint, reprendre la video de 4h et se faire une vrai DA complète (joué le jeu)
+    * Maj aussi sur le compte insta
 * faire un repo github vraiment clean et le rendre ouvert à tous donc faire un readme clean
+* continuer de faire du tri dans les vidéos et en ajouter des nouvelles

@@ -17,7 +17,7 @@ const container: React.CSSProperties = {
   alignItems: "center",
   top: undefined,
   bottom: 350,
-  height: 900,
+  height: 1060,
 };
 
 const DESIRED_FONT_SIZE = 110;
@@ -46,7 +46,7 @@ export const Page: React.FC<{
         style={{
           fontSize,
           color: "white",
-          WebkitTextStroke: "20px black",
+          WebkitTextStroke: "3px black",
           paintOrder: "stroke",
           transform: makeTransform([
             scale(interpolate(enterProgress, [0, 1], [0.8, 1])),
