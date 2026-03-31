@@ -53,7 +53,7 @@ export const Logo: React.FC<MediaSrcProp> = ({src}) => {
         <Img 
            src={staticFile(src)}
             style={{
-              transform: 'scale(0.40) translateY(2900px)',
+              transform: 'scale(0.40) translateY(2930px)',
             }}/>
      </AbsoluteFill>
   );
