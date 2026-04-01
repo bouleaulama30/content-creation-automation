@@ -2,6 +2,7 @@
 
 ## Selector
 
+* rebalayer le code pour le rendre plus clean
 * demander conseil pour rendre mon code de projet plus clean, sur le plan de l'architecture et du contenue
 
 ## Remotion
@@ -10,22 +11,23 @@
 
 ## Deliver
 
-* clean le code
+* rebalayer le code pour le rendre plus clean
+* faire de manière beaucoup plus clean la livraison de la miniature
 
 ## OrderTaker
 
-* continuer l'archi en suivant le dessin
+* rebalayer le code pour le rendre plus clean
 * me renvoyer des erreurs:  
-    * si il n'y a plus de liens dispo dans le pool de liens
-    * si des combinaisons de cases ne sont pas bonnes   
-
+    * si il n'y a plus de liens dispo dans le pool de liens (avoir un visu sur le fichier de lien)
+    * si des combinaisons de cases ne sont pas bonnes  
+* avoir un controle sur les scripts (pouvoir les voir et les supprimer)
 
 ## Creator
 ### script creator
 
-
+* rebalayer le code pour le rendre plus clean
 * faire du prompt engenering pour avoir des scripts indépendants et différents sur diverses thème de ma niche
- 
+
 ### audio creator
 
 
@@ -54,6 +56,7 @@
     * penser à update le tree et le .env.bak sur le github
 * quand les 1500 abonnées seront atteint, reprendre la video de 4h et se faire une vrai DA complète (joué le jeu)
     * faire des miniatures et se les envoyer
+    * ajouter une vidéo en fin de réel avec mon nom qui continue la musique et une transition fade
     * trouver un filtre qui correspond à la DA
     * continuer le prompt engenering:
         * avoir plusieurs hook bien
@@ -71,4 +74,3 @@
 
 * faire un repo github vraiment clean et le rendre ouvert à tous donc faire un readme clean
 * continuer de faire du tri dans les vidéos et en ajouter des nouvelles
-* avoir un controle sur les scripts (pouvoir les voir et les supprimer)
