@@ -20,26 +20,100 @@ client = genai.Client()
 
 chat_id = "7921150744"
 
+
+def _wrap_text_to_width(draw, text, font, max_width):
+    words = text.split()
+    if not words:
+        return [""]
+
+    lines = []
+    current_line = words[0]
+
+    for word in words[1:]:
+        test_line = f"{current_line} {word}"
+        if draw.textlength(test_line, font=font) <= max_width:
+            current_line = test_line
+        else:
+            lines.append(current_line)
+            current_line = word
+
+    lines.append(current_line)
+
+    # If one word is still too large, split it by characters.
+    final_lines = []
+    for line in lines:
+        if draw.textlength(line, font=font) <= max_width:
+            final_lines.append(line)
+            continue
+
+        chunk = ""
+        for char in line:
+            test_chunk = chunk + char
+            if draw.textlength(test_chunk, font=font) <= max_width or not chunk:
+                chunk = test_chunk
+            else:
+                final_lines.append(chunk)
+                chunk = char
+        if chunk:
+            final_lines.append(chunk)
+
+    return final_lines
+
 def generer_image(texte_variable, destination, template):
     # 1. Charger l'image de base
     img = Image.open(f"{DELIVER_PATH}/{template}.png")
     draw = ImageDraw.Draw(img)
     
     # 2. Définir la police
-    font = ImageFont.truetype(f"{INTERMEDIAR_VIDEOS_CAPTIONER_PATH}/Cinzel-SemiBold.ttf", 100)
+    font_path = f"{INTERMEDIAR_VIDEOS_CAPTIONER_PATH}/Cinzel-SemiBold.ttf"
     
-    # 3. Obtenir les dimensions de l'image et du texte
+    # 3. Obtenir les dimensions de l'image
     img_width, img_height = img.size
-    bbox = draw.textbbox((0, 0), texte_variable, font=font)
-    text_width = bbox[2] - bbox[0]
-    text_height = bbox[3] - bbox[1]
-    
-    # 4. Calculer la position centrale
-    x = (img_width - text_width) // 2
-    y = (img_height - text_height) // 2
-    
-    # 5. Ajouter le texte centré
-    draw.text((x, y), texte_variable, fill="white", font=font)
+
+    # 4. Contraintes d'affichage pour éviter tout dépassement
+    margin_x = int(img_width * 0.06)
+    margin_y = int(img_height * 0.08)
+    max_text_width = max(50, img_width - 2 * margin_x)
+    max_text_height = max(50, img_height - 2 * margin_y)
+
+    texte_variable = " ".join(texte_variable.split())
+    if not texte_variable:
+        img.save(destination)
+        return
+
+    font_size = 100
+    min_font_size = 20
+
+    while True:
+        font = ImageFont.truetype(font_path, font_size)
+        lines = _wrap_text_to_width(draw, texte_variable, font, max_text_width)
+
+        line_heights = []
+        max_line_width = 0
+        for line in lines:
+            bbox = draw.textbbox((0, 0), line, font=font)
+            line_w = bbox[2] - bbox[0]
+            line_h = bbox[3] - bbox[1]
+            max_line_width = max(max_line_width, line_w)
+            line_heights.append(line_h)
+
+        line_spacing = int(font_size * 0.2)
+        text_block_height = sum(line_heights) + line_spacing * (len(lines) - 1)
+
+        fits = max_line_width <= max_text_width and text_block_height <= max_text_height
+        if fits or font_size <= min_font_size:
+            break
+        font_size -= 2
+
+    # 5. Dessiner le bloc de texte centré dans la zone utile
+    y = (img_height - text_block_height) // 2
+    for idx, line in enumerate(lines):
+        bbox = draw.textbbox((0, 0), line, font=font)
+        line_w = bbox[2] - bbox[0]
+        line_h = bbox[3] - bbox[1]
+        x = (img_width - line_w) // 2
+        draw.text((x, y), line, fill="yellow", font=font)
+        y += line_h + line_spacing
     
     # 6. Sauvegarder le résultat
     img.save(destination)
@@ -80,7 +154,6 @@ reponse = client.models.generate_content(
     contents=prompt,
 )
 inter_reponse = reponse.text.replace("\n", "")
-inter_reponse = inter_reponse.replace(".", "!")
 
 final_description = inter_reponse + " #motivation #citation #inspiration"
 print(final_description)
@@ -89,7 +162,8 @@ reponse = client.models.generate_content(
     model="gemma-3-27b-it",
     contents=prompt_thumnail,
 )
-final_txt_thumbnail = reponse.text.replace("\n", "")
+inter_reponse = reponse.text.replace(".", "")
+final_txt_thumbnail = inter_reponse.replace("\n", "")
 with open(f"{DATA_CLIENT_FILE}", 'r') as json_data:
     data = json.load(json_data)
     template = data["template"]
