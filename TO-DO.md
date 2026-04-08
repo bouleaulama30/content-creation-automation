@@ -2,12 +2,16 @@
 
 ## Selector
 
+* ajouter d'autre # aussi (cf excel de la concu)
+* ajouter d'autres vidéos et musiques
+
 * rebalayer le code pour le rendre plus clean
 * demander conseil pour rendre mon code de projet plus clean, sur le plan de l'architecture et du contenue
 
 ## Remotion
 
 * faire en sorte d'avoir un profile de filtre selon le template que l'on passe props
+* trouver un filtre qui correspond à la DA
 
 ## Deliver
 
@@ -22,7 +26,12 @@
     * si des combinaisons de cases ne sont pas bonnes  
 * avoir un controle sur les scripts (pouvoir les voir et les supprimer)
 
+
 ## Creator
+* continuer le prompt engenering:
+    * avoir plusieurs hook bien
+    * avoir plusieurs angle bien
+    * avoir un oogway cohérent pour la génération du script
 ### script creator
 
 * rebalayer le code pour le rendre plus clean
@@ -30,47 +39,32 @@
 
 ### audio creator
 
-
-## Extension
-* faire un template joker 
-
-* voir si possible de publier automatiquement
-
-### à faire une fois la nouvelle DA
-* Envoyer la miniature à faire selon le type de template (sur telegramme)
-    * un image (toujours la même selon le template)
-    * le logo inclut
-    * un titre
+* à faire une fois que le set up sur le bureau est fait
+    * améliorer le clonage de voie
+    * faire joujou avec les autres voix et les autres modèles 
 
 ## Autres
+* faire un template joker 
 
-* voir pour dockeriser ça ou faire un script qui fait l'installation, faire l'inventaire des dépendances:
-    * librairies python
-    * yt dlp 
-    * google/genai
-    * remotion
-    * model qwen3-tts
-
-* rendre l'infra globale plus clean
 * faire le set up sur la machine du bureau:
     * penser à update le tree et le .env.bak sur le github
-* quand les 1500 abonnées seront atteint, reprendre la video de 4h et se faire une vrai DA complète (joué le jeu)
-    * faire des miniatures et se les envoyer
-    * ajouter une vidéo en fin de réel avec mon nom qui continue la musique et une transition fade
-    * trouver un filtre qui correspond à la DA
-    * continuer le prompt engenering:
-        * avoir plusieurs hook bien
-        * avoir plusieurs angle bien
-        * avoir un oogway fonctionnel
-    * ajouter d'autre # aussi (cf excel de la concu)
-    * ajouter d'autres vidéos et musiques
-    * voir pour mettre une question en description auto pour faire parler en commentaire
-    * Maj aussi sur le compte insta
+    
+* voir pour générer automatiquement côté client avec une cron job 
     * faire un générateur de story sur des citations (trouver un bon template avec la DA)
+* voir si possible de publier automatiquement
+
 
 * faire une grande analyse des videos qui ont fonctionner dans un tableur (une fois que bcp de vidéos originale auront été publié):
     * nbr vue, partage, enregistrement, comment, average watch time, sujet
     * en tirer des conclusions et améliorer les prompts/ les thèmes choisies
 
-* faire un repo github vraiment clean et le rendre ouvert à tous donc faire un readme clean
 * continuer de faire du tri dans les vidéos et en ajouter des nouvelles
+* rendre l'infra globale plus clean
+
+* faire un repo github vraiment clean et le rendre ouvert à tous donc faire un readme clean
+    * voir pour dockeriser ça ou faire un script qui fait l'installation, faire l'inventaire des dépendances:
+        * librairies python
+        * yt dlp 
+        * google/genai
+        * remotion
+        * model qwen3-tts

@@ -2,6 +2,7 @@ import React from 'react';
 import {Series, AbsoluteFill, OffthreadVideo, Html5Audio, Img, CalculateMetadataFunction, staticFile, } from 'remotion';
 import {parseMedia} from '@remotion/media-parser';
 
+
 type MediaSrcProp = {
   src: string;
 };
@@ -103,7 +104,7 @@ export const VideosInSequence: React.FC<Props> = ({videos}) => {
 
 
 export const calculateMetadata: CalculateMetadataFunction<MyCompProp> = async ({props}) => {
-  const fps = 30;
+  const fps = parseInt(process.env.FPS || '30');
 
   const {slowDurationInSeconds} = await parseMedia({
     src: staticFile(props.audioSrc1), 
@@ -115,6 +116,6 @@ export const calculateMetadata: CalculateMetadataFunction<MyCompProp> = async ({
   return {
     props, // On transmet les données reçues sans les modifier
     fps,
-    durationInFrames: Math.floor(slowDurationInSeconds * fps),  };
+    durationInFrames: Math.floor(slowDurationInSeconds * fps + parseInt(process.env.PIECE_VIDEO_DURATION || '2.5') * fps),};
 };
 

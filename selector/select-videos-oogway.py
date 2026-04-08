@@ -12,11 +12,15 @@ from dotenv import load_dotenv
 load_dotenv()
 
 PIECE_VIDEO_TRANSI_DURATION = float(os.getenv('PIECE_VIDEO_TRANSI_DURATION'))
+PIECE_VIDEO_DURATION = float(os.getenv('PIECE_VIDEO_DURATION'))
 NBR_BEGIN_OOGWAY_VIDEO = int(os.getenv('NBR_BEGIN_OOGWAY_VIDEO'))
 FPS = int(os.getenv('FPS'))
 
 VIDEOS_SRC_OOGWAY_PATH = os.getenv('VIDEOS_SRC_OOGWAY_PATH')
 VIDEOS_SRC_TRANSI_PATH = os.getenv('VIDEOS_SRC_TRANSI_PATH')
+VIDEOS_SRC_OUTRO_FOLDER_PATH = os.getenv('VIDEOS_SRC_OUTRO_FOLDER_PATH')
+VIDEOS_SRC_OUTRO_FILE_NAME = os.getenv('VIDEOS_SRC_OUTRO_FILE_NAME')
+
 AUDIO_FOLDER_PATH = os.getenv('AUDIO_FOLDER_PATH')
 AUDIO_NAME = os.getenv('AUDIO_NAME')
 AUDIO_FILE_PATH= os.getenv('AUDIO_FILE_PATH')
@@ -88,6 +92,10 @@ def select_oogway_videos(video_path_oogway, video_path_transi, duration_transi_v
         if(total_duration < audio_duration):
             oogway_video = oogway_videos.pop()
             oogway_video_duration = get_video_duration(f"{video_path_oogway}/{oogway_video}") 
+            if total_duration + oogway_video_duration > audio_duration:
+                selected_videos.append((oogway_video, audio_duration - total_duration, False))
+                total_duration += oogway_video_duration 
+                break
             total_duration += oogway_video_duration 
             selected_videos.append((oogway_video, oogway_video_duration, False))
 
@@ -97,29 +105,38 @@ def select_oogway_videos(video_path_oogway, video_path_transi, duration_transi_v
         if(is_transi_video):
             transi_video = transi_videos.pop()
             transi_video_duration = duration_transi_videos
+            if total_duration + transi_video_duration > audio_duration:
+                selected_videos.append((transi_video, audio_duration - total_duration, is_transi_video))
+                break
             total_duration += transi_video_duration 
             selected_videos.append((transi_video, transi_video_duration, is_transi_video))
             is_transi_video =  False
         else:
             oogway_video = oogway_videos.pop()
             oogway_video_duration = get_video_duration(f"{video_path_oogway}/{oogway_video}") 
+            if total_duration + oogway_video_duration > audio_duration:
+                selected_videos.append((oogway_video, audio_duration - total_duration, is_transi_video))
+                break
             total_duration += oogway_video_duration 
             selected_videos.append((oogway_video, oogway_video_duration, is_transi_video))
             is_transi_video =  True
 
-    
+    # ajout de l'outro
+    selected_videos.append((VIDEOS_SRC_OUTRO_FILE_NAME, PIECE_VIDEO_DURATION, False))
     print(selected_videos, sep="\n")
     return selected_videos
 
      
 def move_selected_videos(video_path_oogway, video_path_transi, folder_video_dst_path, selected_videos):
-    for idx, (video_src_name, _, is_transi_video) in enumerate(selected_videos):
+    for idx, (video_src_name, _, is_transi_video) in enumerate(selected_videos[:-1]):
         print(f"{idx}, {video_src_name}")
         if (is_transi_video):
             copy_video(video_path_transi, folder_video_dst_path, video_src_name)
         else:
             copy_video(video_path_oogway, folder_video_dst_path, video_src_name)
-     
+    copy_video(VIDEOS_SRC_OUTRO_FOLDER_PATH, folder_video_dst_path, VIDEOS_SRC_OUTRO_FILE_NAME)
+    print(f"{len(selected_videos) - 1}, {VIDEOS_SRC_OUTRO_FILE_NAME}")
+
 def copy_video(src_path, dst_path, src_name):
 	# Copy the file
 	shutil.copy(f"{src_path}/{src_name}", dst_path)

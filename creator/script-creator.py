@@ -99,7 +99,7 @@ Sépare clairement chaque script généré avec "--", respecte le nombre de scri
 prompts_dico = {"default": [prompt_exemple, prompt_theme], "oogway": [prompt_exemple, prompt_theme]}
 
 print("PROMPT SÉLECTIONNÉ PRÊT POUR L'API :\n")
-prompt_select = prompts_dico[template][0] if (data["createFromLinkPool"] == True) else prompts_dico[template][1]
+prompt_select = prompts_dico[template][0] if (data["createScriptFromLink"] == True) else prompts_dico[template][1]
 print(prompt_select)
 
 reponse = client.models.generate_content(

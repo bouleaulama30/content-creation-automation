@@ -14,6 +14,8 @@ PIECE_VIDEO_DURATION = float(os.getenv('PIECE_VIDEO_DURATION'))
 FPS = int(os.getenv('FPS'))
 
 VIDEOS_SRC_DEFAULT_PATH = os.getenv('VIDEOS_SRC_DEFAULT_PATH')
+VIDEOS_SRC_OUTRO_FOLDER_PATH = os.getenv('VIDEOS_SRC_OUTRO_FOLDER_PATH')
+VIDEOS_SRC_OUTRO_FILE_NAME = os.getenv('VIDEOS_SRC_OUTRO_FILE_NAME')
 AUDIO_FOLDER_PATH = os.getenv('AUDIO_FOLDER_PATH')
 AUDIO_NAME = os.getenv('AUDIO_NAME')
 AUDIO_FILE_PATH= os.getenv('AUDIO_FILE_PATH')
@@ -51,6 +53,9 @@ def select_videos(video_path, nbr_video):
     files = [f for f in files if os.path.isfile(video_path+'/'+f)]
     rd.shuffle(files)
     selected_videos = files[:nbr_video]
+
+    # ajout de l'outro
+    selected_videos.append(VIDEOS_SRC_OUTRO_FILE_NAME)
     print(selected_videos, sep="\n")
     return selected_videos
 
@@ -70,10 +75,11 @@ def copy_and_rename(src_path, dst_path, src_name, dst_name):
 	shutil.move(f"{dst_path}/{src_name}", new_name)
      
 def move_selected_videos(folder_video_src_path, folder_video_dst_path, selected_videos):
-    for idx, video_name in enumerate(selected_videos):
+    for idx, video_name in enumerate(selected_videos[:-1]):
         print(f"{idx}, {video_name}")
         copy_and_rename(folder_video_src_path, folder_video_dst_path, video_name, f"video{idx}.mp4")
-     
+    copy_and_rename(VIDEOS_SRC_OUTRO_FOLDER_PATH, folder_video_dst_path, selected_videos[-1], f"video{len(selected_videos)-1}.mp4")
+    print(f"{len(selected_videos) - 1}, {VIDEOS_SRC_OUTRO_FILE_NAME}")
 
 def file_exists(path: str):
     """Vérifie si un fichier existe à l'emplacement donné."""
@@ -92,6 +98,7 @@ def write_data_json(folder_video_path, is_original):
             "src": f"video{idx}.mp4"
         })
         idx += 1
+
     props["videosSrc"] = videos
 
     if is_original:
