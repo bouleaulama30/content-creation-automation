@@ -21,17 +21,22 @@ client = genai.Client()
 chat_id = "7921150744"
 
 
-def _wrap_text_to_width(draw, text, font, max_width):
+def _wrap_text_to_width(draw, text, font, max_width, stroke_width=0):
     words = text.split()
     if not words:
         return [""]
 
+    # Ajouter la largeur du stroke aux deux côtés
+    adjusted_max_width = max_width - 2 * stroke_width
+    
     lines = []
     current_line = words[0]
 
     for word in words[1:]:
         test_line = f"{current_line} {word}"
-        if draw.textlength(test_line, font=font) <= max_width:
+        # Utilisation de textbbox pour une précision maximale au pixel près
+        bbox = draw.textbbox((0, 0), test_line, font=font)
+        if (bbox[2] - bbox[0]) <= adjusted_max_width:
             current_line = test_line
         else:
             lines.append(current_line)
@@ -39,17 +44,19 @@ def _wrap_text_to_width(draw, text, font, max_width):
 
     lines.append(current_line)
 
-    # If one word is still too large, split it by characters.
+    # Si un mot est encore trop long (très grand mot sur petit écran), on coupe par lettre
     final_lines = []
     for line in lines:
-        if draw.textlength(line, font=font) <= max_width:
+        bbox = draw.textbbox((0, 0), line, font=font)
+        if (bbox[2] - bbox[0]) <= adjusted_max_width:
             final_lines.append(line)
             continue
 
         chunk = ""
         for char in line:
             test_chunk = chunk + char
-            if draw.textlength(test_chunk, font=font) <= max_width or not chunk:
+            bbox_chunk = draw.textbbox((0, 0), test_chunk, font=font)
+            if (bbox_chunk[2] - bbox_chunk[0]) <= adjusted_max_width or not chunk:
                 chunk = test_chunk
             else:
                 final_lines.append(chunk)
@@ -65,40 +72,43 @@ def generer_image(texte_variable, destination, template):
     draw = ImageDraw.Draw(img)
     
     # 2. Définir la police
-    font_path = f"{INTERMEDIAR_VIDEOS_CAPTIONER_PATH}/Cinzel-SemiBold.ttf"
+    font_path = f"{INTERMEDIAR_VIDEOS_CAPTIONER_PATH}/Lora-SemiBold.ttf"
     
     # 3. Obtenir les dimensions de l'image
     img_width, img_height = img.size
 
     # 4. Contraintes d'affichage pour éviter tout dépassement
-    margin_x = int(img_width * 0.06)
+    margin_x = int(img_width * 0.10) 
     margin_y = int(img_height * 0.08)
     max_text_width = max(50, img_width - 2 * margin_x)
     max_text_height = max(50, img_height - 2 * margin_y)
 
-    texte_variable = " ".join(texte_variable.split())
+    texte_variable = " ".join(texte_variable.split()).upper()
+    
     if not texte_variable:
         img.save(destination)
         return
 
     font_size = 100
     min_font_size = 20
+    stroke_width = 3
 
     while True:
         font = ImageFont.truetype(font_path, font_size)
-        lines = _wrap_text_to_width(draw, texte_variable, font, max_text_width)
+        lines = _wrap_text_to_width(draw, texte_variable, font, max_text_width, stroke_width)
 
         line_heights = []
         max_line_width = 0
         for line in lines:
             bbox = draw.textbbox((0, 0), line, font=font)
-            line_w = bbox[2] - bbox[0]
-            line_h = bbox[3] - bbox[1]
+            line_w = bbox[2] - bbox[0] + 2 * stroke_width
+            line_h = bbox[3] - bbox[1] + 2 * stroke_width
             max_line_width = max(max_line_width, line_w)
             line_heights.append(line_h)
 
         line_spacing = int(font_size * 0.2)
-        text_block_height = sum(line_heights) + line_spacing * (len(lines) - 1)
+        # Correction mineure : éviter un espacement en trop si le texte ne fait qu'une ligne
+        text_block_height = sum(line_heights) + line_spacing * max(0, len(lines) - 1)
 
         fits = max_line_width <= max_text_width and text_block_height <= max_text_height
         if fits or font_size <= min_font_size:
@@ -109,10 +119,12 @@ def generer_image(texte_variable, destination, template):
     y = (img_height - text_block_height) // 2
     for idx, line in enumerate(lines):
         bbox = draw.textbbox((0, 0), line, font=font)
-        line_w = bbox[2] - bbox[0]
-        line_h = bbox[3] - bbox[1]
+        line_w = bbox[2] - bbox[0] + 2 * stroke_width
+        line_h = bbox[3] - bbox[1] + 2 * stroke_width
         x = (img_width - line_w) // 2
-        draw.text((x, y), line, fill="yellow", font=font)
+        
+        # Le texte est déjà en majuscules, plus besoin de .upper() ici
+        draw.text((x, y), line, fill="yellow", font=font, stroke_width=stroke_width, stroke_fill="black")
         y += line_h + line_spacing
     
     # 6. Sauvegarder le résultat
@@ -126,7 +138,7 @@ transcription = ' '.join(word_list)
 prompt = f"""Tu es un assistant spécialisé dans la création de métadonnées pour Reels Instagram.
 ### DONNÉES D'ENTRÉE :
 1. Transcription du Reel : "{transcription}"
-2. Pool de Hashtags : [alone, depression, amour, douleur, mental, réussite, solitude, vie, espoir, conseil, verite]
+2. Pool de Hashtags : [alone, depression, amour, douleur, mental, réussite, solitude, vie, espoir, conseil, verite, foi, dieu, plan, inspirationfr, sagesse, humour, france, developpementpersonnel, mentalité, Short, vivre]
 
 ### INSTRUCTIONS :
 1. Extrais la toute première phrase de la transcription pour l'utiliser comme description.

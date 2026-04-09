@@ -1,10 +1,6 @@
 # TO DO
 
 ## Selector
-
-* ajouter d'autre # aussi (cf excel de la concu)
-* ajouter d'autres vidéos et musiques
-
 * rebalayer le code pour le rendre plus clean
 * demander conseil pour rendre mon code de projet plus clean, sur le plan de l'architecture et du contenue
 
@@ -46,19 +42,18 @@
 ## Autres
 * faire un template joker 
 
-* faire le set up sur la machine du bureau:
-    * penser à update le tree et le .env.bak sur le github
-    
+* faire le set up sur la machine du bureau
+
 * voir pour générer automatiquement côté client avec une cron job 
     * faire un générateur de story sur des citations (trouver un bon template avec la DA)
 * voir si possible de publier automatiquement
 
+* ajouter d'autres vidéos et des musiques
 
 * faire une grande analyse des videos qui ont fonctionner dans un tableur (une fois que bcp de vidéos originale auront été publié):
     * nbr vue, partage, enregistrement, comment, average watch time, sujet
     * en tirer des conclusions et améliorer les prompts/ les thèmes choisies
 
-* continuer de faire du tri dans les vidéos et en ajouter des nouvelles
 * rendre l'infra globale plus clean
 
 * faire un repo github vraiment clean et le rendre ouvert à tous donc faire un readme clean
