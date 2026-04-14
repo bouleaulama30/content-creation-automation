@@ -25,15 +25,15 @@ if [ -n "$LINK_AUDIO" ]; then
     echo "suppresion de l'ancien audio"
     rm ${AUDIO_FILE_PATH}
     echo "Téléchargement de l'audio du lien ${LINK_AUDIO}"
-    yt-dlp -t mp3 --cookies-from-browser firefox "${LINK_AUDIO}" -o ${AUDIO_FILE_PATH}
+    ${YT_DLP_PATH} -t mp3 --cookies-from-browser firefox "${LINK_AUDIO}" -o ${AUDIO_FILE_PATH}
 fi
 
-
+``
 echo "suppression des video dans le dossier public de l'assembleur"
 rm ${INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}/*.mp4
 
 echo "🐍 Génération du fichier props.json via Python..."
-python3 ${SELECTOR_PATH}/select-videos-${TYPE_REEL}.py || exit
+${PYTHON_PATH} ${SELECTOR_PATH}/select-videos-${TYPE_REEL}.py || exit
 
 # On s'assure d'être dans le bon dossier pour commencer
 cd ${ASSEMBLER_PATH} || exit
@@ -44,7 +44,7 @@ cd ${ASSEMBLER_PATH} || exit
 echo "🎬 Rendu de la vidéo brute..."
 npx remotion render MyComp \
     --props=./props.json \
-    --concurrency=2 \
+    --concurrency=${CONCURRENCY} \
     --output=${INTERMEDIAR_VIDEOS_CAPTIONER_PATH}/video.mp4 || exit
 
 # --- 4. Passage au projet de sous-titrage ---
@@ -63,11 +63,11 @@ node sub.mjs public/video.mp4
 echo "🚀 Rendu final du Reel avec sous-titres..."
 # Ici on lance le rendu du projet captioner
 npx remotion render \
-    --concurrency=2 \
+    --concurrency=${CONCURRENCY} \
     --output=${PRODUCTION_FOLDER_PATH}/video.mp4
 
 echo "Envoie de la video, de la description et de la miniature..."
 cd ${PROJECT_BASE_PATH} || exit
-python ${DELIVER_PATH}/deliver.py
+${PYTHON_PATH} ${DELIVER_PATH}/deliver.py
 
 echo "✅ Terminé ! Ton Reel est prêt dans le dossier ${PRODUCTION_FOLDER_PATH}."

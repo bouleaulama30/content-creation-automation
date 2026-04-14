@@ -23,11 +23,11 @@ set +o allexport
 
 rm -f ${INTERMEDIAR_VIDEOS_CAPTIONER_PATH}/video.json
 rm -f ${INTERMEDIAR_VIDEOS_CAPTIONER_PATH}/video.mp4
-yt-dlp -t mp4 --cookies-from-browser firefox "${LINK_AUDIO}" -o ${INTERMEDIAR_VIDEOS_CAPTIONER_PATH}/video.mp4
+${YT_DLP_PATH} -t mp4 --cookies-from-browser firefox "${LINK_AUDIO}" -o ${INTERMEDIAR_VIDEOS_CAPTIONER_PATH}/video.mp4
 
 cd ${CAPTIONER_PATH} || exit
 node sub.mjs public/video.mp4 
-python ${CREATOR_PATH}/script-creator.py
+${PYTHON_PATH} ${CREATOR_PATH}/script-creator.py
 
 
 

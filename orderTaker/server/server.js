@@ -83,7 +83,7 @@ app.post("/test", (req, res) => {
     else if (createScriptFromInput != '' && link == '') {
         fs.writeFileSync("logs.txt", "Task in progress: creating script from input...");
         console.log("create script from input");
-        shell.exec(`python ${process.env.CREATOR_PATH}/script-creator.py`);
+        shell.exec(`${process.env.PYTHON_PATH} ${process.env.CREATOR_PATH}/script-creator.py`);
         fs.writeFileSync("logs.txt", "Case createScriptFromInput: script created from input");
     }
     else {
