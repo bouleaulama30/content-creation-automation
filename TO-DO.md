@@ -37,10 +37,6 @@
 
 ### audio creator
 
-* à faire une fois que le set up sur le bureau est fait
-    * améliorer le clonage de voie
-    * faire joujou avec les autres voix et les autres modèles 
-
 ## Autres
 * faire un template joker 
 
