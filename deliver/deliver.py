@@ -138,7 +138,7 @@ transcription = ' '.join(word_list)
 prompt = f"""Tu es un assistant spécialisé dans la création de métadonnées pour Reels Instagram.
 ### DONNÉES D'ENTRÉE :
 1. Transcription du Reel : "{transcription}"
-2. Pool de Hashtags : [alone, depression, amour, douleur, mental, réussite, solitude, vie, espoir, conseil, verite, foi, dieu, plan, inspirationfr, sagesse, humour, france, developpementpersonnel, mentalité, Short, vivre]
+2. Pool de Hashtags : [alone, depression, amour, douleur, mental, réussite, solitude, vie, espoir, conseil, verite, foi, dieu, plan, inspirationfr, sagesse, humour, mentalité, Short, vivre]
 
 ### INSTRUCTIONS :
 1. Extrais la toute première phrase de la transcription pour l'utiliser comme description.

@@ -6,8 +6,8 @@
 
 ## Remotion
 
-* faire en sorte d'avoir un profile de filtre selon le template que l'on passe props
-* trouver un filtre qui correspond à la DA
+## Captioner
+* enlever la mention "musique" à la fin de chaque vidéos
 
 ## Deliver
 
@@ -42,7 +42,8 @@
 ## Autres
 * faire un template joker 
 
-* faire le set up sur la machine du bureau
+* faire le set up sur la machine du bureau:
+    * penser à mettre whisper en large-v2
 
 * voir pour générer automatiquement côté client avec une cron job 
     * faire un générateur de story sur des citations (trouver un bon template avec la DA)

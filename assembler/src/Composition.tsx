@@ -35,11 +35,11 @@ export const MyComp: React.FC<MyCompProp> = ({videosSrc, audioSrc1, audioSrc2Pro
 
       {/* 3. Dégradé sombre pour faire ressortir les sous-titres et centrer l'attention */}
       <AbsoluteFill 
-        style={{
-          // Dégradé : transparent en haut, noir à 80% en bas
-          background: 'linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.6) 100%)',
-          pointerEvents: 'none',
-        }} 
+        // style={{
+        //   // Dégradé : transparent en haut, noir à 80% en bas
+        //   background: 'linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.6) 100%)',
+        //   pointerEvents: 'none',
+        // }} 
       />
       <Audio src={audioSrc1} volume={1} />
       <Audio src={audioSrc2Prop.src} volume={volume}/>
