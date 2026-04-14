@@ -34,10 +34,10 @@ cd ${CREATOR_PATH}/qwen3-tts-rs/ || exit
 echo "run tts"
 
 if [[ "${TEMPLATE}" == "default" ]]; then
-    cargo run --release --features cli --bin generate_audio --   --model-dir ${QWEN_TTS_BASE_SMALL_PATH}   --text "${SCRIPT}" --ref-audio default.wav   --ref-text "Et un jour je ne te dérangerai plus, je ne t'appellerai plus, je ne t'écrirai plus non plus. Tu n'entendras plus jamais ma voix. Et si un jour je te manque, rappelle-toi que j'étais là un jour. Et c'est toi qui m'as laissé partir. Si ce message te fait penser à quelqu'un, aime et suis-moi.
+    cargo run --release --features cli --bin generate_audio --   --model-dir ${QWEN_TTS_BASE_BIG_PATH}   --text "${SCRIPT}" --ref-audio default.wav   --ref-text "Et un jour je ne te dérangerai plus, je ne t'appellerai plus, je ne t'écrirai plus non plus. Tu n'entendras plus jamais ma voix. Et si un jour je te manque, rappelle-toi que j'étais là un jour. Et c'est toi qui m'as laissé partir. Si ce message te fait penser à quelqu'un, aime et suis-moi.
 " --language french --output ${AUDIO_FOLDER_PATH}/${AUDIO_TMP}
 else
-    cargo run --release --features cli --bin generate_audio --   --model-dir ${QWEN_TTS_BASE_SMALL_PATH}   --text "${SCRIPT}"   --ref-audio oogway_cut_9.wav   --ref-text "Ne fais pas espérer à quelqu'un que tu seras là pour le soutenir si tu n'as pas l'intention de le faire. S'il te plaît.
+    cargo run --release --features cli --bin generate_audio --   --model-dir ${QWEN_TTS_BASE_BIG_PATH}   --text "${SCRIPT}"   --ref-audio oogway_test2.wav   --ref-text "Ce n'est pas une question de grands gestes ni de moments parfaits. C'est dans les petites choses que tout se joue, l'important, c'est de sentir chaque jour que tu comptes vraiment.
 " --language french --output ${AUDIO_FOLDER_PATH}/${AUDIO_TMP}
 fi
 

@@ -7,6 +7,7 @@
 ## Remotion
 
 ## Captioner
+
 * enlever la mention "musique" à la fin de chaque vidéos
 
 ## Deliver
@@ -28,6 +29,7 @@
     * avoir plusieurs hook bien
     * avoir plusieurs angle bien
     * avoir un oogway cohérent pour la génération du script
+    * voir si on reste sur gemma ou gemini 2
 ### script creator
 
 * rebalayer le code pour le rendre plus clean
@@ -41,9 +43,6 @@
 
 ## Autres
 * faire un template joker 
-
-* faire le set up sur la machine du bureau:
-    * penser à mettre whisper en large-v2
 
 * voir pour générer automatiquement côté client avec une cron job 
     * faire un générateur de story sur des citations (trouver un bon template avec la DA)

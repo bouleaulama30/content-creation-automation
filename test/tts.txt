@@ -34,6 +34,16 @@ cargo run --release --features cli --bin generate_audio --   --model-dir ./model
 "   --ref-audio oogway_cut_9.wav   --ref-text "Ne fais pas espérer à quelqu'un que tu seras là pour le soutenir si tu n'as pas l'intention de le faire. S'il te plaît.
 " --language french
 
+cargo run --release --features cli --bin generate_audio --   --model-dir /home/leolefebvre/IA/modele-base-1.7b --text "Tu te préoccupes trop... de ce qui a été... ou de ce qui sera. Un dicton dit...Hier... est derrière. Demain... est un mystère. Mais aujourd'hui... est un cadeau.
+"   --ref-audio oogway_cut_9.wav   --ref-text "Ne fais pas espérer à quelqu'un que tu seras là pour le soutenir si tu n'as pas l'intention de le faire. S'il te plaît.
+" --language french
+
+cargo run --release --features cli --bin generate_audio --   --model-dir /home/leolefebvre/IA/modele-base-1.7b --text "La vie, c'est surtout des moments où tu comprends que t'as rien compris. Des silences qui pèsent plus que les cris. 
+"   --ref-audio oogway_test.wav   --ref-text "Ne tombe jamais amoureux de la même personne deux fois. La deuxième fois, ce n'est plus elle que tu aimes, mais le souvenir de ce qu'elle était autrefois." --language french
+
+cargo run --release --features cli --bin generate_audio --   --model-dir /home/leolefebvre/IA/modele-base-1.7b --text "La vie, c'est surtout des moments où tu comprends que t'as rien compris. Des silences qui pèsent plus que les cris. 
+"   --ref-audio oogway_test2.wav   --ref-text "Ce n'est pas une question de grands gestes ni de moments parfaits. C'est dans les petites choses que tout se joue, l'important, c'est de sentir chaque jour que tu comptes vraiment." --language french
+
 
 #default voice
 #parfait mais il faut down tout pour le faire fonctionner
@@ -45,3 +55,9 @@ cargo run --release --features cli --bin generate_audio --   --model-dir ./model
 cargo run --release --features cli --bin generate_audio --   --model-dir ~/IA/modele-base-06b   --text "Il arrivera un matin où tu attendras mon message, mais ton écran restera désespérément noir. Tu chercheras mon attention, celle que je t'offrais sans compter, mais je serai déjà loin. Et quand ce silence te pèsera, n'oublie pas que j'ai tout fait pour rester. Mais c'est ton indifférence qui m'a poussé vers la sortie
 "   --ref-audio default.wav   --ref-text "Et un jour je ne te dérangerai plus, je ne t'appellerai plus, je ne t'écrirai plus non plus. Tu n'entendras plus jamais ma voix. Et si un jour je te manque, rappelle-toi que j'étais là un jour. Et c'est toi qui m'as laissé partir. Si ce message te fait penser à quelqu'un, aime et suis-moi.
 " --language french
+
+# test joker
+
+cargo run --release --features cli --bin generate_audio --   --model-dir /home/leolefebvre/IA/modele-base-1.7b --text "La vie, c'est surtout des moments où tu comprends que t'as rien compris. Des silences qui pèsent plus que les cris. 
+"   --ref-audio joker_test.wav   --ref-text "Ta loyauté, ton soutien, ton respect, le jour où tu n'as plus rien à offrir, tu deviens invisible. Ils se souviendront toujours de ce qu'ils peuvent te prendre, mais jamais de ce que tu leur offres." --language french
+
