@@ -96,6 +96,7 @@ function MyForm({onSubmitted}) {
         >
           <option value="default">default</option>
           <option value="oogway">oogway</option>
+          <option value="joker">joker</option>
         </select>
       </div>
 

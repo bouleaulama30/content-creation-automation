@@ -96,7 +96,11 @@ Sépare clairement chaque script généré avec "--", respecte le nombre de scri
 
 # Affichage pour vérifier (Dans ton vrai code, tu envoies ça à l'API de Gemma-3)
 
-prompts_dico = {"default": [prompt_exemple, prompt_theme], "oogway": [prompt_exemple, prompt_theme]}
+prompts_dico = {
+    "default": [prompt_exemple, prompt_theme],
+    "oogway": [prompt_exemple, prompt_theme],
+    "joker": [prompt_exemple, prompt_theme],
+}
 
 print("PROMPT SÉLECTIONNÉ PRÊT POUR L'API :\n")
 prompt_select = prompts_dico[template][0] if (data["createScriptFromLink"] == True) else prompts_dico[template][1]
