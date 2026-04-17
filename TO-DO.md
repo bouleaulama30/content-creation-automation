@@ -11,6 +11,7 @@
 ## Captioner
 
 * enlever la mention "musique" à la fin de chaque vidéos
+* se faire un watermark sonore avec LUMINADICTA
 
 ## Deliver
 
