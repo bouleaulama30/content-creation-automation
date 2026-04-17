@@ -1,8 +1,6 @@
 # TO DO
 
 ## Selector
-* trouver des videos de transi plus dark pour le joker
-* mettre d autres musiques pour le joker
 * rebalayer le code pour le rendre plus clean
 * demander conseil pour rendre mon code de projet plus clean, sur le plan de l'architecture et du contenue
 
@@ -10,8 +8,6 @@
 
 ## Captioner
 
-* enlever la mention "musique" à la fin de chaque vidéos
-* se faire un watermark sonore avec LUMINADICTA
 
 ## Deliver
 

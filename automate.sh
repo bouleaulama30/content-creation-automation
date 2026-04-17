@@ -59,6 +59,8 @@ echo "🎙️ Génération des sous-titres (Whisper/Node)..."
 # Ce script doit générer le nouveau ${INTERMEDIAR_VIDEOS_CAPTIONER_PATH}/video.json
 node sub.mjs public/video.mp4 
 
+${PYTHON_PATH} ${CAPTIONER_PATH}/remove_caption.py || exit
+
 # --- 6. Rendu Final (Vidéo avec sous-titres) ---
 echo "🚀 Rendu final du Reel avec sous-titres..."
 # Ici on lance le rendu du projet captioner
