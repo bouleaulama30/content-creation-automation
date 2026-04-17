@@ -19,7 +19,7 @@
 * rebalayer le code pour le rendre plus clean
 * me renvoyer des erreurs:  
     * si il n'y a plus de liens dispo dans le pool de liens (avoir un visu sur le fichier de lien)
-    * si des combinaisons de cases ne sont pas bonnes  
+    * si des combinaisons de cases ne sont pas bonnes
 * avoir un controle sur les scripts (pouvoir les voir et les supprimer)
 
 
@@ -38,11 +38,15 @@
 
 ## Autres
 
-* voir pour générer automatiquement côté client avec une cron job 
+* voir pour générer automatiquement côté client avec une cron job
     * faire un générateur de story sur des citations (trouver un bon template avec la DA)
-* voir si possible de publier automatiquement
 
-* ajouter d'autres vidéos et des musiques
+* voir si possible de publier automatiquement:
+    * faire des tests sur un compte poubelle en utilisant tiktokAutoUploader
+
+* voir pour faire la meme chose avec un compte sur les quizz
+
+* voir pour faire la meme chose en anglais
 
 * faire une grande analyse des videos qui ont fonctionner dans un tableur (une fois que bcp de vidéos originale auront été publié):
     * nbr vue, partage, enregistrement, comment, average watch time, sujet
