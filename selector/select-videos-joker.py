@@ -32,6 +32,9 @@ VOLUME_MUSIQUE = float(os.getenv('VOLUME_MUSIQUE'))
 ASSEMBLER_PATH = os.getenv('ASSEMBLER_PATH')
 INTERMEDIAR_VIDEOS_ASSEMBLER_PATH = os.getenv('INTERMEDIAR_VIDEOS_ASSEMBLER_PATH')
 
+OPENING_LIST_JOKER_VIDEO = [line.strip() for line in open('joker_list_opening.txt')]
+print(OPENING_LIST_JOKER_VIDEO)
+
 
 class VideoToEmbed(TypedDict):
     durationInFrames: int
@@ -74,9 +77,14 @@ def select_musique(musiques_path):
 
 
 def select_joker_videos(video_path_joker, video_path_transi, duration_transi_videos, nbr_begin_joker_video, audio_path):
+
+
     joker_videos = os.listdir(video_path_joker)
     joker_videos = [f for f in joker_videos if os.path.isfile(video_path_joker + '/' + f)]
     rd.shuffle(joker_videos)
+
+    joker_opening_videos = OPENING_LIST_JOKER_VIDEO.copy()
+    rd.shuffle(joker_opening_videos)
 
     transi_videos = os.listdir(video_path_transi)
     transi_videos = [f for f in transi_videos if os.path.isfile(video_path_transi + '/' + f)]
@@ -88,7 +96,7 @@ def select_joker_videos(video_path_joker, video_path_transi, duration_transi_vid
 
     for _ in range(nbr_begin_joker_video):
         if total_duration < audio_duration:
-            joker_video = joker_videos.pop()
+            joker_video = joker_opening_videos.pop()
             joker_video_duration = get_video_duration(f'{video_path_joker}/{joker_video}')
             if total_duration + joker_video_duration > audio_duration:
                 selected_videos.append((joker_video, audio_duration - total_duration, False))

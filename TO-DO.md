@@ -38,7 +38,6 @@
 ### audio creator
 
 ## Autres
-* faire un template joker 
 
 * voir pour générer automatiquement côté client avec une cron job 
     * faire un générateur de story sur des citations (trouver un bon template avec la DA)
