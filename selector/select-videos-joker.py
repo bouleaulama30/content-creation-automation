@@ -16,7 +16,7 @@ NBR_BEGIN_JOKER_VIDEO = int(os.getenv('NBR_BEGIN_JOKER_VIDEO', os.getenv('NBR_BE
 FPS = int(os.getenv('FPS'))
 
 VIDEOS_SRC_JOKER_PATH = os.getenv('VIDEOS_SRC_JOKER_PATH')
-VIDEOS_SRC_TRANSI_PATH = os.getenv('VIDEOS_SRC_TRANSI_PATH')
+VIDEOS_SRC_TRANSI_JOKER_PATH = os.getenv('VIDEOS_SRC_TRANSI_JOKER_PATH')
 VIDEOS_SRC_OUTRO_FOLDER_PATH = os.getenv('VIDEOS_SRC_OUTRO_FOLDER_PATH')
 VIDEOS_SRC_OUTRO_FILE_NAME = os.getenv('VIDEOS_SRC_OUTRO_FILE_NAME')
 
@@ -32,7 +32,8 @@ VOLUME_MUSIQUE = float(os.getenv('VOLUME_MUSIQUE'))
 ASSEMBLER_PATH = os.getenv('ASSEMBLER_PATH')
 INTERMEDIAR_VIDEOS_ASSEMBLER_PATH = os.getenv('INTERMEDIAR_VIDEOS_ASSEMBLER_PATH')
 
-OPENING_LIST_JOKER_VIDEO = [line.strip() for line in open('joker_list_opening.txt')]
+JOKER_LIST_OPENING_VIDEO_PATH = os.getenv('JOKER_LIST_OPENING_VIDEO_PATH')
+OPENING_LIST_JOKER_VIDEO = [line.strip() for line in open(JOKER_LIST_OPENING_VIDEO_PATH)]
 print(OPENING_LIST_JOKER_VIDEO)
 
 
@@ -179,14 +180,14 @@ def write_data_json(selected_videos, is_original):
 if __name__ == '__main__':
     videos = select_joker_videos(
         f'{VIDEOS_SRC_JOKER_PATH}',
-        f'{VIDEOS_SRC_TRANSI_PATH}',
+        f'{VIDEOS_SRC_TRANSI_JOKER_PATH}',
         PIECE_VIDEO_TRANSI_DURATION,
         NBR_BEGIN_JOKER_VIDEO,
         f'{AUDIO_FILE_PATH}',
     )
     move_selected_videos(
         f'{VIDEOS_SRC_JOKER_PATH}',
-        f'{VIDEOS_SRC_TRANSI_PATH}',
+        f'{VIDEOS_SRC_TRANSI_JOKER_PATH}',
         f'{INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}',
         videos,
     )

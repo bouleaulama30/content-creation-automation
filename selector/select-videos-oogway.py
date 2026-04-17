@@ -17,7 +17,7 @@ NBR_BEGIN_OOGWAY_VIDEO = int(os.getenv('NBR_BEGIN_OOGWAY_VIDEO'))
 FPS = int(os.getenv('FPS'))
 
 VIDEOS_SRC_OOGWAY_PATH = os.getenv('VIDEOS_SRC_OOGWAY_PATH')
-VIDEOS_SRC_TRANSI_PATH = os.getenv('VIDEOS_SRC_TRANSI_PATH')
+VIDEOS_SRC_TRANSI_OOGWAY_PATH = os.getenv('VIDEOS_SRC_TRANSI_OOGWAY_PATH')
 VIDEOS_SRC_OUTRO_FOLDER_PATH = os.getenv('VIDEOS_SRC_OUTRO_FOLDER_PATH')
 VIDEOS_SRC_OUTRO_FILE_NAME = os.getenv('VIDEOS_SRC_OUTRO_FILE_NAME')
 
@@ -180,8 +180,8 @@ def write_data_json(selected_videos, is_original):
 
 if __name__ == "__main__":
     duration = get_video_duration(f"{VIDEOS_SRC_OOGWAY_PATH}/oogway1.mp4")
-    videos = select_oogway_videos(f"{VIDEOS_SRC_OOGWAY_PATH}", f"{VIDEOS_SRC_TRANSI_PATH}", PIECE_VIDEO_TRANSI_DURATION, NBR_BEGIN_OOGWAY_VIDEO, f"{AUDIO_FILE_PATH}")
-    move_selected_videos(f"{VIDEOS_SRC_OOGWAY_PATH}", f"{VIDEOS_SRC_TRANSI_PATH}", f"{INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}", videos)
+    videos = select_oogway_videos(f"{VIDEOS_SRC_OOGWAY_PATH}", f"{VIDEOS_SRC_TRANSI_OOGWAY_PATH}", PIECE_VIDEO_TRANSI_DURATION, NBR_BEGIN_OOGWAY_VIDEO, f"{AUDIO_FILE_PATH}")
+    move_selected_videos(f"{VIDEOS_SRC_OOGWAY_PATH}", f"{VIDEOS_SRC_TRANSI_OOGWAY_PATH}", f"{INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}", videos)
     copy_and_rename_audio(f"{AUDIO_FOLDER_PATH}", f"{INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}",f"{AUDIO_NAME}", f"{AUDIO_NAME}")
     with open(f"{DATA_CLIENT_FILE}", 'r') as json_data:
         data = json.load(json_data)
