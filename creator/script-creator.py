@@ -256,7 +256,7 @@ print(scripts)
 
 with open(f"{ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/{template}-scripts.txt", 'a') as script_file:
     for script in scripts:
-        cleaned_script = script.replace('"', '').strip()
+        cleaned_script = script.replace('"', '').replace('\n', ' ').strip()
         if cleaned_script and cleaned_script not in ("[]", "[ ]"):
             script_file.write(cleaned_script + "\n")
     
