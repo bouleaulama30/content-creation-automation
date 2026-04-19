@@ -24,15 +24,8 @@
 
 
 ## Creator
-* continuer le prompt engenering:
-    * avoir plusieurs hook bien
-    * avoir plusieurs angle bien
-    * avoir un oogway cohérent pour la génération du script
-    * voir si on reste sur gemma ou gemini 2
 ### script creator
-
 * rebalayer le code pour le rendre plus clean
-* faire du prompt engenering pour avoir des scripts indépendants et différents sur diverses thème de ma niche
 
 ### audio creator
 
