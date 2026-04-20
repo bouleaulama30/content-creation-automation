@@ -32,9 +32,7 @@
 ## Autres
 
 * générer automatiquement côté client avec une cron job
-    * générateur de story quotidienne:
-        * avoir un meilleur dataset de citation
-    * faire un script python pour générer un réel par jour
+    * faire un script python pour générer un réel par jour automatiquement
 
 * voir si possible de publier automatiquement:
     * faire des tests sur un compte poubelle en utilisant tiktokAutoUploader
