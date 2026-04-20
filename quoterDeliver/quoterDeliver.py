@@ -79,13 +79,13 @@ def generer_image(texte_variable, destination, template):
     max_text_width = max(50, img_width - 2 * margin_x)
     max_text_height = max(50, img_height - 2 * margin_y)
 
-    texte_variable = " ".join(texte_variable.split()).upper()
+    texte_variable = " ".join(texte_variable.split())
     
     if not texte_variable:
         img.save(destination)
         return
 
-    font_size = 80
+    font_size = 70
     min_font_size = 20
     stroke_width = 3
 
