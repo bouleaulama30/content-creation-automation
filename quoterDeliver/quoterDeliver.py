@@ -11,6 +11,7 @@ PRODUCTION_FOLDER_PATH = os.getenv('PRODUCTION_FOLDER_PATH')
 THUMBNAIL_FILE_PATH = os.getenv('THUMBNAIL_FILE_PATH')
 DATA_CLIENT_FILE = os.getenv('DATA_CLIENT_FILE')
 DELIVER_PATH = os.getenv('DELIVER_PATH')
+ORIGINAL_CONTENT_QUOTES_FILE_PATH = os.getenv('ORIGINAL_CONTENT_QUOTES_FILE_PATH')
 
 TOKEN = os.getenv('TOKEN')
 chat_id = "7921150744"
@@ -125,11 +126,14 @@ def generer_image(texte_variable, destination, template):
     # 6. Sauvegarder le résultat
     img.save(destination)
 
-with open(f"/home/leo/content-creation-automation/quoterDeliver/citation.txt", 'r') as f:
+with open(f"{ORIGINAL_CONTENT_QUOTES_FILE_PATH}", 'r') as f:
     quotes = f.readlines()
     rd.shuffle(quotes)
- 
-generer_image(quotes[0], THUMBNAIL_FILE_PATH, "joker")
+
+template = ["default", "joker", "oogway"]
+rd.shuffle(template)
+
+generer_image(quotes[0], THUMBNAIL_FILE_PATH, template[0])
 
 # send photo
 files = {'photo': open(f"{THUMBNAIL_FILE_PATH}", 'rb')}

@@ -33,8 +33,6 @@
 
 * générer automatiquement côté client avec une cron job
     * générateur de story quotidienne:
-        * set up le cron sur le serveur
-        * trouver un bon fond de story
         * avoir un meilleur dataset de citation
     * faire un script python pour générer un réel par jour
 
