@@ -37,15 +37,13 @@
 
 * faire une amélioration consistant à pouvoir générer un script à partir d'un des liens dans une banque de liens des tik tok qui ont le plus marché et qui sont viraux
 
-* générer automatiquement côté client avec une cron job
-    * faire un script python pour générer un réel par jour automatiquement
+* voir pour faire la meme chose en anglais
 
 * voir si possible de publier automatiquement:
     * faire des tests sur un compte poubelle en utilisant tiktokAutoUploader
 
 * voir pour faire la meme chose avec un compte sur les quizz
 
-* voir pour faire la meme chose en anglais
 
 * faire une grande analyse des videos qui ont fonctionner dans un tableur (une fois que bcp de vidéos originale auront été publié):
     * nbr vue, partage, enregistrement, comment, average watch time, sujet
