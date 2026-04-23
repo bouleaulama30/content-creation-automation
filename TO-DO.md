@@ -10,7 +10,6 @@
 
 
 ## quoterDeliver
-* adapter le code pour mettre la génération des scripts via le pool de lien de le code
 * voir pour améliorer le code
 
 ## Deliver
@@ -34,10 +33,6 @@
 ### audio creator
 
 ## Autres
-
-* faire une amélioration consistant à pouvoir générer un script à partir d'un des liens dans une banque de liens des tik tok qui ont le plus marché et qui sont viraux:
-    * être consistent avec le serveur
-    * intégrer cela avec le dailyContentTrigger
 
 * voir pour faire la meme chose en anglais
 
