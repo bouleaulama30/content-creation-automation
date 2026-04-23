@@ -188,7 +188,7 @@ def create_data_client(templates, type_and_path_list, script_number, word_number
     if not file_parameters:
         rd.shuffle(script_input)
         rd.shuffle(templates)
-        dico = {
+        dico1 = {
             'link': '',
             'template': templates[0],
             'addLinkPool': False,
@@ -200,6 +200,23 @@ def create_data_client(templates, type_and_path_list, script_number, word_number
             'scriptNumber': script_number,
             'wordNumber': word_number 
         }
+
+        # Dans le cas où on veut faire un script depuis un réel viral
+        dico2 = {
+            'link': '',
+            'template': 'default',
+            'addLinkPool': False,
+            'createFromLinkPool': False,
+            'createOriginalContent': False,
+            'createScriptFromViralLinkPool': True,
+            'createScriptFromLink': False,
+            'createScriptFromInput': '',
+            'scriptNumber': script_number,
+            'wordNumber': word_number 
+        }
+        l = [dico1, dico2]
+        rd.shuffle(l)
+        dico = l[0]
     elif file_parameters['type'] == "links":
         # TODO call a function to get link
         with open(file_parameters['file_path'], 'r') as f:
