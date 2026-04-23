@@ -196,7 +196,7 @@ RÈGLES STRICTES :
 3. Fais des phrases courtes et percutantes.
 4. Ne mets pas de didascalies complexes, juste le texte à prononcer.
 
-Sépare clairement chaque script généré avec "--", ne place aucun mot en dehors du script entres les "--", respecte le nombre de script qui est de {nombre_scripts} et mets les scripts entre guillemets. Et si tu dois mettres des guillements dans un script utilise "'" """
+Sépare clairement chaque script généré avec --, ne place aucun mot en dehors du script entres les --, respecte le nombre de script qui est de {nombre_scripts} et mets les scripts entre guillemets. Et si tu dois mettres des guillements dans un script utilise "'" """
 
 
 # =====================================================================
@@ -221,7 +221,7 @@ RÈGLES STRICTES :
 2. Formule des concepts totalement nouveaux autour du même sujet.
 3. Reste brut et sans clichés. Phrases courtes.
 
-Sépare clairement chaque script généré avec "--", respecte le nombre de script qui est de {nombre_scripts} et mets les scripts entre guillemets."""
+Sépare clairement chaque script généré avec --, respecte le nombre de script qui est de {nombre_scripts} et mets les scripts entre guillemets."""
 
 # Affichage pour vérifier (Dans ton vrai code, tu envoies ça à l'API de Gemma-3)
 

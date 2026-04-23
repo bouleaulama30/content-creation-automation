@@ -12,10 +12,10 @@ SCRIPT_NUMBER = 1
 WORD_NUMBER = 45
 
 url = "http://localhost:5000/test"
-# templates = ["default", "oogway", "joker"]
-# type_and_path_list = [("links", LINKS_FOLDER_PATH), ("scripts", ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH)]
-templates = ["joker"]
-type_and_path_list = [("links", LINKS_FOLDER_PATH)]
+templates = ["default", "oogway", "joker"]
+type_and_path_list = [("links", LINKS_FOLDER_PATH), ("scripts", ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH)]
+# templates = ["joker"]
+# type_and_path_list = [("links", LINKS_FOLDER_PATH)]
 script_input = [
     "famille",
     "amour",
