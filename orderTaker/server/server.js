@@ -78,7 +78,7 @@ app.post("/test", (req, res) => {
     else if (createScriptFromViralLinkPool) {
         fs.writeFileSync("logs.txt", "Task in progress: creating script from viral link pool...");
         console.log("create script from viral link pool");
-        // shell.exec(`${process.env.PROJECT_BASE_PATH}/script-creator.sh ${link}`);
+        shell.exec(`${process.env.PYTHON_PATH} ${process.env.TRIGGER_PATH}/viralLinkTrigger.py`);
         fs.writeFileSync("logs.txt", `Case createScriptFromViralLinkPool: script created from viral link ${link}`);
     }
     else if (createScriptFromLink && link != '') {
