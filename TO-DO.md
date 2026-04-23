@@ -39,6 +39,7 @@
 
 * voir pour faire la meme chose en anglais
 
+* voir pour host un serveur pour avoir des vidéos de plus de 1min
 * voir si possible de publier automatiquement:
     * faire des tests sur un compte poubelle en utilisant tiktokAutoUploader
 

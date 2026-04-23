@@ -12,9 +12,10 @@ SCRIPT_NUMBER = 1
 WORD_NUMBER = 45
 
 url = "http://localhost:5000/test"
-templates = ["default", "oogway", "joker"]
-# templates = ["joker"]
-type_and_path_list = [("links", LINKS_FOLDER_PATH), ("scripts", ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH)]
+# templates = ["default", "oogway", "joker"]
+# type_and_path_list = [("links", LINKS_FOLDER_PATH), ("scripts", ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH)]
+templates = ["joker"]
+type_and_path_list = [("links", LINKS_FOLDER_PATH)]
 script_input = [
     "famille",
     "amour",
@@ -208,7 +209,7 @@ def create_data_client(templates, type_and_path_list, script_number, word_number
             'template': file_parameters['template'],
             'addLinkPool': False,
             'createFromLinkPool': False,
-            'createOriginalContent': True,
+            'createOriginalContent': False,
             'createScriptFromLink': False,
             'createScriptFromInput': '',
             'scriptNumber': script_number,
