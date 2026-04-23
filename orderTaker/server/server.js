@@ -47,6 +47,7 @@ app.post("/test", (req, res) => {
     const addLinkPool = req.body.addLinkPool
     const createFromLinkPool = req.body.createFromLinkPool
     const createOriginalContent = req.body.createOriginalContent
+    const createScriptFromViralLinkPool = req.body.createScriptFromViralLinkPool
     const createScriptFromLink = req.body.createScriptFromLink
     const createScriptFromInput = req.body.createScriptFromInput
 
@@ -73,6 +74,12 @@ app.post("/test", (req, res) => {
         shell.exec(`${process.env.PROJECT_BASE_PATH}/content-creator.sh ${template}`);
         shell.exec(`${process.env.PROJECT_BASE_PATH}/automate.sh ${template} ${link}`)
         fs.writeFileSync("logs.txt", "Case createOriginalContent: content generated");
+    }
+    else if (createScriptFromViralLinkPool) {
+        fs.writeFileSync("logs.txt", "Task in progress: creating script from viral link pool...");
+        console.log("create script from viral link pool");
+        // shell.exec(`${process.env.PROJECT_BASE_PATH}/script-creator.sh ${link}`);
+        fs.writeFileSync("logs.txt", `Case createScriptFromViralLinkPool: script created from viral link ${link}`);
     }
     else if (createScriptFromLink && link != '') {
         fs.writeFileSync("logs.txt", "Task in progress: creating script from link...");

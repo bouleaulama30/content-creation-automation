@@ -25,6 +25,7 @@ function MyForm({onSubmitted}) {
   const [addLinkPool, setAddLinkPool] = useState(false);
   const [createFromLinkPool, setcreateFromLinkPool] = useState(false);
   const [createOriginalContent, setcreateOriginalContent] = useState(false);
+  const [createScriptFromViralLinkPool, setcreateScriptFromViralLinkPool] = useState(false);
   const [createScriptFromLink, setcreateScriptFromLink] = useState(false);
   const [createScriptFromInput, setcreateScriptFromInput] = useState("");
   const [scriptNumber, setscriptNumber] = useState(defaultNumberOfScripts);
@@ -57,6 +58,7 @@ function MyForm({onSubmitted}) {
       addLinkPool: addLinkPool,
       createFromLinkPool: createFromLinkPool,
       createOriginalContent: createOriginalContent,
+      createScriptFromViralLinkPool: createScriptFromViralLinkPool,
       createScriptFromLink: createScriptFromLink,
       createScriptFromInput: createScriptFromInput,
       scriptNumber: scriptNumber,
@@ -71,7 +73,7 @@ function MyForm({onSubmitted}) {
       console.log(add)
       onSubmitted();
     }catch(err){
-      console.error()
+      console.error(err);
     };
     }
   return (
@@ -113,6 +115,11 @@ function MyForm({onSubmitted}) {
       <div className="form-row checkbox-row">
         <label htmlFor="createOriginalContent">Create original content: </label>
         <CheckBox id="createOriginalContent" setState={setcreateOriginalContent} checked={createOriginalContent}/>
+      </div>
+
+      <div className="form-row checkbox-row">
+        <label htmlFor="createScriptFromViralLinkPool">Create script from viral link pool: </label>
+        <CheckBox id="createScriptFromViralLinkPool" setState={setcreateScriptFromViralLinkPool} checked={createScriptFromViralLinkPool}/>
       </div>
 
       <div className="form-row checkbox-row">
