@@ -40,7 +40,7 @@ export const RemotionRoot: React.FC = () => {
         ],
         audioSrc1: 'audio.mp3',
         audioSrc2Prop: {src: 'audio.mp3', volume: 0},
-        logoSrc: 'logo_police.png',
+        logoSrc: 'police_logo_english.png',
         // logoSrc: 'logo.png',
       }}
         calculateMetadata={calculateMetadata}

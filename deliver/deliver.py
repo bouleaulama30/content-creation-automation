@@ -135,31 +135,31 @@ with open(f"{INTERMEDIAR_VIDEOS_CAPTIONER_PATH}/video.json", 'r') as f:
 word_list = [elm['text'] for elm in caption ]
 transcription = ' '.join(word_list) 
 
-prompt = f"""Tu es un assistant spécialisé dans la création de métadonnées pour Reels Instagram.
-### DONNÉES D'ENTRÉE :
-1. Transcription du Reel : "{transcription}"
-2. Pool de Hashtags : [alone, depression, amour, douleur, mental, réussite, solitude, vie, espoir, conseil, verite, foi, dieu, plan, inspirationfr, sagesse, humour, mentalité, Short, vivre]
+prompt = f"""You are an assistant specialized in creating metadata for Instagram Reels.
+### INPUT DATA:
+1. Reel transcription: "{transcription}"
+2. Hashtag pool: [alone, depression, amour, pain, mental, réussite, solitude, vie, espoir, conseil, verite, foi, dieu, plan, inspirationfr, sagesse, humour, mentalité, Short, vivre]
 
-### INSTRUCTIONS :
-1. Extrais la toute première phrase de la transcription pour l'utiliser comme description.
-2. Sélectionne les 2 hashtags les plus pertinents dans le pool fourni.
-3. Ta réponse doit être UNIQUEMENT sans texte avant ou après.
+### INSTRUCTIONS:
+1. Extract the very first sentence of the transcription to use as the description.
+2. Select the 2 most relevant hashtags from the provided pool.
+3. Your response must be ONLY the output, with no text before or after.
 
-### FORMAT DE SORTIE ATTENDU SANS COMMENCE:
-La première phrase ici ! #hashtag1 #hastag2"""
+### EXPECTED OUTPUT FORMAT WITHOUT PREFIX:
+The first sentence here! #hashtag1 #hashtag2"""
 
-prompt_thumnail = f"""Tu es un expert en copywriting et en psychologie de l'attention sur TikTok, spécialisé dans la niche de la motivation, de la résilience et de la philosophie.
+prompt_thumbnail = f"""You are an expert in copywriting and attention psychology on TikTok, specialized in the niche of motivation, resilience, and philosophy.
 
-Voici le transcript exact d'une de mes prochaines vidéos :
+Here is the exact transcript of one of my upcoming videos:
 "{transcription}"
 
-Ta mission est de générer UNE SEULE proposition de texte ultra-court à écrire sur la miniature de cette vidéo pour maximiser le taux de clic (CTR).
+Your mission is to generate ONE SINGLE ultra-short text suggestion to place on the thumbnail of this video to maximize click-through rate (CTR).
 
-Règles strictes à respecter :
-1. Longueur : Entre 2 et 5 mots maximum. Le texte doit pouvoir être lu en une fraction de seconde.
-2. Objectif : Créer un mystère, une urgence ou un choc émotionnel (Curiosity Gap). Ne résume pas bêtement le transcript, donne une raison irrépressible d'écouter la vidéo.
-3. Ton : Direct, philosophique, parfois provocateur ou brutalement honnête.
-4. Format de sortie : Renvoie UNIQUEMENT le texte généré, sans guillemets, sans ponctuation finale inutile et sans aucun mot avant ou après."""
+Strict rules to follow:
+1. Length: Between 2 and 5 words maximum. The text must be readable in a fraction of a second.
+2. Objective: Create mystery, urgency, or an emotional shock (Curiosity Gap). Do not simply summarize the transcript—give an irresistible reason to watch the video.
+3. Tone: Direct, philosophical, sometimes provocative or brutally honest.
+4. Output format: Return ONLY the generated text, without quotes, without unnecessary ending punctuation, and without any words before or after."""
 
 reponse = client.models.generate_content(
     model="gemma-3-27b-it",
@@ -172,7 +172,7 @@ print(final_description)
 
 reponse = client.models.generate_content(
     model="gemma-3-27b-it",
-    contents=prompt_thumnail,
+    contents=prompt_thumbnail,
 )
 inter_reponse = reponse.text.replace(".", "")
 final_txt_thumbnail = inter_reponse.replace("\n", "")
