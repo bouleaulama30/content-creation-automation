@@ -16,7 +16,7 @@ function CheckBox({id, setState, checked}){
   )
 }
 
-function MyForm({onSubmitted}) {
+function MyFormAutomation({onSubmitted}) {
   const defaultNumberOfWords = 30;
   const defaultNumberOfScripts = 1;
 
@@ -162,6 +162,102 @@ function MyForm({onSubmitted}) {
   );
 }
 
+
+function MyFormControl() {
+  const defaultScriptLine = 0
+
+
+  const [template, setTemplate] = useState("default");
+  const [showScriptContentFile, setshowScriptContentFile] = useState(false);
+  const [showLinkContentFile, setshowLinkContentFile] = useState(false);
+  const [deleteAllContentFile, setdeleteAllContentFile] = useState(false);
+  const [scriptFile, setScriptFile] = useState("")
+  const [scriptLine, setScriptLine] = useState(defaultScriptLine)
+
+
+ 
+  const handleTemplate = (e) => {
+    setTemplate(e.target.value);
+  }
+
+  const handleScriptLine = (e) => {
+    setScriptLine(e.target.value);
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const userData = {
+      template: template,
+      showScriptContentFile: showScriptContentFile,
+      showLinkContentFile: showLinkContentFile,
+      deleteAllContentFile: deleteAllContentFile,
+      scriptLine: scriptLine,
+    };
+    try {
+      const getData= async() => {
+        const response = await fetch("/control", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(userData),
+        });
+        const text = await response.text();
+        setScriptFile(text);
+    }
+    getData();
+    }catch(err){
+      console.error(err);
+    };
+    }
+
+  return (
+    <div>
+    <form className="content-form" onSubmit={handleSubmit}>
+      <div className="form-row">
+        <label htmlFor="template">Template: </label>
+        <select
+          id="template"
+          placeholder=" Enter Template"
+          type="text"
+          onChange={handleTemplate}
+        >
+          <option value="default">default</option>
+          <option value="oogway">oogway</option>
+          <option value="joker">joker</option>
+        </select>
+      </div>
+
+      <div className="form-row checkbox-row">
+        <label htmlFor="showScriptContentFile">Show script content file: </label>
+        <CheckBox id="showScriptContentFile" setState={setshowScriptContentFile} checked={showScriptContentFile}/>
+      </div>
+      <div className="form-row checkbox-row">
+        <label htmlFor="showLinkContentFile">Show link content file: </label>
+        <CheckBox id="showLinkContentFile" setState={setshowLinkContentFile} checked={showLinkContentFile}/>
+      </div>
+      <div className="form-row checkbox-row">
+        <label htmlFor="deleteAllContentFile">Delete all scripts in file: </label>
+        <CheckBox id="deleteAllContentFile" setState={setdeleteAllContentFile} checked={deleteAllContentFile}/>
+      </div>
+      <div className="form-row">
+        <input
+          id="scriptLine"
+          placeholder={` Line to delete (default ${scriptLine})`}
+          type="number"
+          onChange={handleScriptLine}
+        />      
+      </div>  
+      <button className="form-row" type="submit">
+        Control content
+      </button>
+    </form>
+    <section className="logs-panel" aria-label="Execution logs">
+      <h2 className="logs-title">Scrips/Links output file</h2>
+      <pre className="logs-output">{scriptFile}</pre>
+    </section>
+    </div>
+  );
+}
+
 function Logs ({refreshKey}) {
   const [log, setLog] = useState("")
 
@@ -192,9 +288,20 @@ function App() {
   return (
     <div>
       <h1>Content Creation Automation</h1>
-      <MyForm onSubmitted={handleSubmitComplete} />
+      <MyFormAutomation onSubmitted={handleSubmitComplete} />
       <Logs refreshKey={logsRefreshKey} />
     </div>
   )
 }
-export default App
+
+function Control(){
+return(
+  <div>
+    <h1>Control script panel</h1>
+    <MyFormControl/>
+  </div>
+  )
+}
+
+export default App;
+export { Control };

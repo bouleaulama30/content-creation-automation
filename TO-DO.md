@@ -20,11 +20,6 @@
 ## OrderTaker
 
 * rebalayer le code pour le rendre plus clean
-* me renvoyer des erreurs:  
-    * si il n'y a plus de liens dispo dans le pool de liens (avoir un visu sur le fichier de lien)
-    * si des combinaisons de cases ne sont pas bonnes
-* avoir un controle sur les scripts (pouvoir les voir et les supprimer)
-
 
 ## Creator
 ### script creator

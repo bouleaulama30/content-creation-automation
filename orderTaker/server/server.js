@@ -101,4 +101,41 @@ app.post("/test", (req, res) => {
     console.log(req.body);
 })
 
+app.post("/control", (req, res) => {
+
+    const template = req.body.template;
+    const showScriptContentFile = req.body.showScriptContentFile;
+    const showLinkContentFile = req.body.showLinkContentFile;
+    const deleteAllContentFile = req.body.deleteAllContentFile;
+    const scriptLine = req.body.scriptLine;
+    if (showScriptContentFile){
+        console.log(`read script file from template: ${template}`)
+        const scriptFileContent = fs.readFileSync(`${process.env.ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${template}-scripts.txt`, "utf-8")
+        res.send(scriptFileContent)    
+    }
+    else if (showLinkContentFile){
+        console.log(`read link file from template: ${template}`)
+        const linkFileContent = fs.readFileSync(`${process.env.LINKS_FOLDER_PATH}/${template}-links.txt`, "utf-8")
+        res.send(linkFileContent)    
+    }
+    else if (deleteAllContentFile) {
+        console.log(`Delete all scripts in file from template: ${template}`)
+        shell.exec(`echo -ne '' > ${process.env.ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${template}-scripts.txt`)
+        const scriptFileContent = fs.readFileSync(`${process.env.ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${template}-scripts.txt`, "utf-8")
+        res.send(scriptFileContent)    
+    }
+    else if (scriptLine > 0){
+        console.log(`Delete the line ${scriptLine} in file from template: ${template}`)
+        shell.exec(`sed -i '${scriptLine}d' ${process.env.ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${template}-scripts.txt`)
+        const scriptFileContent = fs.readFileSync(`${process.env.ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${template}-scripts.txt`, "utf-8")
+        res.send(scriptFileContent) 
+    }
+    else {
+        console.log(`read script file from template: ${template}`)
+        const scriptFileContent = fs.readFileSync(`${process.env.ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${template}-scripts.txt`, "utf-8")
+        res.send(scriptFileContent) 
+    }
+
+})
+
 app.listen(5000, () => {console.log(`Server started on port 5000`)})
