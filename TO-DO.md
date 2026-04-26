@@ -19,6 +19,7 @@
 
 ## OrderTaker
 
+* faire en sorte que le serveur de prod soit un module kernel
 * rebalayer le code pour le rendre plus clean
 
 ## Creator
@@ -29,7 +30,9 @@
 
 ## Autres
 
-* voir pour faire la meme chose en anglais
+
+* voir pour faire la meme chose en anglais:
+    * test à petite échelle (sur un nouveau compte voir si ça peut fonctionner)
 
 * voir pour host un serveur pour avoir des vidéos de plus de 1min
 * voir si possible de publier automatiquement:
