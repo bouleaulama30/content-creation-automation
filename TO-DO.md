@@ -14,6 +14,7 @@
 
 ## Deliver
 
+* mettre url dans .env
 * rebalayer le code pour le rendre plus clean
 * faire de manière beaucoup plus clean la livraison de la miniature
 
@@ -30,11 +31,12 @@
 
 ## Autres
 
+* sécurisé les var api_id et api_hash pour le bot telegram
+* faire un module pour le bot telegram api car c'est chiant de la relancer à chaque fois
 
 * voir pour faire la meme chose en anglais:
     * test à petite échelle (sur un nouveau compte voir si ça peut fonctionner)
 
-* voir pour host un serveur pour avoir des vidéos de plus de 1min
 * voir si possible de publier automatiquement:
     * faire des tests sur un compte poubelle en utilisant tiktokAutoUploader
 
