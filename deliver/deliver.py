@@ -183,17 +183,17 @@ with open(f"{DATA_CLIENT_FILE}", 'r') as json_data:
 generer_image(final_txt_thumbnail, THUMBNAIL_FILE_PATH, template)
 
 # send txt
-url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+url = f"http://victor-simulateur:8081/bot{TOKEN}"
 data = {'chat_id' : chat_id, 'text' : final_description} 
-status_txt = r.get(url, data=data).json
+status_txt = r.get(f"{url}/sendMessage", data=data).json
 
 # send photo
 files = {'photo': open(f"{THUMBNAIL_FILE_PATH}", 'rb')}
-status_photo = r.post(f"https://api.telegram.org/bot{TOKEN}/sendPhoto?chat_id={chat_id}", files=files)
+status_photo = r.post(f"{url}/sendPhoto?chat_id={chat_id}", files=files)
 
 # send video
 files = {'video': open(f"{PRODUCTION_FOLDER_PATH}/video.mp4", 'rb')}
-status_video = r.post(f"https://api.telegram.org/bot{TOKEN}/sendVideo?chat_id={chat_id}", files=files)
+status_video = r.post(f"{url}/sendVideo?chat_id={chat_id}", files=files)
 
 print(status_txt)
 print(status_photo)
