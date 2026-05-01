@@ -38,7 +38,7 @@
     * test à petite échelle (sur un nouveau compte voir si ça peut fonctionner)
     * pour switch en anglais:
         * changer les miniatures 
-        * trouver un moyen d'avoir des prompts conditionnelles (dictionnaire ou autre selon la lecture du flag fr ou en)
+        * adapter le reste des fonctionnalitées à l'anglais
         * ajouter les fichiers pour acceuillir tout en anglais
 
 * voir si possible de publier automatiquement:
