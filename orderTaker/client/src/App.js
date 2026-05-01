@@ -22,6 +22,7 @@ function MyFormAutomation({onSubmitted}) {
 
   const [link, setLink] = useState("");
   const [template, setTemplate] = useState("default");
+  const [LANG, setLANG] = useState("fr");
   const [addLinkPool, setAddLinkPool] = useState(false);
   const [createFromLinkPool, setcreateFromLinkPool] = useState(false);
   const [createOriginalContent, setcreateOriginalContent] = useState(false);
@@ -49,12 +50,15 @@ function MyFormAutomation({onSubmitted}) {
   const handleTemplate = (e) => {
     setTemplate(e.target.value);
   }
-
+  const handleLANG = (e) => {
+    setLANG(e.target.value);
+  }
   const handleSubmit = async (e) => {
     e.preventDefault();
     const userData = {
       link: link,
       template: template,
+      LANG: LANG,
       addLinkPool: addLinkPool,
       createFromLinkPool: createFromLinkPool,
       createOriginalContent: createOriginalContent,
@@ -99,6 +103,18 @@ function MyFormAutomation({onSubmitted}) {
           <option value="default">default</option>
           <option value="oogway">oogway</option>
           <option value="joker">joker</option>
+        </select>
+      </div>
+      <div className="form-row">
+        <label htmlFor="LANG">Language: </label>
+        <select
+          id="LANG"
+          placeholder=" Enter Language"
+          type="text"
+          onChange={handleLANG}
+        >
+          <option value="fr">French</option>
+          <option value="en">English</option>
         </select>
       </div>
 

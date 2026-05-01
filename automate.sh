@@ -1,7 +1,39 @@
 #!/bin/bash
 
-TYPE_REEL=$1
-LINK_AUDIO=$2
+TYPE_REEL=""
+LINK_AUDIO=""
+TARGET_LANG=""
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --lang=*)
+            TARGET_LANG="${1#--lang=}"
+            shift
+            ;;
+        --lang)
+            shift
+            TARGET_LANG="${1:-}"
+            shift
+            ;;
+        *)
+            if [[ -z "$TYPE_REEL" ]]; then
+                TYPE_REEL="$1"
+            elif [[ -z "$LINK_AUDIO" ]]; then
+                LINK_AUDIO="$1"
+            fi
+            shift
+            ;;
+    esac
+done
+
+if [[ -z "$TYPE_REEL" ]]; then
+    echo "Missing reel type argument"
+    exit 1
+fi
+
+if [[ -z "$TARGET_LANG" ]]; then
+    TARGET_LANG="fr"
+fi
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ENV_FILE="${SCRIPT_DIR}/.env"
@@ -28,7 +60,6 @@ if [ -n "$LINK_AUDIO" ]; then
     ${YT_DLP_PATH} -t mp3 --cookies-from-browser firefox "${LINK_AUDIO}" -o ${AUDIO_FILE_PATH}
 fi
 
-``
 echo "suppression des video dans le dossier public de l'assembleur"
 rm ${INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}/*.mp4
 
@@ -57,7 +88,7 @@ rm -f ${INTERMEDIAR_VIDEOS_CAPTIONER_PATH}/video.json
 
 echo "🎙️ Génération des sous-titres (Whisper/Node)..."
 # Ce script doit générer le nouveau ${INTERMEDIAR_VIDEOS_CAPTIONER_PATH}/video.json
-node sub.mjs public/video.mp4 
+node sub.mjs public/video.mp4 --lang="${TARGET_LANG}"
 
 ${PYTHON_PATH} ${CAPTIONER_PATH}/remove_caption.py || exit
 

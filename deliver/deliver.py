@@ -161,6 +161,11 @@ Règles strictes à respecter :
 3. Ton : Direct, philosophique, parfois provocateur ou brutalement honnête.
 4. Format de sortie : Renvoie UNIQUEMENT le texte généré, sans guillemets, sans ponctuation finale inutile et sans aucun mot avant ou après."""
 
+with open(f"{DATA_CLIENT_FILE}", 'r') as json_data:
+    data = json.load(json_data)
+    template = data["template"]
+    lang = data["LANG"]
+    
 reponse = client.models.generate_content(
     model="gemma-3-27b-it",
     contents=prompt,
@@ -176,9 +181,6 @@ reponse = client.models.generate_content(
 )
 inter_reponse = reponse.text.replace(".", "")
 final_txt_thumbnail = inter_reponse.replace("\n", "")
-with open(f"{DATA_CLIENT_FILE}", 'r') as json_data:
-    data = json.load(json_data)
-    template = data["template"]
 
 generer_image(final_txt_thumbnail, THUMBNAIL_FILE_PATH, template)
 

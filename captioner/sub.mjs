@@ -36,7 +36,9 @@ const subFile = async (filePath, fileName, folder) => {
     folder,
     fileName.replace(".wav", ".json"),
   );
-
+  const langFlag = process.argv.find((arg) => arg.startsWith("--lang="));
+  const LANG = langFlag ? langFlag.slice("--lang=".length) : process.argv[3] ?? WHISPER_LANG;
+  console.log(`Whisper language: ${LANG}`);
   const whisperCppOutput = await transcribe({
     inputPath: filePath,
     model: WHISPER_MODEL,
@@ -45,7 +47,7 @@ const subFile = async (filePath, fileName, folder) => {
     whisperCppVersion: WHISPER_VERSION,
     printOutput: false,
     translateToEnglish: false,
-    language: WHISPER_LANG,
+    language: LANG,
     splitOnWord: true,
   });
 
@@ -126,17 +128,16 @@ if (!hasArgs) {
   process.exit(0);
 }
 
-for (const arg of process.argv.slice(2)) {
-  const fullPath = path.join(process.cwd(), arg);
-  const stat = lstatSync(fullPath);
+const arg = process.argv[2];
+const fullPath = path.join(process.cwd(), arg);
+const stat = lstatSync(fullPath);
 
-  if (stat.isDirectory()) {
-    await processDirectory(fullPath);
-    continue;
-  }
-
-  console.log(`Processing file ${fullPath}`);
-  const directory = path.dirname(fullPath);
-  const fileName = path.basename(fullPath);
-  await processVideo(fullPath, fileName, directory);
+if (stat.isDirectory()) {
+  await processDirectory(fullPath);
 }
+
+console.log(`Processing file ${fullPath}`);
+const directory = path.dirname(fullPath);
+const fileName = path.basename(fullPath);
+await processVideo(fullPath, fileName, directory);
+

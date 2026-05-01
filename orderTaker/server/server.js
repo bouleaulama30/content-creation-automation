@@ -8,6 +8,10 @@ const envPath = path.resolve(__dirname, '../../', '.env');
 
 dotenvExpand.expand(dotenv.config({ path: envPath }));
 
+function shellQuote(value) {
+    return `'${String(value).replace(/'/g, `'"'"'`)}'`;
+}
+
 function WriteLink(file, link){
     fs.appendFile(file, `${link}\n`, function(err){
     if (err){
@@ -50,6 +54,7 @@ app.post("/test", (req, res) => {
     const createScriptFromViralLinkPool = req.body.createScriptFromViralLinkPool
     const createScriptFromLink = req.body.createScriptFromLink
     const createScriptFromInput = req.body.createScriptFromInput
+    const LANG = req.body.LANG
 
     const dataString = JSON.stringify(req.body, null);
     fs.writeFileSync(`${process.env.DATA_CLIENT_FILE}`, dataString);
@@ -65,37 +70,38 @@ app.post("/test", (req, res) => {
         // const linkPool = ReadLinkAndMoveIt("link.txt", "link-used.txt");
         const linkPool = ReadLinkAndMoveIt(`${process.env.LINKS_FOLDER_PATH}/${template}-links.txt`, `${process.env.LINKS_FOLDER_PATH}/${template}-links-used.txt`,);
         console.log(`create from pool link: ${linkPool}`)
-        shell.exec(`${process.env.PROJECT_BASE_PATH}/automate.sh ${template} ${linkPool}`)
+        shell.exec(`${shellQuote(process.env.PROJECT_BASE_PATH)}/automate.sh ${shellQuote(template)} ${shellQuote(linkPool)} --lang=${shellQuote(LANG)}`)
         fs.writeFileSync("logs.txt", `Case createFromLinkPool: used link ${linkPool}`);
     }
     else if (createOriginalContent){
         fs.writeFileSync("logs.txt", "Task in progress: creating original content...");
         console.log("create original content")
-        shell.exec(`${process.env.PROJECT_BASE_PATH}/content-creator.sh ${template}`);
-        shell.exec(`${process.env.PROJECT_BASE_PATH}/automate.sh ${template} ${link}`)
+        shell.exec(`${shellQuote(process.env.PROJECT_BASE_PATH)}/content-creator.sh ${shellQuote(template)}`);
+        shell.exec(`${shellQuote(process.env.PROJECT_BASE_PATH)}/automate.sh ${shellQuote(template)} ${shellQuote(link)} --lang=${shellQuote(LANG)}`)
         fs.writeFileSync("logs.txt", "Case createOriginalContent: content generated");
     }
     else if (createScriptFromViralLinkPool) {
         fs.writeFileSync("logs.txt", "Task in progress: creating script from viral link pool...");
         console.log("create script from viral link pool");
-        shell.exec(`${process.env.PYTHON_PATH} ${process.env.TRIGGER_PATH}/viralLinkTrigger.py`);
+        shell.exec(`${shellQuote(process.env.PYTHON_PATH)} ${shellQuote(process.env.TRIGGER_PATH)}/viralLinkTrigger.py`);
         fs.writeFileSync("logs.txt", `Case createScriptFromViralLinkPool: script created from viral link ${link}`);
     }
     else if (createScriptFromLink && link != '') {
         fs.writeFileSync("logs.txt", "Task in progress: creating script from link...");
         console.log("create script from link");
-        shell.exec(`${process.env.PROJECT_BASE_PATH}/script-creator.sh ${link}`);
+        shell.exec(`${shellQuote(process.env.PROJECT_BASE_PATH)}/script-creator.sh ${shellQuote(link)}`);
         fs.writeFileSync("logs.txt", `Case createScriptFromLink: script created from link ${link}`);
     }
     else if (createScriptFromInput != '' && link == '') {
         fs.writeFileSync("logs.txt", "Task in progress: creating script from input...");
         console.log("create script from input");
-        shell.exec(`${process.env.PYTHON_PATH} ${process.env.CREATOR_PATH}/script-creator.py`);
+        shell.exec(`${shellQuote(process.env.PYTHON_PATH)} ${shellQuote(process.env.CREATOR_PATH)}/script-creator.py`);
         fs.writeFileSync("logs.txt", "Case createScriptFromInput: script created from input");
     }
     else {
         fs.writeFileSync("logs.txt", "Task in progress: running default automation...");
-        shell.exec(`${process.env.PROJECT_BASE_PATH}/automate.sh ${template} ${link}`)
+        console.log(`Language: ${LANG}`);
+        shell.exec(`${shellQuote(process.env.PROJECT_BASE_PATH)}/automate.sh ${shellQuote(template)} ${shellQuote(link)} --lang=${shellQuote(LANG)}`);
         fs.writeFileSync("logs.txt", "Case default: automate script executed");
     }
     console.log(req.body);
