@@ -37,15 +37,13 @@
 * voir pour faire la meme chose en anglais:
     * test à petite échelle (sur un nouveau compte voir si ça peut fonctionner)
     * pour switch en anglais:
-        * changer les miniatures 
-        * adapter le reste des fonctionnalitées à l'anglais
+        * la création de script à l'anglais
         * ajouter les fichiers pour acceuillir tout en anglais
 
 * voir si possible de publier automatiquement:
     * faire des tests sur un compte poubelle en utilisant tiktokAutoUploader
 
 * voir pour faire la meme chose avec un compte sur les quizz
-
 
 * faire une grande analyse des videos qui ont fonctionner dans un tableur (une fois que bcp de vidéos originale auront été publié):
     * nbr vue, partage, enregistrement, comment, average watch time, sujet

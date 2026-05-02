@@ -61,14 +61,14 @@ app.post("/test", (req, res) => {
 
     if (addLinkPool && link !== '') {
         fs.writeFileSync("logs.txt", "Task in progress: adding link to pool...");
-        console.log(`${process.env.LINKS_FOLDER_PATH}/${template}-links.txt`)
-        WriteLink(`${process.env.LINKS_FOLDER_PATH}/${template}-links.txt`, link);
+        console.log(`${process.env.LINKS_FOLDER_PATH}/${template}-${LANG}-links.txt`)
+        WriteLink(`${process.env.LINKS_FOLDER_PATH}/${template}-${LANG}-links.txt`, link);
         fs.writeFileSync("logs.txt", "Case addLinkPool: link added to pool");
     }
     else if (createFromLinkPool && !addLinkPool){
         fs.writeFileSync("logs.txt", "Task in progress: creating content from link pool...");
         // const linkPool = ReadLinkAndMoveIt("link.txt", "link-used.txt");
-        const linkPool = ReadLinkAndMoveIt(`${process.env.LINKS_FOLDER_PATH}/${template}-links.txt`, `${process.env.LINKS_FOLDER_PATH}/${template}-links-used.txt`,);
+        const linkPool = ReadLinkAndMoveIt(`${process.env.LINKS_FOLDER_PATH}/${template}-${LANG}-links.txt`, `${process.env.LINKS_FOLDER_PATH}/${template}-${LANG}-links-used.txt`,);
         console.log(`create from pool link: ${linkPool}`)
         shell.exec(`${shellQuote(process.env.PROJECT_BASE_PATH)}/automate.sh ${shellQuote(template)} ${shellQuote(linkPool)} --lang=${shellQuote(LANG)}`)
         fs.writeFileSync("logs.txt", `Case createFromLinkPool: used link ${linkPool}`);

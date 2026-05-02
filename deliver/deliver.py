@@ -66,9 +66,9 @@ def _wrap_text_to_width(draw, text, font, max_width, stroke_width=0):
 
     return final_lines
 
-def generer_image(texte_variable, destination, template):
+def generer_image(texte_variable, destination, template, lang):
     # 1. Charger l'image de base
-    img = Image.open(f"{DELIVER_PATH}/{template}.png")
+    img = Image.open(f"{DELIVER_PATH}/{template}-{lang}.png")
     draw = ImageDraw.Draw(img)
     
     # 2. Définir la police
@@ -209,7 +209,7 @@ reponse = client.models.generate_content(
 inter_reponse = reponse.text.replace(".", "")
 final_txt_thumbnail = inter_reponse.replace("\n", "")
 
-generer_image(final_txt_thumbnail, THUMBNAIL_FILE_PATH, template)
+generer_image(final_txt_thumbnail, THUMBNAIL_FILE_PATH, template, lang)
 
 # send txt
 url = f"http://localhost:8081/bot{TOKEN}"
