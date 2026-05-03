@@ -25,6 +25,8 @@
 
 ## Creator
 ### script creator
+
+* voir car oogway pas fou voir si ça marche vraiment
 * rebalayer le code pour le rendre plus clean
 
 ### audio creator
@@ -37,8 +39,10 @@
 * voir pour faire la meme chose en anglais:
     * test à petite échelle (sur un nouveau compte voir si ça peut fonctionner)
     * pour switch en anglais:
-        * la création de script à l'anglais
-        * ajouter les fichiers pour acceuillir tout en anglais
+        * génération de l'audio en anglais (retrouver des audios bien)
+        * ajouter la possibilité d'avoir un link viral anglais (update les .env des deux serveurs)
+        * adapter le dailyQuoter et trigger avec un flag lang en argument que l'on place dans la config cron
+        * plug le control panel aux bon fichiers de scripts (adapter le client et le serveur)
 
 * voir si possible de publier automatiquement:
     * faire des tests sur un compte poubelle en utilisant tiktokAutoUploader

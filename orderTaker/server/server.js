@@ -76,7 +76,7 @@ app.post("/test", (req, res) => {
     else if (createOriginalContent){
         fs.writeFileSync("logs.txt", "Task in progress: creating original content...");
         console.log("create original content")
-        shell.exec(`${shellQuote(process.env.PROJECT_BASE_PATH)}/content-creator.sh ${shellQuote(template)}`);
+        shell.exec(`${shellQuote(process.env.PROJECT_BASE_PATH)}/content-creator.sh ${shellQuote(template)} ${shellQuote(LANG)}`);
         shell.exec(`${shellQuote(process.env.PROJECT_BASE_PATH)}/automate.sh ${shellQuote(template)} ${shellQuote(link)} --lang=${shellQuote(LANG)}`)
         fs.writeFileSync("logs.txt", "Case createOriginalContent: content generated");
     }
@@ -89,7 +89,7 @@ app.post("/test", (req, res) => {
     else if (createScriptFromLink && link != '') {
         fs.writeFileSync("logs.txt", "Task in progress: creating script from link...");
         console.log("create script from link");
-        shell.exec(`${shellQuote(process.env.PROJECT_BASE_PATH)}/script-creator.sh ${shellQuote(link)}`);
+        shell.exec(`${shellQuote(process.env.PROJECT_BASE_PATH)}/script-creator.sh ${shellQuote(link)} ${shellQuote(LANG)}`);
         fs.writeFileSync("logs.txt", `Case createScriptFromLink: script created from link ${link}`);
     }
     else if (createScriptFromInput != '' && link == '') {
@@ -114,31 +114,33 @@ app.post("/control", (req, res) => {
     const showLinkContentFile = req.body.showLinkContentFile;
     const deleteAllContentFile = req.body.deleteAllContentFile;
     const scriptLine = req.body.scriptLine;
+    const lang = 'fr'
+
     if (showScriptContentFile){
-        console.log(`read script file from template: ${template}`)
-        const scriptFileContent = fs.readFileSync(`${process.env.ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${template}-scripts.txt`, "utf-8")
+        console.log(`read script file from template: ${template} with langage: ${lang}`)
+        const scriptFileContent = fs.readFileSync(`${process.env.ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${template}-${lang}-scripts.txt`, "utf-8")
         res.send(scriptFileContent)    
     }
     else if (showLinkContentFile){
-        console.log(`read link file from template: ${template}`)
-        const linkFileContent = fs.readFileSync(`${process.env.LINKS_FOLDER_PATH}/${template}-links.txt`, "utf-8")
+        console.log(`read link file from template: ${template} with langage: ${lang}`)
+        const linkFileContent = fs.readFileSync(`${process.env.LINKS_FOLDER_PATH}/${template}-${lang}-links.txt`, "utf-8")
         res.send(linkFileContent)    
     }
     else if (deleteAllContentFile) {
-        console.log(`Delete all scripts in file from template: ${template}`)
-        shell.exec(`echo -ne '' > ${process.env.ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${template}-scripts.txt`)
-        const scriptFileContent = fs.readFileSync(`${process.env.ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${template}-scripts.txt`, "utf-8")
+        console.log(`Delete all scripts in file from template: ${template} with langage: ${lang}`)
+        shell.exec(`echo -ne '' > ${process.env.ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${template}-${lang}-scripts.txt`)
+        const scriptFileContent = fs.readFileSync(`${process.env.ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${template}-${lang}-scripts.txt`, "utf-8")
         res.send(scriptFileContent)    
     }
     else if (scriptLine > 0){
-        console.log(`Delete the line ${scriptLine} in file from template: ${template}`)
-        shell.exec(`sed -i '${scriptLine}d' ${process.env.ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${template}-scripts.txt`)
-        const scriptFileContent = fs.readFileSync(`${process.env.ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${template}-scripts.txt`, "utf-8")
+        console.log(`Delete the line ${scriptLine} in file from template: ${template} with langage: ${lang}`)
+        shell.exec(`sed -i '${scriptLine}d' ${process.env.ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${template}-${lang}-scripts.txt`)
+        const scriptFileContent = fs.readFileSync(`${process.env.ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${template}-${lang}-scripts.txt`, "utf-8")
         res.send(scriptFileContent) 
     }
     else {
-        console.log(`read script file from template: ${template}`)
-        const scriptFileContent = fs.readFileSync(`${process.env.ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${template}-scripts.txt`, "utf-8")
+        console.log(`read script file from template: ${template} with langage: ${lang}`)
+        const scriptFileContent = fs.readFileSync(`${process.env.ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${template}-${lang}-scripts.txt`, "utf-8")
         res.send(scriptFileContent) 
     }
 

@@ -3,6 +3,7 @@
 echo "test script is running"
 
 TEMPLATE=$1
+LANG=$2
 AUDIO_TMP=audio.wav
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -23,10 +24,10 @@ fi
 set +o allexport
 
 # Read and remove the first line of the file
-SCRIPT=$(head -n 1 "${ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${TEMPLATE}-scripts.txt")
+SCRIPT=$(head -n 1 "${ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${TEMPLATE}-${LANG}-scripts.txt")
 echo "Script: ${SCRIPT}"
 
-tail -n +2 "${ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${TEMPLATE}-scripts.txt" > "${ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${TEMPLATE}-scripts.txt.tmp" && mv "${ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${TEMPLATE}-scripts.txt.tmp" "${ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${TEMPLATE}-scripts.txt"
+tail -n +2 "${ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${TEMPLATE}-${LANG}-scripts.txt" > "${ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${TEMPLATE}-${LANG}-scripts.txt.tmp" && mv "${ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${TEMPLATE}-${LANG}-scripts.txt.tmp" "${ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH}/${TEMPLATE}-${LANG}-scripts.txt"
 
 
 cd ${CREATOR_PATH}/qwen3-tts-rs/ || exit

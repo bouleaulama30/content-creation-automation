@@ -3,6 +3,7 @@
 echo "test script is running"
 
 LINK_AUDIO=$1
+LANG=$2
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ENV_FILE="${SCRIPT_DIR}/.env"
@@ -26,7 +27,8 @@ rm -f ${INTERMEDIAR_VIDEOS_CAPTIONER_PATH}/video.mp4
 ${YT_DLP_PATH} -t mp4 --cookies-from-browser firefox "${LINK_AUDIO}" -o ${INTERMEDIAR_VIDEOS_CAPTIONER_PATH}/video.mp4
 
 cd ${CAPTIONER_PATH} || exit
-node sub.mjs public/video.mp4 
+node sub.mjs public/video.mp4 --lang="${LANG}"
+
 ${PYTHON_PATH} ${CREATOR_PATH}/script-creator.py
 
 
