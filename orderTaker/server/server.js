@@ -114,7 +114,7 @@ app.post("/control", (req, res) => {
     const showLinkContentFile = req.body.showLinkContentFile;
     const deleteAllContentFile = req.body.deleteAllContentFile;
     const scriptLine = req.body.scriptLine;
-    const lang = 'fr'
+    const lang = req.body.LANG;
 
     if (showScriptContentFile){
         console.log(`read script file from template: ${template} with langage: ${lang}`)

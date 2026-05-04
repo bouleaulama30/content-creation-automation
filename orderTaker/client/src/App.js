@@ -189,8 +189,12 @@ function MyFormControl() {
   const [deleteAllContentFile, setdeleteAllContentFile] = useState(false);
   const [scriptFile, setScriptFile] = useState("")
   const [scriptLine, setScriptLine] = useState(defaultScriptLine)
+  const [LANG, setLANG] = useState("fr");
 
 
+  const handleLANG = (e) => {
+    setLANG(e.target.value);
+  }
  
   const handleTemplate = (e) => {
     setTemplate(e.target.value);
@@ -204,6 +208,7 @@ function MyFormControl() {
     e.preventDefault();
     const userData = {
       template: template,
+      LANG: LANG,
       showScriptContentFile: showScriptContentFile,
       showLinkContentFile: showLinkContentFile,
       deleteAllContentFile: deleteAllContentFile,
@@ -239,6 +244,18 @@ function MyFormControl() {
           <option value="default">default</option>
           <option value="oogway">oogway</option>
           <option value="joker">joker</option>
+        </select>
+      </div>
+      <div className="form-row">
+        <label htmlFor="language">Language: </label>
+        <select
+          id="language"
+          placeholder=" Enter language"
+          type="text"
+          onChange={handleLANG}
+        >
+          <option value="fr">French</option>
+          <option value="en">English</option>
         </select>
       </div>
 
