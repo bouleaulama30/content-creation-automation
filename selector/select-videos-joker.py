@@ -154,7 +154,7 @@ def copy_and_rename_audio(src_path, dst_path, src_name, dst_name):
     shutil.move(f'{dst_path}/{src_name}', new_name)
 
 
-def write_data_json(selected_videos, is_original):
+def write_data_json(selected_videos, is_original, lang):
     videos: List[VideoToEmbed] = []
     props = {'videosSrc': []}
 
@@ -171,6 +171,8 @@ def write_data_json(selected_videos, is_original):
 
     if is_original:
         props['audioSrc2Prop'] = {'src': f'{ORIGINAL_CONTENT_MUSIQUE_NAME}', 'volume': VOLUME_MUSIQUE}
+
+    props['logoSrc'] = f'logo_police_{lang}.png'
 
     with open(f'{ASSEMBLER_PATH}/props.json', 'w') as f:
         json.dump(props, f)
@@ -196,6 +198,7 @@ if __name__ == '__main__':
     with open(f'{DATA_CLIENT_FILE}', 'r') as json_data:
         data = json.load(json_data)
         original = data['createOriginalContent']
+        lang = data['LANG']
 
     if original:
         musique = select_musique(ORIGINAL_CONTENT_MUSIQUES_JOKER_FOLDER_PATH)
@@ -206,5 +209,5 @@ if __name__ == '__main__':
             ORIGINAL_CONTENT_MUSIQUE_NAME,
         )
 
-    write_data_json(videos, original)
+    write_data_json(videos, original, lang)
     print(videos)

@@ -153,7 +153,7 @@ def file_exists(path: str):
     """Vérifie si un fichier existe à l'emplacement donné."""
     return os.path.exists(path)
 
-def write_data_json(selected_videos, is_original):
+def write_data_json(selected_videos, is_original, lang):
     videos: List[VideoToEmbed] = []
     props = {"videosSrc" : []}
 
@@ -173,6 +173,8 @@ def write_data_json(selected_videos, is_original):
     if is_original:
         props["audioSrc2Prop"] = {"src": f"{ORIGINAL_CONTENT_MUSIQUE_NAME}", "volume": VOLUME_MUSIQUE}
 
+    props["logoSrc"] = f"logo_police_{lang}.png"
+
     with open(f"{ASSEMBLER_PATH}/props.json", 'w') as f:
         json.dump(props, f)
     print(props)
@@ -186,9 +188,10 @@ if __name__ == "__main__":
     with open(f"{DATA_CLIENT_FILE}", 'r') as json_data:
         data = json.load(json_data)
         original = data["createOriginalContent"]
+        lang = data["LANG"]
     if original:
         musique = select_musique(ORIGINAL_CONTENT_MUSIQUES_OOGWAY_FOLDER_PATH)
         copy_and_rename_audio(f"{ORIGINAL_CONTENT_MUSIQUES_OOGWAY_FOLDER_PATH}", f"{INTERMEDIAR_VIDEOS_ASSEMBLER_PATH}",musique, ORIGINAL_CONTENT_MUSIQUE_NAME)
 
-    write_data_json(videos, original)
+    write_data_json(videos, original, lang)
     print(videos)
