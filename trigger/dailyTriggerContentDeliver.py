@@ -3,9 +3,11 @@ import json
 from pathlib import Path
 import random as rd
 import os
+import sys
 import dotenv
 
 dotenv.load_dotenv()
+LANG = sys.argv[1] if len(sys.argv) > 1 else os.getenv('LANG', 'fr')
 LINKS_FOLDER_PATH = os.getenv('LINKS_FOLDER_PATH') 
 ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH = os.getenv('ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH') 
 SCRIPT_NUMBER = 1
