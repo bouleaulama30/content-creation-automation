@@ -1,10 +1,13 @@
 import requests as r
 import os
 import dotenv
+import sys
 import random as rd
 from PIL import Image, ImageDraw, ImageFont
 
 dotenv.load_dotenv()
+
+LANG = sys.argv[1] if len(sys.argv) > 1 else 'fr'
 
 INTERMEDIAR_VIDEOS_CAPTIONER_PATH = os.getenv('INTERMEDIAR_VIDEOS_CAPTIONER_PATH')
 PRODUCTION_FOLDER_PATH = os.getenv('PRODUCTION_FOLDER_PATH')
@@ -62,9 +65,9 @@ def _wrap_text_to_width(draw, text, font, max_width, stroke_width=0):
 
     return final_lines
 
-def generer_image(texte_variable, destination, template):
+def generer_image(texte_variable, destination, template, lang):
     # 1. Charger l'image de base
-    img = Image.open(f"{DELIVER_PATH}/{template}.png")
+    img = Image.open(f"{DELIVER_PATH}/{template}-{lang}.png")
     draw = ImageDraw.Draw(img)
     
     # 2. Définir la police
@@ -126,14 +129,14 @@ def generer_image(texte_variable, destination, template):
     # 6. Sauvegarder le résultat
     img.save(destination)
 
-with open(f"{ORIGINAL_CONTENT_QUOTES_FILE_PATH}", 'r') as f:
+with open(f"{ORIGINAL_CONTENT_QUOTES_FILE_PATH}/citation-{LANG}.txt", 'r') as f:
     quotes = f.readlines()
     rd.shuffle(quotes)
 
 template = ["default", "joker", "oogway"]
 rd.shuffle(template)
 
-generer_image(quotes[0], THUMBNAIL_FILE_PATH, template[0])
+generer_image(quotes[0], THUMBNAIL_FILE_PATH, template[0], LANG)
 
 # send photo
 files = {'photo': open(f"{THUMBNAIL_FILE_PATH}", 'rb')}

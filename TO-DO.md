@@ -40,8 +40,8 @@
     * test à petite échelle (sur un nouveau compte voir si ça peut fonctionner)
     * pour switch en anglais:
         * génération de l'audio en anglais (retrouver des audios bien)
-        * ajouter la possibilité d'avoir un link viral anglais (update les .env des deux serveurs)
-        * adapter le dailyQuoter et trigger avec un flag lang en argument que l'on place dans la config cron
+        * adapter le trigger avec un flag lang en argument que l'on place dans la config cron
+
 
 * voir si possible de publier automatiquement:
     * faire des tests sur un compte poubelle en utilisant tiktokAutoUploader
