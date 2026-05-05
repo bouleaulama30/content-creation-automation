@@ -54,7 +54,7 @@ def get_script_parameters(input_json_file):
 
     
 if __name__ == "__main__":
-    random_csv_line = select_random_line(f"{LINKS_VIRAL_FILE_PATH}")
+    random_csv_line = select_random_line(f"{LINKS_VIRAL_FILE_PATH}/viral-links-{LANG}.csv")
     script_parameters = get_script_parameters(f"{DATA_CLIENT_FILE}")
     data_client = create_data_client(random_csv_line[0], random_csv_line[1], script_parameters[0], script_parameters[1], LANG)
     print(data_client)
