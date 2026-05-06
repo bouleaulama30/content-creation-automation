@@ -7,7 +7,7 @@ import sys
 import dotenv
 
 dotenv.load_dotenv()
-LANG = sys.argv[1] if len(sys.argv) > 1 else os.getenv('LANG', 'fr')
+LANG = sys.argv[1] if len(sys.argv) > 1 else 'fr'
 LINKS_FOLDER_PATH = os.getenv('LINKS_FOLDER_PATH') 
 ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH = os.getenv('ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH') 
 SCRIPT_NUMBER = 1
@@ -15,10 +15,10 @@ WORD_NUMBER = 45
 
 url = "http://localhost:5000/test"
 templates = ["default", "oogway", "joker"]
-type_and_path_list = [("links", LINKS_FOLDER_PATH), ("scripts", ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH)]
+type_and_path_list = [(f"{LANG}-links", LINKS_FOLDER_PATH), (f"{LANG}-scripts", ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH)]
 # templates = ["joker"]
 # type_and_path_list = [("links", LINKS_FOLDER_PATH)]
-script_input = [
+script_input_fr = [
     "famille",
     "amour",
     "joie",
@@ -57,7 +57,7 @@ script_input = [
     "Le danger de la nostalgie d'une relation toxique"
 ]
 
-script_input += [
+script_input_fr += [
     # 🧠 Psychologie cachée (très viral)
     "Pourquoi tu t'attaches aux mauvaises personnes",
     "Le besoin d'attention déguisé en indépendance",
@@ -162,6 +162,152 @@ script_input += [
     "Aimer sans jamais s’attacher"
 ]
 
+script_input_en = [
+    "family",
+    "love",
+    "joy",
+    "depression",
+    "hope",
+    "social media addiction",
+
+    # Resilience & Strength (Lion / Training Vibe)
+    "Solitude as a weapon",
+    "Working in absolute silence",
+    "The sacrifice nobody sees",
+    "The difference between discipline and motivation",
+    "Getting back up when everyone thinks you're finished",
+    "The price of independence",
+
+    # Dark Mindset & Truth (Joker / Revenge Vibe)
+    "The betrayal of those you trusted the most",
+    "The hypocrisy of fake friendships",
+    "Using disrespect as fuel",
+    "Why being too kind is a weakness",
+    "Disappear and come back untouchable",
+    "Cutting ties without any explanation",
+
+    # Wisdom & Detachment (Oogway / Stoicism Vibe)
+    "The absolute power of silence",
+    "The art of expecting nothing from anyone",
+    "Accepting what you can't control",
+    "The illusion that people will change",
+    "Finding peace in chaos",
+    "Understanding that nothing is permanent",
+
+    # Relationships & Pain (Highly Viral Topics)
+    "Healing from heartbreak without revenge",
+    "Emotional dependency and how to kill it",
+    "Self-respect before the love of others",
+    "Loyalty versus opportunism",
+    "The danger of nostalgia for a toxic relationship"
+]
+
+script_input_en += [
+    # 🧠 Hidden Psychology (Very Viral)
+    "Why you get attached to the wrong people",
+    "The need for attention disguised as independence",
+    "Why you sabotage what's good for you",
+    "Addiction to emotional chaos",
+    "Looking for love in someone emotionally unavailable",
+    "Why you always go back to the same person",
+    "Confusing intensity with love",
+    "The unconscious pleasure of suffering",
+
+    # 💔 Toxic Relationships (Deep Version)
+    "When someone loves you but destroys you",
+    "Staying out of fear of being alone",
+    "The illusion of 'they will change'",
+    "Loving someone who doesn't respect you",
+    "Signs that you're the option, not the choice",
+    "Giving too much and becoming invisible",
+    "When silence becomes punishment",
+    "Jealousy disguised as love",
+
+    # 🪞 Uncomfortable Truths
+    "You're not a good person for everyone",
+    "Nobody thinks about you as much as you think",
+    "You're not special (and why that's a good thing)",
+    "People leave as soon as you stop being useful to them",
+    "Being replaced faster than expected",
+    "Respect is often conditional",
+    "You are also the problem in some stories",
+
+    # 🧊 Detachment & Coldness
+    "Stop wanting to be understood",
+    "Stop explaining your choices to anyone",
+    "Becoming emotionally unavailable",
+    "Observe without reacting",
+    "Learning to leave quietly",
+    "Stop replying, even when you want to",
+    "Cutting people off without regret",
+    "Detaching even when it hurts",
+
+    # 🔥 Ego & Identity
+    "Building an identity after losing everything",
+    "Who you become when nobody is watching",
+    "The mask you wear every day",
+    "Playing a role to be accepted",
+    "Redefining yourself after humiliation",
+    "Becoming someone your old self would hate",
+    "Other people's opinions as a prison",
+
+    # ⏳ Time & Regret
+    "Regretting a decision too late",
+    "Losing years for someone",
+    "Realizing you wasted your potential",
+    "Understanding too late what you had",
+    "The moment when you finally see everything clearly",
+    "Growing up and losing people",
+    "Aging without becoming better",
+
+    # 📱 Modern World (Very Relevant)
+    "The illusion of relationships on social media",
+    "Comparing your life to fake people online",
+    "Feeling empty after hours on TikTok",
+    "Building an image that isn't really you",
+    "Seeking validation online",
+    "The fake success of others",
+    "Depending on digital attention",
+
+    # ⚔️ Hard Mentality (But Original)
+    "Working without recognition",
+    "Being invisible for years",
+    "Nobody is coming to save you",
+    "Winning without ever being celebrated",
+    "Being alone against everyone",
+    "Building something without support",
+    "Moving forward even without real motivation",
+
+    # 🧬 Deep Introspection
+    "Why you run away from silence",
+    "Not recognizing yourself anymore",
+    "Lying to yourself to avoid reality",
+    "Refusing to see the signs",
+    "Getting lost in your own thoughts",
+    "Being afraid of becoming someone better",
+    "Sabotaging your own chances",
+
+    # 🎭 Original / Narrative Angles
+    "The day you stop replying",
+    "The exact moment you understand",
+    "What you think but never say",
+    "What you feel at 3 AM",
+    "When you reread old messages",
+    "The silence after an argument",
+    "The look that changes everything",
+    "When you pretend you're okay",
+
+    # 🧨 Borderline Topics (High Performing)
+    "Why some people deserve to be lost",
+    "Stop being a good person",
+    "Use people before they use you",
+    "Why love isn't always a good idea",
+    "Being happy without anyone",
+    "Stop believing in anyone",
+    "Loving without ever getting attached"
+]
+
+script_input = script_input_fr if LANG == "fr" else script_input_en
 
 def check_content_in_file(path_file):
     file = Path(path_file)
@@ -185,14 +331,16 @@ def get_file_parameters_to_use(templates, type_and_path_list):
             return dico
     return False
 
-def create_data_client(templates, type_and_path_list, script_number, word_number, script_input):
+def create_data_client(templates, type_and_path_list, script_number, word_number, script_input, lang):
     file_parameters = get_file_parameters_to_use(templates, type_and_path_list)
+    dico = {}
     if not file_parameters:
         rd.shuffle(script_input)
         rd.shuffle(templates)
         dico1 = {
             'link': '',
             'template': templates[0],
+            'LANG': lang,
             'addLinkPool': False,
             'createFromLinkPool': False,
             'createOriginalContent': False,
@@ -207,6 +355,7 @@ def create_data_client(templates, type_and_path_list, script_number, word_number
         dico2 = {
             'link': '',
             'template': 'default',
+            'LANG': lang,
             'addLinkPool': False,
             'createFromLinkPool': False,
             'createOriginalContent': False,
@@ -219,7 +368,7 @@ def create_data_client(templates, type_and_path_list, script_number, word_number
         l = [dico1, dico2]
         rd.shuffle(l)
         dico = l[0]
-    elif file_parameters['type'] == "links":
+    elif file_parameters['type'] == f"{lang}-links":
         # TODO call a function to get link
         with open(file_parameters['file_path'], 'r') as f:
             link = f.readline()
@@ -227,6 +376,7 @@ def create_data_client(templates, type_and_path_list, script_number, word_number
         dico = {
             'link': link,
             'template': file_parameters['template'],
+            'LANG': lang,
             'addLinkPool': False,
             'createFromLinkPool': False,
             'createOriginalContent': False,
@@ -236,10 +386,11 @@ def create_data_client(templates, type_and_path_list, script_number, word_number
             'scriptNumber': script_number,
             'wordNumber': word_number 
         }
-    elif file_parameters['type'] == "scripts":
+    elif file_parameters['type'] == f"{lang}-scripts":
         dico = {
             'link': '',
             'template': file_parameters['template'],
+            'LANG': lang,
             'addLinkPool': False,
             'createFromLinkPool': False,
             'createOriginalContent': True,
@@ -259,10 +410,10 @@ def send_server_request(url, data_client, timeout):
         
 
 if __name__ == "__main__":
-    data_client = create_data_client(templates, type_and_path_list, SCRIPT_NUMBER, WORD_NUMBER, script_input)
+    data_client = create_data_client(templates, type_and_path_list, SCRIPT_NUMBER, WORD_NUMBER, script_input, LANG)
     print(json.dumps(data_client))
     send_server_request(url, data_client, 20)
-    if data_client['link'] == '' and data_client['createOriginalContent'] == False:
-        data_client = create_data_client(templates, type_and_path_list, SCRIPT_NUMBER, WORD_NUMBER, script_input)
+    if data_client[f"{LANG}-link"] == '' and data_client['createOriginalContent'] == False:
+        data_client = create_data_client(templates, type_and_path_list, SCRIPT_NUMBER, WORD_NUMBER, script_input, LANG)
         print(json.dumps(data_client))
         send_server_request(url, data_client, 5)
