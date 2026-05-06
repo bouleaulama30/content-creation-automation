@@ -15,6 +15,7 @@
 ## Deliver
 
 * mettre url dans .env
+* mettre le choix du modèle dans un .env 
 * rebalayer le code pour le rendre plus clean
 * faire de manière beaucoup plus clean la livraison de la miniature
 
@@ -26,6 +27,7 @@
 ## Creator
 ### script creator
 
+* mettre le choix du modèle dans un .env 
 * voir car oogway pas fou voir si ça marche vraiment
 * rebalayer le code pour le rendre plus clean
 
@@ -37,7 +39,7 @@
     * test à petite échelle (sur un nouveau compte voir si ça peut fonctionner)
     * pour switch en anglais:
         * génération de l'audio en anglais (retrouver des audios bien)
-        * adapter le trigger avec un flag lang en argument que l'on place dans la config cron
+        * tester le trigger avec un flag lang en argument que l'on place dans la config cron
 
 
 * voir si possible de publier automatiquement:
