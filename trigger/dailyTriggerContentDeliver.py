@@ -12,7 +12,7 @@ LINKS_FOLDER_PATH = os.getenv('LINKS_FOLDER_PATH')
 ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH = os.getenv('ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH') 
 URL = os.getenv('URL') 
 SCRIPT_NUMBER = 1
-WORD_NUMBER = 45
+WORD_NUMBER = 60
 
 url = f"{URL}:5000/test"
 templates = ["default", "oogway", "joker"]
