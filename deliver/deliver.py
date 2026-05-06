@@ -195,7 +195,7 @@ with open(f"{DATA_CLIENT_FILE}", 'r') as json_data:
 
 print(lang)
 reponse = client.models.generate_content(
-    model="gemma-3-27b-it",
+    model="gemma-4-31b-it",
     contents=prompt_fr if lang == "fr" else prompt_en,
 )
 inter_reponse = reponse.text.replace("\n", "")
@@ -203,7 +203,7 @@ final_description = inter_reponse + " #motivation " + "#citation " + "#inspirati
 print(final_description)
 
 reponse = client.models.generate_content(
-    model="gemma-3-27b-it",
+    model="gemma-4-31b-it",
     contents=prompt_thumnail_fr if lang == "fr" else prompt_thumnail_en,
 )
 inter_reponse = reponse.text.replace(".", "")

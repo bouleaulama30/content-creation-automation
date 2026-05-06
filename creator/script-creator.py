@@ -415,7 +415,7 @@ prompt_select = prompts_dico[template][0] if (data["createScriptFromLink"] == Tr
 print(prompt_select)
 
 # reponse = client.models.generate_content(
-#     model="gemma-3-27b-it",
+#     model="gemma-4-31b-it",
 #     contents=prompt_select,
 # )
 
