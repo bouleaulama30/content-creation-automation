@@ -9,13 +9,14 @@ dotenv.load_dotenv()
 
 DATA_CLIENT_FILE = os.getenv('DATA_CLIENT_FILE')
 LINKS_VIRAL_FILE_PATH = os.getenv('LINKS_VIRAL_FILE_PATH')
+URL = os.getenv('URL')
 
 with open(f"{DATA_CLIENT_FILE}", 'r') as json_data:
     data = json.load(json_data)
 LANG = data.get('LANG', 'fr')
 
 
-url = "http://localhost:5000/test"
+url = f"{URL}:5000/test"
 
 def send_server_request(url, data_client, timeout):
     try:

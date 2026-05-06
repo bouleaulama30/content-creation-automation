@@ -10,10 +10,11 @@ dotenv.load_dotenv()
 LANG = sys.argv[1] if len(sys.argv) > 1 else 'fr'
 LINKS_FOLDER_PATH = os.getenv('LINKS_FOLDER_PATH') 
 ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH = os.getenv('ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH') 
+URL = os.getenv('URL') 
 SCRIPT_NUMBER = 1
 WORD_NUMBER = 45
 
-url = "http://localhost:5000/test"
+url = f"{URL}:5000/test"
 templates = ["default", "oogway", "joker"]
 type_and_path_list = [(f"{LANG}-links", LINKS_FOLDER_PATH), (f"{LANG}-scripts", ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH)]
 # templates = ["joker"]
@@ -413,7 +414,7 @@ if __name__ == "__main__":
     data_client = create_data_client(templates, type_and_path_list, SCRIPT_NUMBER, WORD_NUMBER, script_input, LANG)
     print(json.dumps(data_client))
     send_server_request(url, data_client, 20)
-    if data_client[f"{LANG}-link"] == '' and data_client['createOriginalContent'] == False:
+    if data_client[f"link"] == '' and data_client['createOriginalContent'] == False:
         data_client = create_data_client(templates, type_and_path_list, SCRIPT_NUMBER, WORD_NUMBER, script_input, LANG)
         print(json.dumps(data_client))
         send_server_request(url, data_client, 5)

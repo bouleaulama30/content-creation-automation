@@ -12,7 +12,9 @@ PRODUCTION_FOLDER_PATH = os.getenv('PRODUCTION_FOLDER_PATH')
 THUMBNAIL_FILE_PATH = os.getenv('THUMBNAIL_FILE_PATH')
 DATA_CLIENT_FILE = os.getenv('DATA_CLIENT_FILE')
 DELIVER_PATH = os.getenv('DELIVER_PATH')
+DELIVER_MODEL = os.getenv('DELIVER_MODEL')
 
+URL = os.getenv('URL')
 TOKEN = os.getenv('TOKEN')
 GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
 
@@ -195,7 +197,7 @@ with open(f"{DATA_CLIENT_FILE}", 'r') as json_data:
 
 print(lang)
 reponse = client.models.generate_content(
-    model="gemma-4-31b-it",
+    model=DELIVER_MODEL,
     contents=prompt_fr if lang == "fr" else prompt_en,
 )
 inter_reponse = reponse.text.replace("\n", "")
@@ -203,7 +205,7 @@ final_description = inter_reponse + " #motivation " + "#citation " + "#inspirati
 print(final_description)
 
 reponse = client.models.generate_content(
-    model="gemma-4-31b-it",
+    model=DELIVER_MODEL,
     contents=prompt_thumnail_fr if lang == "fr" else prompt_thumnail_en,
 )
 inter_reponse = reponse.text.replace(".", "")
@@ -211,8 +213,10 @@ final_txt_thumbnail = inter_reponse.replace("\n", "")
 
 generer_image(final_txt_thumbnail, THUMBNAIL_FILE_PATH, template, lang)
 
+# url telegram bot
+url=f"{URL}:8081/bot{TOKEN}"
+
 # send txt
-url = f"http://localhost:8081/bot{TOKEN}"
 data = {'chat_id' : chat_id, 'text' : final_description} 
 status_txt = r.get(f"{url}/sendMessage", data=data).json
 

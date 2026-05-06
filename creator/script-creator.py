@@ -6,6 +6,23 @@ from google import genai
 from google.genai import types
 import re
 
+dotenv.load_dotenv()
+
+TOKEN = os.getenv('TOKEN')
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
+INTERMEDIAR_VIDEOS_CAPTIONER_PATH = os.getenv('INTERMEDIAR_VIDEOS_CAPTIONER_PATH')
+DATA_CLIENT_FILE = os.getenv('DATA_CLIENT_FILE')
+SCRIPT_CREATOR_MODEL = os.getenv('SCRIPT_CREATOR_MODEL')
+ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH = os.getenv('ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH')
+client = genai.Client()
+
+# Read language from data.json
+with open(f"{DATA_CLIENT_FILE}", 'r') as json_data:
+    data = json.load(json_data)
+
+LANGUAGE = data.get("LANG", "fr")  # Default to French if not specified
+is_from_link = data.get("createScriptFromLink", False)
+
 
 def extract_scripts_from_response(raw_text):
     """Extract script blocks from model output with tolerant parsing."""
@@ -27,21 +44,6 @@ def extract_scripts_from_response(raw_text):
     # Priority 3: if no delimiter is respected, keep the whole response as one script.
     return [text]
 
-dotenv.load_dotenv()
-
-TOKEN = os.getenv('TOKEN')
-GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
-INTERMEDIAR_VIDEOS_CAPTIONER_PATH = os.getenv('INTERMEDIAR_VIDEOS_CAPTIONER_PATH')
-DATA_CLIENT_FILE = os.getenv('DATA_CLIENT_FILE')
-ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH = os.getenv('ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH')
-client = genai.Client()
-
-# Read language from data.json
-with open(f"{DATA_CLIENT_FILE}", 'r') as json_data:
-    data = json.load(json_data)
-
-LANGUAGE = data.get("LANG", "fr")  # Default to French if not specified
-is_from_link = data.get("createScriptFromLink", False)
 
 # =====================================================================
 # FRENCH CONTENT LISTS
@@ -135,14 +137,7 @@ system_instruction_fr = "Tu es un assistant IA spécialisé dans l'écriture de 
 
 consignes_default_fr = ""
 
-consignes_oogway_fr = """
-RÈGLES SPÉCIALES POUR LE RYTHME VOCAL (PERSONNAGE : SAGE/OOGWAY) :
-Ce script sera dicté par une IA vocale. Le personnage est un vieux maître philosophe. Le débit doit être EXTRÊMEMENT LENT, grave et respirant.
-1. Remplace la majorité des virgules par des points de suspension (...) pour forcer le TTS à marquer de longs silences.
-2. Formule des phrases très courtes (4 à 6 mots maximum par segment).
-3. Ne mets aucune exclamation (!), le ton doit rester plat, ancré et paisible en toutes circonstances.
-4. Structure typique attendue : "Une idée... Un silence... Une conclusion implacable."
-"""
+consignes_oogway_fr = ""
 
 consignes_joker_fr = """
 RÈGLES SPÉCIALES POUR LE RYTHME VOCAL (PERSONNAGE : SOMBRE/JOKER) :
@@ -245,14 +240,7 @@ system_instruction_en = "You are an AI assistant specialized in writing compelli
 
 consignes_default_en = ""
 
-consignes_oogway_en = """
-SPECIAL RULES FOR VOCAL RHYTHM (CHARACTER: SAGE/OOGWAY):
-This script will be read by a voice AI. The character is an old philosophical master. The delivery must be EXTREMELY SLOW, grave and breathing.
-1. Replace most commas with ellipses (...) to force the TTS to mark long silences.
-2. Make sentences very short (4 to 6 words maximum per segment).
-3. Don't use any exclamation marks (!), the tone should remain flat, grounded and peaceful in all circumstances.
-4. Expected typical structure: "An idea... A silence... An implacable conclusion."
-"""
+consignes_oogway_en = ""
 
 consignes_joker_en = """
 SPECIAL RULES FOR VOCAL RHYTHM (CHARACTER: DARK/JOKER):
@@ -414,13 +402,9 @@ else:
 prompt_select = prompts_dico[template][0] if (data["createScriptFromLink"] == True) else prompts_dico[template][1]
 print(prompt_select)
 
-# reponse = client.models.generate_content(
-#     model="gemma-4-31b-it",
-#     contents=prompt_select,
-# )
 
 reponse = client.models.generate_content(
-    model="gemini-2.5-flash",
+    model=SCRIPT_CREATOR_MODEL,
     contents=prompt_select,
     config=types.GenerateContentConfig(
         system_instruction=system_instruction)
