@@ -20,8 +20,8 @@
 
 ## OrderTaker
 
-* faire en sorte que le serveur de prod soit un module kernel
 * rebalayer le code pour le rendre plus clean
+* faire en sorte que le serveur de prod soit un module kernel
 
 ## Creator
 ### script creator
@@ -32,9 +32,6 @@
 ### audio creator
 
 ## Autres
-
-* sécurisé les var api_id et api_hash pour le bot telegram
-* faire un module pour le bot telegram api car c'est chiant de la relancer à chaque fois
 
 * voir pour faire la meme chose en anglais:
     * test à petite échelle (sur un nouveau compte voir si ça peut fonctionner)
