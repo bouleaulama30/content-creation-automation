@@ -61,3 +61,8 @@ cargo run --release --features cli --bin generate_audio --   --model-dir ~/IA/mo
 cargo run --release --features cli --bin generate_audio --   --model-dir /home/leolefebvre/IA/modele-base-1.7b --text "La vie, c'est surtout des moments où tu comprends que t'as rien compris. Des silences qui pèsent plus que les cris. 
 "   --ref-audio joker_test.wav   --ref-text "Ta loyauté, ton soutien, ton respect, le jour où tu n'as plus rien à offrir, tu deviens invisible. Ils se souviendront toujours de ce qu'ils peuvent te prendre, mais jamais de ce que tu leur offres." --language french
 
+# pour le mode english 
+#joker
+cargo run --release --features cli --bin generate_audio --   --model-dir ${QWEN_TTS_BASE_BIG_PATH} --text "${SCRIPT}"  --ref-audio en_joker_sample.wav   --ref-text "I'm not angry, I'm just done. That's what people don't get. I'm not mad at anyone. I'm just done with situations that disrupt my peace, with people who don't love me." --output ${AUDIO_FOLDER_PATH}/${AUDIO_TMP}
+#oogway
+cargo run --release --features cli --bin generate_audio --   --model-dir ${QWEN_TTS_BASE_BIG_PATH} --text "${SCRIPT}"  --ref-audio en_oogway_audio_sample.wav   --ref-text "Let them lose you. Let them walk away. Let them miss the light that you bring and the kindness you offer. Because my friend, it is not your task to prove your worth to anyone." --output ${AUDIO_FOLDER_PATH}/${AUDIO_TMP}

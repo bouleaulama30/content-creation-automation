@@ -69,3 +69,6 @@ Sépare clairement chaque script généré avec "--- SCRIPT [Numéro] ---"."""
 # Affichage pour vérifier (Dans ton vrai code, tu envoies ça à l'API de Gemma-3)
 print("PROMPT SÉLECTIONNÉ PRÊT POUR L'API :\n")
 print(prompt_exemple)
+
+
+

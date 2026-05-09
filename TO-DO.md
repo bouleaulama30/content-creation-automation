@@ -25,18 +25,11 @@
 ## Creator
 ### script creator
 
-* voir car oogway pas fou voir si ça marche vraiment
 * rebalayer le code pour le rendre plus clean
 
 ### audio creator
 
 ## Autres
-
-* voir pour faire la meme chose en anglais:
-    * pour switch en anglais:
-        * génération de l'audio en anglais (retrouver des audios bien)
-        * tester le trigger avec un flag lang en argument que l'on place dans la config cron
-
 
 * voir si possible de publier automatiquement:
     * faire des tests sur un compte poubelle en utilisant tiktokAutoUploader
