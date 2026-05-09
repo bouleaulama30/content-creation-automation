@@ -31,21 +31,9 @@
 
 ## Autres
 
-* voir si possible de publier automatiquement:
-    * faire des tests sur un compte poubelle en utilisant tiktokAutoUploader
-
-* voir pour faire la meme chose avec un compte sur les quizz
-
+* rendre l'infra globale plus clean
 * faire une grande analyse des videos qui ont fonctionner dans un tableur (une fois que bcp de vidéos originale auront été publié):
     * nbr vue, partage, enregistrement, comment, average watch time, sujet
     * en tirer des conclusions et améliorer les prompts/ les thèmes choisies
 
-* rendre l'infra globale plus clean
 
-* faire un repo github vraiment clean et le rendre ouvert à tous donc faire un readme clean
-    * voir pour dockeriser ça ou faire un script qui fait l'installation, faire l'inventaire des dépendances:
-        * librairies python
-        * yt dlp 
-        * google/genai
-        * remotion
-        * model qwen3-tts
