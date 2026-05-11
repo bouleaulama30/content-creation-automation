@@ -15,7 +15,7 @@ SCRIPT_NUMBER = 1
 WORD_NUMBER = 60
 
 url = f"{URL}:5000/test"
-templates = ["default", "oogway", "joker"]
+templates = [ "oogway", "joker"]
 type_and_path_list = [(f"{LANG}-links", LINKS_FOLDER_PATH), (f"{LANG}-scripts", ORIGINAL_CONTENT_SCRIPTS_FOLDER_PATH)]
 # templates = ["joker"]
 # type_and_path_list = [("links", LINKS_FOLDER_PATH)]
